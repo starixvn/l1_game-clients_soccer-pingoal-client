@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>balance-bg.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{224,52}</string>
+                <key>spriteSourceSize</key>
+                <string>{224,52}</string>
+                <key>textureRect</key>
+                <string>{{3,3},{224,52}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>main.webp</string>
+            <key>size</key>
+            <string>{64,256}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:7c25b51f253991f1dad22e5bd7343f75:59f3f80fb3fc15db98fdf4c84e45c225:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
+            <key>textureFileName</key>
+            <string>main.webp</string>
+        </dict>
+    </dict>
+</plist>
