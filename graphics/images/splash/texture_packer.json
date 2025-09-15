@@ -7,8 +7,8 @@
             "children": [
                 {
                     "options": {
-                        "params": ["--texture-format", "png"],
-                        "sheet_extension": "png",
+                        "params": ["--texture-format", "webp"],
+                        "sheet_extension": "webp",
                         "output_path": ["splash"]
                     }
                 }
@@ -17,6 +17,8 @@
     ],
     "options": {
         "params": [
+            ["--webp-quality", 100],
+            ["--alpha-handling", "ReduceBorderArtifacts"],
             ["--maxrects-heuristics", "Best"],
             ["--scale-mode", "Smooth"],
             ["--pack-mode", "Best"],
@@ -28,7 +30,6 @@
             ["--max-height", 2048],
             ["--size-constraints", "POT"],
             ["--png-opt-level", 0],
-            ["--alpha-handling", "KeepTransparentPixels"],
             ["--max-width", 2048],
             ["--trim-mode", "Trim"],
             ["--border-padding", 2],

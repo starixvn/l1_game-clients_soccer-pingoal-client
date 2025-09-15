@@ -4,7 +4,7 @@ import { _decorator } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import { siteConfigs } from "../../../scripts/site-configs";
-import { containerOptions } from "../containerOptions";
+import { containerOptions } from "../container-options";
 import { settings } from "../game-settings";
 import "./../../../resources/i18n";
 

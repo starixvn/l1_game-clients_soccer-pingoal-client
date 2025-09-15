@@ -1,5 +1,5 @@
 import { GameConfigs } from "@sg/game-client-base";
-import { containerOptions } from "db://assets/game/scripts/containerOptions";
+import { containerOptions } from "db://assets/game/scripts/container-options";
 import { LogStore } from "db://shared-components/game/scripts/stores/log-store";
 import { settings } from "../../../assets/game/scripts/game-settings";
 
