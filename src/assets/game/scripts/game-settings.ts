@@ -1,9 +1,9 @@
-export const GAME_NAME = "WukongsRevenge";
+export const GAME_NAME = "soccerpingoal";
 export const settings = {
-    id: 121,
+    id: 156,
     name: GAME_NAME,
     observerNamespace: GAME_NAME,
-    tolgeeNamespaces: [GAME_NAME, "cascadingslot"],
+    tolgeeNamespaces: [GAME_NAME],
     durations: {
         wholeRound: 14,
         lockingBet: 3,
