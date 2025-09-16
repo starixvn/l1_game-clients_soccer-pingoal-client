@@ -1,21 +1,6 @@
 {
     "others": {
-        "resources": [
-            "audios/click",
-            "audios/peek-effect-item",
-            "audios/stinger-freespin-peek",
-            "audios/peek-effect-shift",
-            "audios/reel-stop",
-            "audios/spin-button",
-            "audios/spinning-normal",
-            "audios/spinning-turbo",
-            "audios/big-win",
-            "audios/win",
-            "audios/freespin",
-            "audios/wincount-increment",
-            "audios/wincount-stop",
-            "audios/multiplier-land"
-        ]
+        "resources": ["audios/click"]
     },
     "localized": {
         "resources": {
