@@ -6,8 +6,10 @@ import { settings } from "./game-settings";
 export const containerOptions: gc.IContainerOptions = {
     globalContainer: sharedContainer,
     onContainerCreated: (container) => {
-        container.bind(gc.GameConfigs.GameSetting).toConstantValue(settings);
+        container.bind(gc.GameConfigs.GameSetting).toConstantValue(settings as any);
         container.bind(LogStore).to(LogStore);
+        container.bind(SinglePlayerGame.SingleGameRoundTimeStore).to(SinglePlayerGame.SingleGameRoundTimeStore);
+        container.bind(gc.Rounds.RoundTimeStore).toService(SinglePlayerGame.SingleGameRoundTimeStore as any);
     },
     features: [SinglePlayerGame, gc.BetDetailsNew, ...gc.defaultFeatures],
 };
