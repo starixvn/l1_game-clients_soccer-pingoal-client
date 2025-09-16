@@ -92,7 +92,8 @@
     "fileId": "a095nL0w1G1JJodHcDJ9kX",
     "instance": {
       "__id__": 4
-    }
+    },
+    "targetOverrides": []
   },
   {
     "__type__": "cc.PrefabInstance",
@@ -531,8 +532,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 786,
-      "height": 1398
+      "width": 750,
+      "height": 1334
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -568,7 +569,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "230c48ae-4688-4ed0-88be-a1119f9016c6@f9941",
+      "__uuid__": "b0677668-e31f-4b39-8dbf-cd27e889e6d2@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
