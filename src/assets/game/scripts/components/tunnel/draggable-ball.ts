@@ -38,7 +38,7 @@ const getTunnelPosition = (): Record<TunnelNumber, number> => {
 const TUNNEL_X_POSITIONS = getTunnelPosition();
 
 
-const DEFAULT_TUNNEL_NUMBER = {
+const DEFAULT_TUNNEL_NUMBER: Record<BallType, TunnelNumber> = {
     [BallType.BLUE]: TunnelNumber.FIRST,
     [BallType.RED]: TunnelNumber.SIXTH,
 }
@@ -48,9 +48,6 @@ Enum(TunnelNumber);
 
 @ccclass
 export default class DraggableBall extends SafeDraggableItem {
-    @property(Node)
-    draggableBall: Node = null;
-
     @property({ type: BallType })
     ballType: BallType = BallType.BLUE;
 
@@ -83,7 +80,7 @@ export default class DraggableBall extends SafeDraggableItem {
         posY = Math.min(maxY - this.fixTopPadding, posY);
 
         const { xPosition, tunnelNumber } = this.getNearestTunnel();
-        this.tunnelNumber = this.getNearestTunnel().tunnelNumber;
+        this.tunnelNumber = tunnelNumber;
 
         tween(this.node)
             .to(0.3, { position: v3(xPosition, posY) }, { easing: "sineOut" })
