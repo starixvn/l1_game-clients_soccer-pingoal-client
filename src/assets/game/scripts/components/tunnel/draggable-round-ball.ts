@@ -1,6 +1,5 @@
-import { _decorator, Enum, tween, v3, Node, Vec2, v2 } from "cc";
+import { _decorator, Enum, tween, v3, Node, Vec2, v2, EventTouch, UITransform, Vec3, CircleCollider2D } from "cc";
 import DraggableItem from "db://shared-components/shared/common-components/draggable/draggable-item";
-import SafeDraggableItem from "db://shared-components/shared/common-components/draggable/safe-draggable-item";
 import { ComponentUtils } from "db://shared-components/shared/utils";
 
 const { ccclass, property } = _decorator;
@@ -48,7 +47,7 @@ Enum(BallType);
 Enum(TunnelNumber);
 
 @ccclass
-export default class DraggableBall extends DraggableItem {
+export default class DraggableRoundBall extends DraggableItem {
     @property({ type: BallType })
     ballType: BallType = BallType.BLUE;
 
@@ -67,6 +66,18 @@ export default class DraggableBall extends DraggableItem {
     getCurrentSize(): Vec2 {
         const transform = ComponentUtils.getTransform(this.node);
         return v2(transform.width, transform.height);
+    }
+
+    onTouchStart(e: EventTouch) {
+        const position = e.getUILocation();
+        const local = this.node.getComponent(UITransform).convertToNodeSpaceAR(new Vec3(position.x, position.y));
+        const collider = this.getComponent(CircleCollider2D)
+        const circleRadius = collider.radius
+
+        if(local.length() > circleRadius){
+           return;
+        }
+        super.onTouchStart(e);
     }
 
     onTouchEnd(e) {
