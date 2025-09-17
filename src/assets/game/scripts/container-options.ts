@@ -3,6 +3,7 @@ import { LogStore } from "db://shared-components/game/scripts/stores/log-store";
 import * as SinglePlayerGame from "db://shared-single-player-game/scripts/core";
 import { sharedContainer } from "../../scripts/shared-container";
 import { settings } from "./game-settings";
+import * as SoccerPinGoal from "./index";
 export const containerOptions: gc.IContainerOptions = {
     globalContainer: sharedContainer,
     onContainerCreated: (container) => {
@@ -11,5 +12,5 @@ export const containerOptions: gc.IContainerOptions = {
         container.bind(SinglePlayerGame.SingleGameRoundTimeStore).to(SinglePlayerGame.SingleGameRoundTimeStore);
         container.bind(gc.Rounds.RoundTimeStore).toService(SinglePlayerGame.SingleGameRoundTimeStore as any);
     },
-    features: [SinglePlayerGame, gc.BetDetailsNew, ...gc.defaultFeatures],
+    features: [SoccerPinGoal, SinglePlayerGame, gc.BetDetailsNew, ...gc.defaultFeatures],
 };
