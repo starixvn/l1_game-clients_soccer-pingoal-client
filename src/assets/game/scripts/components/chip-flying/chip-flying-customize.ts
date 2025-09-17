@@ -70,7 +70,7 @@ export class ChipFlyingCustomize extends ChipFlying {
         this.startShowResultAnimation = false;
     }
 
-    @render(Chips.ChipStore, (store) => store.clearAllChips, { fireImmediately: false })
+    @render(SingleGameChipStore, (store) => store.clearAllChips, { fireImmediately: false })
     clearChipsForAllBetItems() {
         this.chipStorage = {};
         this.currentChipContainer.destroyAllChildren();
