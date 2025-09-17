@@ -28,13 +28,13 @@ export class PingoalLedLightTooltip extends LedLightTooltip {
     }
 
     private getResultText(settlementResult: any): string {
-        if (settlementResult.red) {
+        if (settlementResult?.red) {
             return SETTLEMENT_RESULT_TEXT.RED;
         }
-        if (settlementResult.blue) {
+        if (settlementResult?.blue) {
             return SETTLEMENT_RESULT_TEXT.BLUE;
         }
-        if (settlementResult.draw) {
+        if (settlementResult?.draw) {
             return SETTLEMENT_RESULT_TEXT.DRAW;
         }
         return "";
