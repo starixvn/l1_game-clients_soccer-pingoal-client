@@ -1,7 +1,7 @@
 import gc from "@sg/game-client-base";
 import { _decorator, log, Node } from "cc";
 import { BalanceEffectHandlers } from "db://shared-components/game/balance-effect/scripts/handlers/balance-effect-handlers";
-import { ChipFlying, IMainPlayerChip } from "db://shared-components/game/chip-flying/scripts/components/chip-flying";
+import { ChipFlying } from "db://shared-components/game/chip-flying/scripts/components/chip-flying";
 import { SingleGameChipStore } from "db://shared-single-player-game/scripts/core";
 import Observer from "observer";
 
@@ -39,32 +39,15 @@ export class ChipFlyingCustomize extends ChipFlying {
     protected startShowResultAnimation = false;
     protected winningPlayers: gc.GameServiceMessage.TWinningPlayers = {};
 
+    // Chips clear after user switch tab to other tab or reload page
     @render(Chips.ChipStore, (store) => store.chipsByMainPlayerRate)
-    override async flyChipsWhenJoinGame(chipsByMainPlayerRate: gc.Chips.TChipsByMainPlayerRate) {
-        // Chips clear after user switch tab to other tab or reload page
-    }
+    override async flyChipsWhenJoinGame(chipsByMainPlayerRate: gc.Chips.TChipsByMainPlayerRate) {}
 
     @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: false })
     flyOwnChip(ownChip: gc.GameServiceMessage.OwnChip) {
-        // TODO: implement
+        super.flyOwnChip(ownChip);
+
         log("fly chips to bet item: -------", ownChip);
-
-        const { betChoice, amount } = ownChip ?? {};
-        if (!betChoice || !amount) {
-            return;
-        }
-
-        const betItem = this.betItems?.betItemComponents.find((item) => betChoice === item.betChoice);
-        if (!betItem) {
-            return;
-        }
-
-        const mainPlayerChip: IMainPlayerChip = {
-            chipBox: betItem?.chipBox,
-            chipValue: amount,
-        };
-        this.placeChipToChipBox(betChoice, this.currentChipContainer, this.slidingChip, mainPlayerChip, null, null);
-        this.playSoundSingleChip();
     }
 
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX(id))
@@ -72,23 +55,13 @@ export class ChipFlyingCustomize extends ChipFlying {
         return gc.Audios.AudioIds.SINGLE_CHIP;
     }
 
+    // single game not use this function
     @render(Settlements.SettlementStore, (store) => store.settlementResult, { fireImmediately: false })
-    override payChipsWhenReceivingSettlementResult(settlementResult: gc.GameServiceMessage.TSettlementResult) {
-        // single game not use this function
-    }
+    override payChipsWhenReceivingSettlementResult(settlementResult: gc.GameServiceMessage.TSettlementResult) {}
 
-    callActionPayChips() {
-        if (this.usingDelayPayChips) {
-            return;
-        }
-
-        this.actionPayChips(true);
-    }
-
+    // update balance when receive settlement result status win
     @handle(Auth.AuthHandlers.GetBalance)
-    getBalance() {
-        // update balance when receive settlement result status win
-    }
+    getBalance() {}
 
     @handle(BalanceEffectHandlers.MainPlayerIncreaseBalance)
     mainPlayerIncreaseBalance(balance: number) {
