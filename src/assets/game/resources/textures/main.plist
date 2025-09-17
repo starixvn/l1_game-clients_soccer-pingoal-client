@@ -15,7 +15,22 @@
                 <key>spriteSourceSize</key>
                 <string>{224,52}</string>
                 <key>textureRect</key>
-                <string>{{3,3},{224,52}}</string>
+                <string>{{3,739},{224,52}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>bet-area.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{734,298}</string>
+                <key>spriteSourceSize</key>
+                <string>{734,298}</string>
+                <key>textureRect</key>
+                <string>{{3,3},{734,298}}</string>
                 <key>textureRotated</key>
                 <true/>
             </dict>
@@ -31,9 +46,9 @@
             <key>realTextureFileName</key>
             <string>main.webp</string>
             <key>size</key>
-            <string>{64,256}</string>
+            <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:7c25b51f253991f1dad22e5bd7343f75:59f3f80fb3fc15db98fdf4c84e45c225:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
+            <string>$TexturePacker:SmartUpdate:b3c2f2331f9d903a77f2d3cbe2ff924d:3982fbe386020d01b464ac63eae4e664:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
             <key>textureFileName</key>
             <string>main.webp</string>
         </dict>
