@@ -233,7 +233,40 @@ export const languages = {
         "invalid_bonus": "invalid_bonus",
         "opened_bonus": "opened_bonus",
         "invalid_jackpot": "invalid_jackpot",
-        "opened_jackpot": "opened_jackpot"
+        "opened_jackpot": "opened_jackpot",
+        "bet_amount": "投注金額",
+        "bet_detail_note": "僅提供當前日期前7天內的投注紀錄。",
+        "players": "玩家",
+        "original_tagline": "暢玩新體驗，贏取最高獎勵",
+        "auto_cashout": "自動兌現",
+        "auto_play": "自動遊戲",
+        "bet_accepted": "接受投注",
+        "chip_value": "籌碼價值",
+        "total_bet": "總賭注",
+        "waiting_for_the_next_round": "等待下一輪",
+        "show_more": "顯示更多",
+        "show_less": "顯示更少",
+        "start_in": "開始於 {time}s",
+        "cancel_bet": "取消投注",
+        "cashed": "兌現",
+        "cashout": "兌現",
+        "message_bet_is_accepted": "投注接受",
+        "message_total_cashout_reach_max": "提現總額 達到最大勝利",
+        "my_bets": "我的投注",
+        "waiting": "等待...",
+        "bet_slip": "投注單",
+        "game": "游戲",
+        "auto_rebet": "自動重押",
+        "label_custom_rounds": "自訂回合數",
+        "scoreboard_odd": "單",
+        "scoreboard_even": "雙",
+        "tooltip_double": "雙倍先前的投注",
+        "tooltip_sound": "音效",
+        "tooltip_guide": "遊戲指南",
+        "tooltip_fairness": "公平",
+        "lock_bet": "等待結果",
+        "tooltip_stat": "View stat",
+        "tooltip_auto": null
     },
     "cascadingslot": {
         "auto_spin": "自動旋轉",
@@ -303,6 +336,13 @@ export const languages = {
     "WukongsRevenge": {
         "game_icon_name": "悟空復仇",
         "game_name": "悟空復仇"
+    },
+    "SoccerPinGoal": {
+        "game_name": null,
+        "glossary_red": "紅",
+        "glossary_blue": "藍色",
+        "glossary_draw": "抽",
+        "glossary_tunnel_selection": null
     }
 };
 

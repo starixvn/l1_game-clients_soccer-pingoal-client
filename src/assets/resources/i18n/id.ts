@@ -231,9 +231,42 @@ export const languages = {
         "opened_bonus": "opened_bonus",
         "invalid_jackpot": "invalid_jackpot",
         "opened_jackpot": "opened_jackpot",
-        "no_data": null,
-        "all": null,
-        "message_loading": "Loading"
+        "no_data": "Data tidak tersedia.",
+        "all": "Semua",
+        "message_loading": "Memuat",
+        "bet_amount": "JUMLAH TARUHAN",
+        "bet_detail_note": "Data hanya tersedia untuk 7 hari terakhir terhitung dari tanggal saat ini.",
+        "players": "Pemain",
+        "original_tagline": "Main Segar, Menang Terbaik",
+        "auto_cashout": "CASHOUT OTOMATIS",
+        "auto_play": "AUTO-PLAY",
+        "bet_accepted": "Taruhan\nDiterima",
+        "chip_value": "Nilai Chip",
+        "total_bet": "Total Taruhan",
+        "waiting_for_the_next_round": "Menunggu putaran berikutnya",
+        "show_more": "Tampilkan Lebih Banyak",
+        "show_less": "Tampilkan Lebih Sedikit",
+        "start_in": "Mulai masuk {time}s",
+        "cancel_bet": "(Batalkan Taruhan)",
+        "cashed": "Dicairkan",
+        "cashout": "Cashout",
+        "message_bet_is_accepted": "Taruhan diterima",
+        "message_total_cashout_reach_max": "Total jumlah pembayaran Raih kemenangan maksimal",
+        "my_bets": "Taruhan Saya",
+        "waiting": "MENUNGGU...",
+        "bet_slip": "Slip Taruhan",
+        "game": "game",
+        "auto_rebet": "Rebet Otomatis",
+        "label_custom_rounds": "Jumlah ronde khusus",
+        "scoreboard_odd": "GE",
+        "scoreboard_even": "GE",
+        "tooltip_double": "Gandakan Taruhan Sebelumnya",
+        "tooltip_sound": "Suara",
+        "tooltip_guide": "Panduan Permainan",
+        "tooltip_fairness": "adil",
+        "lock_bet": "Tunggu hasil",
+        "tooltip_stat": "View stat",
+        "tooltip_auto": "Auto"
     },
     "cascadingslot": {
         "auto_spin": "Auto Putar",
@@ -303,6 +336,13 @@ export const languages = {
     "WukongsRevenge": {
         "game_icon_name": "Pembalasan Wukong",
         "game_name": "Pembalasan Wukong"
+    },
+    "SoccerPinGoal": {
+        "game_name": null,
+        "glossary_red": "Merah",
+        "glossary_blue": "BIRU",
+        "glossary_draw": "Undian",
+        "glossary_tunnel_selection": null
     }
 };
 

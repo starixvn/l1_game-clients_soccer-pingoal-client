@@ -233,7 +233,40 @@ export const languages = {
         "invalid_bonus": "invalid_bonus",
         "opened_bonus": "opened_bonus",
         "invalid_jackpot": "invalid_jackpot",
-        "opened_jackpot": "opened_jackpot"
+        "opened_jackpot": "opened_jackpot",
+        "bet_amount": "Bet Amount",
+        "bet_detail_note": "Data are only available within the last 7 days from the current date.",
+        "players": "Players",
+        "original_tagline": "Play Fresh, Win Best",
+        "auto_cashout": "Auto Cashout",
+        "auto_play": "Auto Play",
+        "bet_accepted": "Bet\nAccepted",
+        "chip_value": "Chip Value",
+        "total_bet": "Total Bet",
+        "waiting_for_the_next_round": "Showing result",
+        "show_more": "Show More",
+        "show_less": "Show Less",
+        "start_in": "Betting time: {time}s",
+        "cancel_bet": "(Cancel Bet)",
+        "cashed": "Cashed",
+        "cashout": "Cashout",
+        "message_bet_is_accepted": "Bet is accepted",
+        "message_total_cashout_reach_max": "Total cashout amounts reach the max win",
+        "my_bets": "My Bets",
+        "waiting": "Waiting...",
+        "bet_slip": "Bet Slip",
+        "game": "Game",
+        "auto_rebet": "Auto Rebet",
+        "label_custom_rounds": "Custom number of rounds",
+        "scoreboard_odd": "O",
+        "scoreboard_even": "E",
+        "tooltip_double": "Double",
+        "tooltip_sound": "Sound",
+        "tooltip_guide": "Game Guides",
+        "tooltip_fairness": "Fairness",
+        "lock_bet": "Waiting for the result",
+        "tooltip_stat": "View stat",
+        "tooltip_auto": "Auto"
     },
     "cascadingslot": {
         "auto_spin": "Auto Spin",
@@ -303,6 +336,13 @@ export const languages = {
     "WukongsRevenge": {
         "game_icon_name": "Wukong's Revenge",
         "game_name": "Wukong's Revenge"
+    },
+    "SoccerPinGoal": {
+        "game_name": "Soccer PinGoal",
+        "glossary_red": "Red",
+        "glossary_blue": "Blue",
+        "glossary_draw": "Draw",
+        "glossary_tunnel_selection": "Tunnel Selection"
     }
 };
 

@@ -231,9 +231,42 @@ export const languages = {
         "opened_bonus": "opened_bonus",
         "invalid_jackpot": "invalid_jackpot",
         "opened_jackpot": "opened_jackpot",
-        "no_data": null,
-        "all": null,
-        "message_loading": "Loading"
+        "no_data": "Không có dữ liệu.",
+        "all": "Tất cả",
+        "message_loading": "Đang tải",
+        "bet_amount": "Tiền Cược",
+        "bet_detail_note": "Dữ liệu chỉ khả dụng trong 7 ngày gần nhất tính từ ngày hiện tại.",
+        "players": "Người Chơi",
+        "original_tagline": "Chơi Mới Mẻ, Thắng Lớn Nhất",
+        "auto_cashout": "TỰ ĐỘNG RÚT TIỀN",
+        "auto_play": "CHƠI TỰ ĐỘNG",
+        "bet_accepted": "Đã\nNhận Cược",
+        "chip_value": "Giá trị chip",
+        "total_bet": "Tổng Cược",
+        "waiting_for_the_next_round": "Hiển thị kết quả",
+        "show_more": "Xem thêm",
+        "show_less": "Thu gọn",
+        "start_in": "Thời gian đặt cược: {time}s",
+        "cancel_bet": "(Hủy Cược)",
+        "cashed": "Rút Tiền",
+        "cashout": "Rút Tiền",
+        "message_bet_is_accepted": "Đã xác nhận cược",
+        "message_total_cashout_reach_max": "Tổng tiền đã rút đạt mức tối đa",
+        "my_bets": "Cược Của Tôi",
+        "waiting": "ĐANG CHỜ...",
+        "bet_slip": "Phiếu Cược",
+        "game": "Trò Chơi",
+        "auto_rebet": "Tự động cược lại",
+        "label_custom_rounds": "Tùy chỉnh số lượt",
+        "scoreboard_odd": "L",
+        "scoreboard_even": "C",
+        "tooltip_double": "Gấp đôi",
+        "tooltip_sound": "Âm thanh",
+        "tooltip_guide": "Hướng dẫn",
+        "tooltip_fairness": "Minh bạch",
+        "lock_bet": "Đang chờ kết quả",
+        "tooltip_stat": "Thống kê",
+        "tooltip_auto": "Tự động"
     },
     "cascadingslot": {
         "auto_spin": "Tự Quay",
@@ -303,6 +336,13 @@ export const languages = {
     "WukongsRevenge": {
         "game_icon_name": "Ngộ Không Báo Thù",
         "game_name": "Ngộ Không Báo Thù"
+    },
+    "SoccerPinGoal": {
+        "game_name": null,
+        "glossary_red": "Đỏ",
+        "glossary_blue": "Xanh Dương",
+        "glossary_draw": "Phiên",
+        "glossary_tunnel_selection": null
     }
 };
 

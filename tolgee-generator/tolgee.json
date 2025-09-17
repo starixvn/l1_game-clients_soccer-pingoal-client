@@ -1,4 +1,4 @@
 {
-    "mainNamespace": "WukongsRevenge",
-    "additionalNamespaces": ["Common", "cascadingslot"]
+    "mainNamespace": "SoccerPinGoal",
+    "additionalNamespaces": ["Common", "SoccerPinGoal"]
 }

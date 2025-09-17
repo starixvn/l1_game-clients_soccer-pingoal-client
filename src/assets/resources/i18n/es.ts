@@ -233,7 +233,40 @@ export const languages = {
         "invalid_bonus": "invalid_bonus",
         "opened_bonus": "opened_bonus",
         "invalid_jackpot": "invalid_jackpot",
-        "opened_jackpot": "opened_jackpot"
+        "opened_jackpot": "opened_jackpot",
+        "bet_amount": "Monto de Apuesta",
+        "bet_detail_note": "Los datos solo están disponibles para los últimos 7 días a partir de la fecha actual.",
+        "players": "Jugadores",
+        "original_tagline": "Juega Fresco, Gana Mejor",
+        "auto_cashout": "Auto Retiro",
+        "auto_play": "Juego Automático",
+        "bet_accepted": "Apuesta Aceptada",
+        "chip_value": "Valor de la ficha",
+        "total_bet": "Apuesta Total",
+        "waiting_for_the_next_round": "Esperando la siguiente ronda",
+        "show_more": "Mostrar más",
+        "show_less": "Mostrar menos",
+        "start_in": "Comienza en {time}s",
+        "cancel_bet": "(Cancelar Apuesta)",
+        "cashed": "Retirado",
+        "cashout": "Retirar",
+        "message_bet_is_accepted": "Apuesta aceptada",
+        "message_total_cashout_reach_max": "Los importes totales de los cobros alcanzan el máximo de ganancias",
+        "my_bets": "Mis apuestas",
+        "waiting": "Esperando...",
+        "bet_slip": "Boleto de Apuestas",
+        "game": "juego",
+        "auto_rebet": "Apuesta automática de nuevo",
+        "label_custom_rounds": "Número de rondas personalizado",
+        "scoreboard_odd": "I",
+        "scoreboard_even": "P",
+        "tooltip_double": "Doblar la apuesta anterior",
+        "tooltip_sound": "Sonido",
+        "tooltip_guide": "Guías de Juego",
+        "tooltip_fairness": "Equidad",
+        "lock_bet": "Esperando resultado",
+        "tooltip_stat": "View stat",
+        "tooltip_auto": "Auto"
     },
     "cascadingslot": {
         "auto_spin": "Giro Automático",
@@ -303,6 +336,13 @@ export const languages = {
     "WukongsRevenge": {
         "game_icon_name": "Wukong's Revenge",
         "game_name": "Wukong's Revenge"
+    },
+    "SoccerPinGoal": {
+        "game_name": "Soccer PinGoal",
+        "glossary_red": "Rojo",
+        "glossary_blue": "Azul",
+        "glossary_draw": "Sorteo",
+        "glossary_tunnel_selection": "Tunnel Selection"
     }
 };
 

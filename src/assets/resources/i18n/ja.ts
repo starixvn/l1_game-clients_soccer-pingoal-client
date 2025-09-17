@@ -233,7 +233,40 @@ export const languages = {
         "invalid_bonus": "invalid_bonus",
         "opened_bonus": "opened_bonus",
         "invalid_jackpot": "invalid_jackpot",
-        "opened_jackpot": "opened_jackpot"
+        "opened_jackpot": "opened_jackpot",
+        "bet_amount": "ベット額",
+        "bet_detail_note": "データは、現在の日付から過去7日間にのみ利用可能です。",
+        "players": "プレイヤー",
+        "original_tagline": "新鮮にプレイして、最高の勝利を",
+        "auto_cashout": "オートキャッシュアウト",
+        "auto_play": "オートプレイ",
+        "bet_accepted": "ベット受付",
+        "chip_value": "チップの価値",
+        "total_bet": "合計ベット",
+        "waiting_for_the_next_round": "次のラウンドをお待ちください",
+        "show_more": "もっと見る",
+        "show_less": "表示を減らす",
+        "start_in": "{time}に開始",
+        "cancel_bet": "（ベットをキャンセル）",
+        "cashed": "キャッシュ済",
+        "cashout": "キャッシュアウト",
+        "message_bet_is_accepted": "ベットが確定しました。",
+        "message_total_cashout_reach_max": "キャッシュアウトの合計額が最大勝利金額に達しました",
+        "my_bets": "ベット履歴",
+        "waiting": "待機中...",
+        "bet_slip": "ベットスリップ",
+        "game": "ゲーム",
+        "auto_rebet": "自動リベット",
+        "label_custom_rounds": "カスタムラウンド数",
+        "scoreboard_odd": "奇",
+        "scoreboard_even": "終",
+        "tooltip_double": "前のベットを倍にする",
+        "tooltip_sound": "サウンド",
+        "tooltip_guide": "ゲームガイド",
+        "tooltip_fairness": "公平性",
+        "lock_bet": "結果を待つ",
+        "tooltip_stat": "View stat",
+        "tooltip_auto": "Auto"
     },
     "cascadingslot": {
         "auto_spin": "オートスピン",
@@ -303,6 +336,13 @@ export const languages = {
     "WukongsRevenge": {
         "game_icon_name": "Wukong's Revenge",
         "game_name": "Wukong's Revenge"
+    },
+    "SoccerPinGoal": {
+        "game_name": null,
+        "glossary_red": "赤",
+        "glossary_blue": "ブルー",
+        "glossary_draw": "ドロー",
+        "glossary_tunnel_selection": null
     }
 };
 

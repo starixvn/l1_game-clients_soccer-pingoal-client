@@ -1,30 +1,20 @@
 {
-    "lobbyNames": {
-        "en": "Wukong's Revenge",
-        "es": "Wukong's Revenge",
-        "fil_ph": "Wukong's Revenge",
-        "id": "Pembalasan Wukong",
-        "ja": "Wukong's Revenge",
-        "ko": "오공의 복수",
-        "pt_br": "A Vingança de Wukong",
-        "th": "การล้างแค้น\nของหงอคง",
-        "tr": "Wukong'un İntikamı",
-        "vi": "Ngộ Không Báo Thù",
-        "zh_cn": "悟空复仇",
-        "zh_tw": "悟空復仇"
-    },
+    "lobbyNames": {},
     "gameNames": {
-        "en": "Wukong's Revenge",
-        "es": "Wukong's Revenge",
-        "fil_ph": "Wukong's Revenge",
-        "id": "Pembalasan Wukong",
-        "ja": "Wukong's Revenge",
-        "ko": "오공의 복수",
-        "pt_br": "A Vingança de Wukong",
-        "th": "การล้างแค้นของหงอคง",
-        "tr": "Wukong'un İntikamı",
-        "vi": "Ngộ Không Báo Thù",
-        "zh_cn": "悟空复仇",
-        "zh_tw": "悟空復仇"
+        "en": "Soccer PinGoal",
+        "th": null,
+        "id": null,
+        "vi": null,
+        "zh_cn": null,
+        "zh_tw": null,
+        "ja": null,
+        "es": "Soccer PinGoal",
+        "tr": "Soccer PinGoal",
+        "fil_ph": "Soccer PinGoal",
+        "pt_br": "Soccer PinGoal",
+        "ko": "Soccer PinGoal",
+        "bn_bd": "Soccer PinGoal",
+        "hi_in": "Soccer PinGoal",
+        "ms_my": "Soccer PinGoal"
     }
 }

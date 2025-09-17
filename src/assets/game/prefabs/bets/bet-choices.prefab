@@ -349,7 +349,7 @@
     "__prefab": {
       "__id__": 52
     },
-    "key": "Common.bet_choice_away",
+    "key": "SoccerPinGoal.glossary_blue",
     "format": 1,
     "prefix": "",
     "suffix": "",
@@ -963,7 +963,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 854.5078125,
+      "width": 130.828125,
       "height": 60.480000000000004
     },
     "_anchorPoint": {
@@ -999,7 +999,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "AWAY",
+    "_string": "BLUE",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 48,
@@ -1583,7 +1583,7 @@
     ],
     "value": {
       "__type__": "cc.Size",
-      "width": 854.5078125,
+      "width": 130.828125,
       "height": 60.480000000000004
     }
   },
@@ -1728,7 +1728,7 @@
     "__prefab": {
       "__id__": 140
     },
-    "key": "Common.bet_choice_draw",
+    "key": "SoccerPinGoal.glossary_draw",
     "format": 1,
     "prefix": "",
     "suffix": "",
@@ -2342,7 +2342,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 658.828125,
+      "width": 116.068359375,
       "height": 32.76
     },
     "_anchorPoint": {
@@ -2920,7 +2920,7 @@
     ],
     "value": {
       "__type__": "cc.Size",
-      "width": 658.828125,
+      "width": 116.068359375,
       "height": 32.76
     }
   },
@@ -3080,7 +3080,7 @@
     "__prefab": {
       "__id__": 224
     },
-    "key": "Common.bet_choice_home",
+    "key": "SoccerPinGoal.glossary_red",
     "format": 1,
     "prefix": "",
     "suffix": "",
@@ -3694,7 +3694,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 825.7734375,
+      "width": 102.09375,
       "height": 60.480000000000004
     },
     "_anchorPoint": {
@@ -3730,7 +3730,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "HOME",
+    "_string": "RED",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 48,
@@ -3990,7 +3990,7 @@
     ],
     "value": {
       "__type__": "cc.Size",
-      "width": 825.7734375,
+      "width": 102.09375,
       "height": 60.480000000000004
     }
   },
