@@ -8,8 +8,8 @@ if __name__ == '__main__':
     current_dir = os.path.dirname(os.path.realpath(__file__))
     project_dir = os.path.join(current_dir, '')
 
-    images_dir = ".\images"
-    outputPath = os.path.join(project_dir, '..\\', 'src\\assets\\game\\resources\\textures')
+    images_dir = "./images"
+    outputPath = os.path.join(project_dir, '../', 'src/assets/game/resources/textures')
 
     # images_dir = "..\\src\\extensions\\shared-cascading-slot\\graphics\\shared-standard-slot"
     # outputPath = os.path.join(project_dir, '..\\', 'src\\extensions\\shared-cascading-slot\\assets\\shared\\textures')
