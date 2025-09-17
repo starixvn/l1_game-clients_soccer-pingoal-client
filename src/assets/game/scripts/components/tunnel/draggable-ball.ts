@@ -1,4 +1,5 @@
-import { _decorator, Enum, tween, v3 } from "cc";
+import { _decorator, Enum, tween, v3, Node, Vec2, v2 } from "cc";
+import DraggableItem from "db://shared-components/shared/common-components/draggable/draggable-item";
 import SafeDraggableItem from "db://shared-components/shared/common-components/draggable/safe-draggable-item";
 import { ComponentUtils } from "db://shared-components/shared/utils";
 
@@ -39,27 +40,23 @@ const TUNNEL_X_POSITIONS = getTunnelPosition();
 
 
 const DEFAULT_TUNNEL_NUMBER: Record<BallType, TunnelNumber> = {
-    [BallType.BLUE]: TunnelNumber.FIRST,
-    [BallType.RED]: TunnelNumber.SIXTH,
+    [BallType.RED]: TunnelNumber.FIRST,
+    [BallType.BLUE]: TunnelNumber.SIXTH,
 }
 
 Enum(BallType);
 Enum(TunnelNumber);
 
 @ccclass
-export default class DraggableBall extends SafeDraggableItem {
+export default class DraggableBall extends DraggableItem {
     @property({ type: BallType })
     ballType: BallType = BallType.BLUE;
 
     private tunnelNumber: TunnelNumber = TunnelNumber.FIRST;
 
-    onLoad(): void {
-        super.onLoad();
-
-    }
-
     start(): void {
         this.setDefaultPosition();
+        this.node.parent.on(Node.EventType.SIZE_CHANGED, this.moveToEdge, this);
     }
 
     setDefaultPosition(): void {
@@ -67,9 +64,22 @@ export default class DraggableBall extends SafeDraggableItem {
         this.node.setPosition(TUNNEL_X_POSITIONS[this.tunnelNumber], this.node.y);
     }
 
+    getCurrentSize(): Vec2 {
+        const transform = ComponentUtils.getTransform(this.node);
+        return v2(transform.width, transform.height);
+    }
+
+    onTouchEnd(e) {
+        super.onTouchEnd(e);
+        this.moveToEdge();
+    }
+
+    onTouchCancel() {
+        super.onTouchCancel();
+        this.moveToEdge();
+    }
 
     moveToEdge() {
-        super.moveToEdge();
         const transform = ComponentUtils.getTransform(this.node.parent);
         const height = transform.height;
         const size = this.getCurrentSize();
@@ -77,7 +87,7 @@ export default class DraggableBall extends SafeDraggableItem {
 
         let posY: number;
         posY = this.node.y < 0 ? -maxY : maxY;
-        posY = Math.min(maxY - this.fixTopPadding, posY);
+        posY = Math.min(maxY, posY);
 
         const { xPosition, tunnelNumber } = this.getNearestTunnel();
         this.tunnelNumber = tunnelNumber;
@@ -85,8 +95,6 @@ export default class DraggableBall extends SafeDraggableItem {
         tween(this.node)
             .to(0.3, { position: v3(xPosition, posY) }, { easing: "sineOut" })
             .start();
-
-        console.log(`${this.ballType} is dropped in tunnel: ${tunnelNumber}`);
     }
 
     private getNearestTunnel(): { xPosition: number, tunnelNumber: TunnelNumber } {
