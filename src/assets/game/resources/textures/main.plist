@@ -79,6 +79,21 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
+            <key>main-player-bg.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{2,64}</string>
+                <key>spriteSourceSize</key>
+                <string>{2,64}</string>
+                <key>textureRect</key>
+                <string>{{3,1003},{2,64}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
             <key>statistic-black.png</key>
             <dict>
                 <key>aliases</key>
@@ -198,7 +213,7 @@
             <key>size</key>
             <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:9421b46ca79532e67d807dbc4b5615c2:9128d944a2216d0f3623a8742ab1ae73:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
+            <string>$TexturePacker:SmartUpdate:eb7cb1326e9483b76d7e5fe2b969daac:5362869cc6c15ab62bb0599bfa71c455:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
             <key>textureFileName</key>
             <string>main.webp</string>
         </dict>

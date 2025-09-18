@@ -237,6 +237,52 @@
       ],
       "subMetas": {}
     },
+    "8c070": {
+      "importer": "sprite-frame",
+      "uuid": "bd322ce4-db93-474f-b837-b8383aac4ef3@8c070",
+      "displayName": "",
+      "id": "8c070",
+      "name": "main-player-bg",
+      "userData": {
+        "trimThreshold": 1,
+        "rotated": true,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 3,
+        "trimY": 1003,
+        "width": 2,
+        "height": 64,
+        "rawWidth": 2,
+        "rawHeight": 64,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [],
+          "indexes": [],
+          "uv": [],
+          "nuv": [],
+          "minPos": [],
+          "maxPos": []
+        },
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2b5264a6-c560-436c-bd7e-4fe8845ae34b@6c48a",
+        "atlasUuid": "bd322ce4-db93-474f-b837-b8383aac4ef3",
+        "trimType": "auto"
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
     "3fbb3": {
       "importer": "sprite-frame",
       "uuid": "bd322ce4-db93-474f-b837-b8383aac4ef3@3fbb3",
