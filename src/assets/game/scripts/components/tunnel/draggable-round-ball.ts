@@ -37,8 +37,7 @@ const getTunnelPosition = (): Record<TunnelNumber, number> => {
 
 const TUNNEL_X_POSITIONS = getTunnelPosition();
 
-
-const DEFAULT_TUNNEL_NUMBER: Record<BallType, TunnelNumber> = {
+export const DEFAULT_TUNNEL_NUMBER: Record<BallType, TunnelNumber> = {
     [BallType.RED]: TunnelNumber.FIRST,
     [BallType.BLUE]: TunnelNumber.SIXTH,
 }
@@ -52,6 +51,14 @@ export default class DraggableRoundBall extends DraggableItem {
     ballType: BallType = BallType.BLUE;
 
     private tunnelNumber: TunnelNumber = TunnelNumber.FIRST;
+    // TODO: remove hard value
+    // private tunnelXPosition: number = this.node.parent
+
+    public touchCallback = {
+        start: () => {},
+        move: () => {},
+        end: () => {},
+    };
 
     start(): void {
         this.setDefaultPosition();
@@ -106,6 +113,8 @@ export default class DraggableRoundBall extends DraggableItem {
         tween(this.node)
             .to(0.3, { position: v3(xPosition, posY) }, { easing: "sineOut" })
             .start();
+
+        return tunnelNumber
     }
 
     private getNearestTunnel(): { xPosition: number, tunnelNumber: TunnelNumber } {
@@ -127,4 +136,10 @@ export default class DraggableRoundBall extends DraggableItem {
         }
     }
 
+    moveToTargetTunnel(tunnelNumber: TunnelNumber) {
+        this.tunnelNumber = tunnelNumber;
+        tween(this.node)
+            .to(0.3, { position: v3(TUNNEL_X_POSITIONS[tunnelNumber], this.node.y) }, { easing: "sineOut" })
+            .start();
+    }
 }

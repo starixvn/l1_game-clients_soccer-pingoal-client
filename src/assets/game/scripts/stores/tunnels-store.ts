@@ -1,5 +1,6 @@
 import inversify from "inversify";
 import mobx from "mobx";
+import { BallType, DEFAULT_TUNNEL_NUMBER } from "../components/tunnel/draggable-round-ball";
 const { injectable, inject } = inversify;
 
 @injectable()
@@ -8,15 +9,19 @@ export class TunnelsStore {
         mobx.makeAutoObservable(this);
     }
 
-    //save color,position,...
-
-    private _position = {};
+    private _position = {
+        redTunnel: DEFAULT_TUNNEL_NUMBER[BallType.RED],
+        blueTunnel: DEFAULT_TUNNEL_NUMBER[BallType.BLUE],
+    };
 
     get position() {
         return this._position;
     }
 
     set position(value: {}) {
-        this._position = value;
+        this._position = {
+            ...this._position,
+            ...value,
+        };
     }
 }
