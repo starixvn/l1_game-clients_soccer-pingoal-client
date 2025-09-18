@@ -672,8 +672,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 620.8,
-      "height": 72
+      "width": 586.8679999999999,
+      "height": 75.764
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -713,8 +713,6 @@
       "__id__": 0
     },
     "fileId": "95TrhWWmdIeZ2P41Zzh7vP",
-    "instance": null,
-    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {

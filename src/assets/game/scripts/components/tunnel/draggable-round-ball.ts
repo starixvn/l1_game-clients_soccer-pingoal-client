@@ -18,24 +18,7 @@ export enum TunnelNumber {
     SIXTH = 6,
 }
 
-const TUNNEL_POSITIONS = {
-    FIRST_X: -255,
-    LAST_X: 255,
-    TUNNEL_COUNT: 6
-}
-
-const getTunnelPosition = (): Record<TunnelNumber, number> => {
-    const positions: Record<TunnelNumber, number> = {} as Record<TunnelNumber, number>;
-    const step = (TUNNEL_POSITIONS.LAST_X - TUNNEL_POSITIONS.FIRST_X) / (TUNNEL_POSITIONS.TUNNEL_COUNT - 1);
-
-    for (let i = 0; i < TUNNEL_POSITIONS.TUNNEL_COUNT; i++) {
-        positions[i + 1 as TunnelNumber] = TUNNEL_POSITIONS.FIRST_X + (step * i);
-    }
-
-    return positions;
-}
-
-const TUNNEL_X_POSITIONS = getTunnelPosition();
+export const TUNNEL_COUNT = 6;
 
 export const DEFAULT_TUNNEL_NUMBER: Record<BallType, TunnelNumber> = {
     [BallType.RED]: TunnelNumber.FIRST,
@@ -51,26 +34,32 @@ export default class DraggableRoundBall extends DraggableItem {
     ballType: BallType = BallType.BLUE;
 
     private tunnelNumber: TunnelNumber = TunnelNumber.FIRST;
-    // TODO: remove hard value
-    // private tunnelXPosition: number = this.node.parent
+    private tunnelFirstX: number = 0;
+    private tunnelLastX: number = 0;
+    private tunnelXPositions: Record<TunnelNumber, number> = null;
 
     public touchCallback = {
-        start: () => {},
-        move: () => {},
-        end: () => {},
+        start: () => { },
+        move: () => { },
+        end: () => { },
     };
 
     start(): void {
-        this.setDefaultPosition();
         this.node.parent.on(Node.EventType.SIZE_CHANGED, this.moveToEdge, this);
+        const containerWidth = this.node.parent.getComponent(UITransform).width;
+        const ballWidth = this.node.getComponent(UITransform).width;
+        this.tunnelFirstX = this.node.parent.position.x - containerWidth / 2 + ballWidth / 2;
+        this.tunnelLastX = this.node.parent.position.x + containerWidth / 2 - ballWidth / 2;
+        this.tunnelXPositions = this.getTunnelPosition();
+        this.setDefaultPosition();
     }
 
-    setDefaultPosition(): void {
+    private setDefaultPosition(): void {
         this.tunnelNumber = DEFAULT_TUNNEL_NUMBER[this.ballType];
-        this.node.setPosition(TUNNEL_X_POSITIONS[this.tunnelNumber], this.node.y);
+        this.node.setPosition(this.tunnelXPositions[this.tunnelNumber], this.node.y);
     }
 
-    getCurrentSize(): Vec2 {
+    private getCurrentSize(): Vec2 {
         const transform = ComponentUtils.getTransform(this.node);
         return v2(transform.width, transform.height);
     }
@@ -81,8 +70,8 @@ export default class DraggableRoundBall extends DraggableItem {
         const collider = this.getComponent(CircleCollider2D)
         const circleRadius = collider.radius
 
-        if(local.length() > circleRadius){
-           return;
+        if (local.length() > circleRadius) {
+            return;
         }
         super.onTouchStart(e);
     }
@@ -120,10 +109,10 @@ export default class DraggableRoundBall extends DraggableItem {
     private getNearestTunnel(): { xPosition: number, tunnelNumber: TunnelNumber } {
         const currentX = this.node.position.x;
         let nearestIndex = this.tunnelNumber;
-        let minDistance = Math.abs(currentX - TUNNEL_X_POSITIONS[this.tunnelNumber]);
+        let minDistance = Math.abs(currentX - this.tunnelXPositions[this.tunnelNumber]);
 
         for (const tunnel of Object.values(TunnelNumber)) {
-            const distance = Math.abs(currentX - TUNNEL_X_POSITIONS[tunnel]);
+            const distance = Math.abs(currentX - this.tunnelXPositions[tunnel]);
             if (distance < minDistance) {
                 minDistance = distance;
                 nearestIndex = tunnel as TunnelNumber;
@@ -131,15 +120,26 @@ export default class DraggableRoundBall extends DraggableItem {
         }
 
         return {
-            xPosition: TUNNEL_X_POSITIONS[nearestIndex],
+            xPosition: this.tunnelXPositions[nearestIndex],
             tunnelNumber: nearestIndex
         }
+    }
+
+    private getTunnelPosition() {
+        const positions: Record<TunnelNumber, number> = {} as Record<TunnelNumber, number>;
+        const step = (this.tunnelLastX - this.tunnelFirstX) / (TUNNEL_COUNT - 1);
+
+        for (let i = 0; i < TUNNEL_COUNT; i++) {
+            positions[i + 1 as TunnelNumber] = this.tunnelFirstX + (step * i);
+        }
+
+        return positions;
     }
 
     moveToTargetTunnel(tunnelNumber: TunnelNumber) {
         this.tunnelNumber = tunnelNumber;
         tween(this.node)
-            .to(0.3, { position: v3(TUNNEL_X_POSITIONS[tunnelNumber], this.node.y) }, { easing: "sineOut" })
+            .to(0.3, { position: v3(this.tunnelXPositions[tunnelNumber], this.node.y) }, { easing: "sineOut" })
             .start();
     }
 }
