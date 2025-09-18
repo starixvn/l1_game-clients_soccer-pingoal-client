@@ -25,10 +25,8 @@ export class ChipFlyingCustomize extends ChipFlying {
     override async flyChipsWhenJoinGame(chipsByMainPlayerRate: gc.Chips.TChipsByMainPlayerRate) {}
 
     @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: false })
-    flyOwnChip(ownChip: gc.GameServiceMessage.OwnChip) {
+    flyOwnChip(ownChip: gc.GameServiceMessage.OwnChip, store?: SingleGameChipStore) {
         super.flyOwnChip(ownChip);
-
-        log("fly chips to bet item: -------", ownChip);
     }
 
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX(id))
@@ -72,6 +70,12 @@ export class ChipFlyingCustomize extends ChipFlying {
 
     @render(Chips.ChipStore, (store) => store.clearAllChips, { fireImmediately: false })
     clearChipsForAllBetItems() {
+        this.chipStorage = {};
+        this.currentChipContainer.destroyAllChildren();
+    }
+
+    @render(SingleGameChipStore, (store) => store.clearAllChips, { fireImmediately: false })
+    clearSingleGameChips() {
         this.chipStorage = {};
         this.currentChipContainer.destroyAllChildren();
     }
