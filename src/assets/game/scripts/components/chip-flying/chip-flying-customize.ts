@@ -20,9 +20,6 @@ export class ChipFlyingCustomize extends ChipFlying {
     @property({ type: Node, visible: false, override: true })
     nodeAroundTablePlayers: Node = null;
 
-    @property({ type: Node, visible: false, override: true })
-    nodeBetItems: Node = null;
-
     // Chips clear after user switch tab to other tab or reload page
     @render(Chips.ChipStore, (store) => store.chipsByMainPlayerRate)
     override async flyChipsWhenJoinGame(chipsByMainPlayerRate: gc.Chips.TChipsByMainPlayerRate) {}
