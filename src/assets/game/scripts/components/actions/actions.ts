@@ -10,9 +10,6 @@ const { observer, render, handle } = Observer;
 @ccclass("actions")
 export class Actions extends ObserverComponent {
     @handle(SingleGameRoundTimeHandlers, (handler, payload: string) => handler.handle(payload))
-    @handle(SingleGameChipStore, (store) => {
-        console.log("  - ownChip:", JSON.stringify(store.ownChip, null, 2));
-    })
     handleStart() {
         return SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO;
     }
