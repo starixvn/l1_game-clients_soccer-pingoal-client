@@ -11,33 +11,17 @@ const { render, handle } = Observer;
 
 @ccclass
 export class ChipFlyingCustomize extends ChipFlying {
-    @property(Node)
-    mainPlayerAvatarNode: Node = null;
-
-    @property({ type: Node, visible: false })
+    @property({ type: Node, visible: false, override: true })
     hiddenPlayersNode: Node = null;
 
-    @property({ type: Node, visible: false })
+    @property({ type: Node, visible: false, override: true })
     dealerChipBox: Node = null;
 
-    @property({ type: Node, visible: false })
+    @property({ type: Node, visible: false, override: true })
     nodeAroundTablePlayers: Node = null;
 
-    @property(Node)
+    @property({ type: Node, visible: false, override: true })
     nodeBetItems: Node = null;
-
-    useFakeChip = false;
-    currentChipContainer: Node = null;
-
-    protected enablePlaceChips = true;
-    protected payChipsDuration = 1.2;
-    protected chipDelayFlyingTime = 1.25;
-    protected settlementStatus: gc.GameServiceMessage.Status = null;
-    protected aroundTablePlayerChips = [];
-    protected isFlyChipSlow = true;
-    protected chipStorage = {};
-    protected startShowResultAnimation = false;
-    protected winningPlayers: gc.GameServiceMessage.TWinningPlayers = {};
 
     // Chips clear after user switch tab to other tab or reload page
     @render(Chips.ChipStore, (store) => store.chipsByMainPlayerRate)

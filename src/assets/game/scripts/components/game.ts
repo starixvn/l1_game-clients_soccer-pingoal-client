@@ -1,6 +1,6 @@
 import Observer from "observer";
 
-import { _decorator, log } from "cc";
+import { _decorator, Label, log } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
 import {
@@ -21,6 +21,15 @@ const { observer, render, handle } = Observer;
 @ccclass
 @observer(settings.name)
 export default class Game extends GameComponent {
+    @property({ type: Label, visible: false, override: true })
+    lblRoundId: Label = null;
+
+    @property({ type: Label, visible: false, override: true })
+    lblMinBet: Label = null;
+
+    @property({ type: Label, visible: false, override: true })
+    lblMaxBet: Label = null;
+
     namespace = settings.name;
 
     // example update round state
