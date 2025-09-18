@@ -3,18 +3,13 @@ import { VideoStreamStore } from "../../stores/video-stream/video-stream-store";
 
 const { injectable, inject } = inversify;
 
-export class VideoStream {
-    firstHalfVideo: string;
-    secondHalfVideo: string;
-    firstHalfTimeline: number[];
-    secondHalfTimeline: number[];
-    firstHalf: string;
-    secondHalf: string;
+class VideoStream {
+    video: string;
 
     static eventName = "videoResult";
 }
 
-export class LiveStreamServer {
+class LiveStreamServer {
     static eventName = "liveStreamServer";
 }
 
