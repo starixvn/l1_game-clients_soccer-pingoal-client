@@ -522,7 +522,7 @@
     "__prefab": {
       "__id__": 20
     },
-    "durationInactive": 1,
+    "durationInactive": 0.2,
     "_id": ""
   },
   {
@@ -969,7 +969,7 @@
     "__prefab": {
       "__id__": 41
     },
-    "durationInactive": 1,
+    "durationInactive": 0.2,
     "_id": ""
   },
   {
