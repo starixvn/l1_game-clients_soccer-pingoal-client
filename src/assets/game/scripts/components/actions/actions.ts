@@ -15,7 +15,6 @@ export class Actions extends ObserverComponent {
     }
 
     @handle(SingleGameRoundTimeHandlers, (handler, payload: string) => handler.handle(payload))
-    @handle(SingleGameChipHandlers, (handler) => handler.handleClearAllChips())
     handleClear() {
         return SINGLE_GAME_ROUND_STATE.WAITING;
     }
