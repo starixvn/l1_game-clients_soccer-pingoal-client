@@ -45,11 +45,11 @@ export default class DraggableRoundBall extends DraggableItem {
     };
 
     start(): void {
-        this.node.parent.on(Node.EventType.SIZE_CHANGED, this.moveToEdge, this);
-        const containerWidth = this.node.parent.getComponent(UITransform).width;
-        const ballWidth = this.node.getComponent(UITransform).width;
-        this.tunnelFirstX = this.node.parent.position.x - containerWidth / 2 + ballWidth / 2;
-        this.tunnelLastX = this.node.parent.position.x + containerWidth / 2 - ballWidth / 2;
+        this.node?.parent?.on(Node.EventType.SIZE_CHANGED, this.moveToEdge, this);
+        const containerWidth = this.node?.parent?.getComponent(UITransform).width ?? 0;
+        const ballWidth = this.node?.getComponent(UITransform).width ?? 0;
+        this.tunnelFirstX = this.node?.parent?.position.x - containerWidth / 2 + ballWidth / 2;
+        this.tunnelLastX = this.node?.parent?.position.x + containerWidth / 2 - ballWidth / 2;
         this.tunnelXPositions = this.getTunnelPosition();
         this.setDefaultPosition();
     }
@@ -66,9 +66,9 @@ export default class DraggableRoundBall extends DraggableItem {
 
     onTouchStart(e: EventTouch) {
         const nodePosition = e.getUILocation();
-        const local = this.node.getComponent(UITransform).convertToNodeSpaceAR(v3(nodePosition.x, nodePosition.y, 0));
+        const local = this.node?.getComponent(UITransform).convertToNodeSpaceAR(v3(nodePosition.x, nodePosition.y, 0));
         const collider = this.getComponent(CircleCollider2D)
-        const circleRadius = collider.radius
+        const circleRadius = collider?.radius ?? 0;
 
         if (local.length() > circleRadius) {
             return;
@@ -87,8 +87,8 @@ export default class DraggableRoundBall extends DraggableItem {
     }
 
     moveToEdge() {
-        const transform = ComponentUtils.getTransform(this.node.parent);
-        const height = transform.height;
+        const transform = ComponentUtils.getTransform(this.node?.parent);
+        const height = transform.height ?? 0;
         const size = this.getCurrentSize();
         const maxY = height / 2 - size.y / 2;
 
@@ -107,7 +107,7 @@ export default class DraggableRoundBall extends DraggableItem {
     }
 
     private getNearestTunnel(): { xPosition: number, tunnelNumber: TunnelNumber } {
-        const currentX = this.node.position.x;
+        const currentX = this.node?.position.x ?? 0;
         let nearestIndex = this.tunnelNumber;
         let minDistance = Math.abs(currentX - this.tunnelXPositions[this.tunnelNumber]);
 
