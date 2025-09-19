@@ -16,10 +16,6 @@ export class PingoalLedLightTooltip extends LedLightTooltip {
             return;
         }
 
-        if (this.roundId) {
-            this.roundId.string = `#${ledLightInfo.roundId}`;
-        }
-
         if (this.result && ledLightInfo.settlementResult) {
             const settlementResult = ledLightInfo.settlementResult;
             const resultText = this.getResultText(settlementResult);
