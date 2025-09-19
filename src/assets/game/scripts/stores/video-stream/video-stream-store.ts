@@ -17,11 +17,10 @@ export class VideoStream {
 @injectable()
 export class VideoStreamStore {
     private _videoResult: VideoStream = {} as any;
-    private _currentVideo: StreamingVideo = {} as any;
     private _isPlayVideo = false;
 
     // temporary hard code
-    liveStreamServer = "https://d1aof1lwumql9k.cloudfront.net/soccerpingoal/";
+    liveStreamServer = "https://d1aof1lwumql9k.cloudfront.net/";
 
     constructor() {
         mobx.makeAutoObservable(this);
@@ -47,7 +46,6 @@ export class VideoStreamStore {
     }
 
     resetForNewRound() {
-        this._currentVideo = {} as any;
         this._videoResult = {} as any;
     }
 }

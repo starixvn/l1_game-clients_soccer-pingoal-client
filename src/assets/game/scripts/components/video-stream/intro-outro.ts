@@ -5,17 +5,22 @@ const { ccclass, property } = _decorator;
 @ccclass("IntroOutro")
 export class IntroOutro extends Component {
     @property(UIOpacity)
+    gameBackground: UIOpacity = null;
+
+    @property(UIOpacity)
     backgroundBlur: UIOpacity = null;
+
+    private readonly maxOpacity = 255;
 
     set showBackgroundBlur(value: boolean) {
         this.backgroundBlur.node.active = value;
     }
 
-    playIntroAnimation() {
-        // handle before play video
+    set showBackgroundGame(value: boolean) {
+        this.gameBackground.node.active = value;
     }
 
-    playOutroAnimation() {
-        // handle after play video
+    setMaxBackgroundOpacity() {
+        this.gameBackground.opacity = this.maxOpacity;
     }
 }

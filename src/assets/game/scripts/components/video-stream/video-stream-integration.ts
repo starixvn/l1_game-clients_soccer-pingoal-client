@@ -5,7 +5,6 @@ import Observer from "observer";
 import { VideoStreamHandlers } from "../../handlers";
 import { VideoStream, VideoStreamStore } from "../../stores";
 import { BackgroundVideoPlayer } from "./background-video-player";
-import { IntroOutro } from "./intro-outro";
 import { NetworkStatus, SystemIndicator } from "./system-indicator";
 
 const { ccclass, property } = _decorator;
@@ -21,9 +20,6 @@ export default class VideoStreamIntegration extends ObserverComponent {
 
     @property(Node)
     nodeSystemIndicator: Node = null;
-
-    @property(IntroOutro)
-    introOutro: IntroOutro = null;
 
     @property(Prefab)
     warnPrefab: Prefab = null;
@@ -50,7 +46,9 @@ export default class VideoStreamIntegration extends ObserverComponent {
         this.backgroundVideoPlayer?.node.on("hlsLevelSwitched", this.updateSystemIndicator, this);
         this.backgroundVideoPlayer?.node.on("hlsError", this.updateSystemIndicator, this);
         this.backgroundVideoPlayer?.node.on("hlsError", this.onHLSError, this);
-        this.backgroundVideoPlayer?.node.on("hlsManifestLoading", () => this.backgroundBlur && (this.introOutro.showBackgroundBlur = true));
+        this.backgroundVideoPlayer?.node.on("hlsManifestLoading", () => {
+            // handle before play video
+        });
         this.backgroundVideoPlayer?.node.on("syncNativeCurrentTime", (time: number) => {
             if (this.blockShowFieldWithSyncNativeCurrentTime) {
                 return;

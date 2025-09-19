@@ -10,7 +10,7 @@ export class DOMBackgroundVideo {
         DOMBackgroundVideo.onResize();
     });
 
-    static maxHeight = 466;
+    static maxHeight = 0;
 
     static setMaxHeight(height: number) {
         this.maxHeight = height;
@@ -113,8 +113,8 @@ export class DOMBackgroundVideo {
         const ratio = view.getVisibleSize()?.width / DOMBackgroundVideo.maxHeight;
         const width = Math.min(currentWidth, view.getDesignResolutionSize()?.width);
 
-        console.log("width", width, ratio);
         const height = currentHeight ? currentHeight : width / ratio;
+        console.log("width", width, height);
 
         return {
             width: Math.round(width),

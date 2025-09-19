@@ -30,9 +30,8 @@ export class VideoStreamHandlers {
         }
     }
 
-    handleLiveStreamServer(liveStreamServer: string) {
-        this.videoStreamStore.liveStreamServer = liveStreamServer;
-    }
+    // handle after this.videoStreamStore.liveStreamServer = liveStreamServer;
+    handleLiveStreamServer(liveStreamServer: string) {}
 
     resetForNewRound() {
         this.videoStreamStore.resetForNewRound();

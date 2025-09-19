@@ -8,7 +8,7 @@ export class DOMBackgroundImage {
         DOMBackgroundImage.onResize();
     });
 
-    static createBackgroundImageElement(imageSource: string): HTMLImageElement {
+    static createBackgroundImageElement(): HTMLImageElement {
         const container = document.getElementById(DOMBackgroundImage.GAME_CONTAINER_ID);
         const game = document.getElementById(DOMBackgroundImage.GAME_CANVAS_ID);
         const image = document.getElementById(DOMBackgroundImage.IMAGE_ID) as HTMLImageElement;
@@ -24,7 +24,6 @@ export class DOMBackgroundImage {
             DOMBackgroundImage.applyImageStyles(image, size);
             container.insertBefore(image, container.firstChild);
             DOMBackgroundImage.registerEvents();
-            image.src = imageSource;
         }
 
         return image;

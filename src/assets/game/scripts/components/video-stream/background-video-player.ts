@@ -47,7 +47,7 @@ export class BackgroundVideoPlayer extends Component {
 
         if (this._videoName !== videoName || !this.initialized) {
             this._videoName = videoName;
-            this._videoSource = new URL(`${videoName.trim()}.m3u8`, this.liveStreamServer).toString();
+            this._videoSource = new URL(videoName, this.liveStreamServer).toString();
             this.loadSource();
             this._onPlayStateChanged(false);
         }
