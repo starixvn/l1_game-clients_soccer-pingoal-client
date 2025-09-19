@@ -29,7 +29,9 @@ export default class BetItemCustomize extends BetItem {
 
     @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: false })
     renderOwnChip(ownChip: gc.GameServiceMessage.OwnChip & { totalAmount?: number } | null) {
-        if (!this.lblOwnBet) return;
+        if (!this.lblOwnBet) {
+            return;
+        }
         
         const isOwnBet = ownChip?.betChoice === this.node.name;
         const hasAmount = (ownChip?.totalAmount || 0) > 0;

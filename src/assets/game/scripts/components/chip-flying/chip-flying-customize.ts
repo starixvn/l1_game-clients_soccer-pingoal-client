@@ -1,5 +1,5 @@
 import gc from "@sg/game-client-base";
-import { _decorator, log, Node } from "cc";
+import { _decorator, Node } from "cc";
 import { BalanceEffectHandlers } from "db://shared-components/game/balance-effect/scripts/handlers/balance-effect-handlers";
 import { ChipFlying } from "db://shared-components/game/chip-flying/scripts/components/chip-flying";
 import { SingleGameChipStore } from "db://shared-single-player-game/scripts/core";
