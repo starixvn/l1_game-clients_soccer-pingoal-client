@@ -3,7 +3,7 @@ import { _decorator, instantiate, Node, Prefab } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 import Observer from "observer";
 import { VideoStreamHandlers } from "../../handlers";
-import { StreamingVideo, VideoStream, VideoStreamStore } from "../../stores";
+import { VideoStream, VideoStreamStore } from "../../stores";
 import { BackgroundVideoPlayer } from "./background-video-player";
 import { IntroOutro } from "./intro-outro";
 import { NetworkStatus, SystemIndicator } from "./system-indicator";
@@ -78,31 +78,16 @@ export default class VideoStreamIntegration extends ObserverComponent {
         }
     }
 
-    @render(VideoStreamStore, (store) => store.currentVideo)
-    renderVideoSource(currentVideo: StreamingVideo) {
-        if (currentVideo?.videoName) {
-            this.backgroundVideoPlayer.currentTime = currentVideo.time;
-            this.backgroundVideoPlayer.playVideoByName(currentVideo.videoName, this.handlePlayVideo);
+    @render(VideoStreamStore, (store) => store.videoResult)
+    renderVideoSource(videoResult: VideoStream) {
+        if (videoResult?.video) {
+            this.backgroundVideoPlayer.playVideoByName(videoResult?.video, this.handlePlayVideo);
         }
     }
 
     @handle(VideoStreamHandlers, (handler, isPlay: boolean) => handler.handlePlayVideo(isPlay))
     private handlePlayVideo(isPlay: boolean) {
         return isPlay;
-    }
-
-    @render(VideoStreamStore, (store) => ({
-        videoResult: store.videoResult,
-    }))
-    bufferVideo({ videoResult }: { videoResult: VideoStream }) {
-        if (!videoResult) {
-            return;
-        }
-
-        if (videoResult.video) {
-            this.backgroundVideoPlayer.currentTime = 0;
-            this.backgroundVideoPlayer.loadVideoByName(videoResult.video);
-        }
     }
 
     @render(gc.Rounds.RoundTimeStore, (store) => store.isStartRound)

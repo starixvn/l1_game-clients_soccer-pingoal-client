@@ -14,19 +14,14 @@ export class VideoStream {
     static eventName = "videoResult";
 }
 
-type VideoData = {
-    videoName: string;
-    videoResult: string;
-    videoTimeline: number[];
-};
-
 @injectable()
 export class VideoStreamStore {
     private _videoResult: VideoStream = {} as any;
     private _currentVideo: StreamingVideo = {} as any;
     private _isPlayVideo = false;
 
-    liveStreamServer = "";
+    // temporary hard code
+    liveStreamServer = "https://d1aof1lwumql9k.cloudfront.net/soccerpingoal/";
 
     constructor() {
         mobx.makeAutoObservable(this);
@@ -41,10 +36,6 @@ export class VideoStreamStore {
 
     get videoResult(): any {
         return this._videoResult;
-    }
-
-    get currentVideo(): StreamingVideo {
-        return this._currentVideo;
     }
 
     get isPlayVideo(): boolean {

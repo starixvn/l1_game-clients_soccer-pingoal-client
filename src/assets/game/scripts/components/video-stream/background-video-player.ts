@@ -35,6 +35,7 @@ export class BackgroundVideoPlayer extends Component {
     currentTime = 0;
 
     init(liveStreamServer: string, callbackAfterPlay: (isPlay: boolean) => void) {
+        console.log("init - liveStreamServer: ", liveStreamServer);
         this.liveStreamServer = liveStreamServer;
         this._onPlayStateChanged = callbackAfterPlay;
     }
@@ -57,6 +58,9 @@ export class BackgroundVideoPlayer extends Component {
     playVideoByName(videoName: string, callback: (isPlay: boolean) => void) {
         if (this.loadVideoByName(videoName)) {
             this.play();
+            callback(true);
+        } else {
+            callback(false);
         }
     }
 

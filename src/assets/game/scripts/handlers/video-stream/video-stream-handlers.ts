@@ -1,3 +1,4 @@
+import gc from "@sg/game-client-base";
 import inversify from "inversify";
 import { VideoStreamStore } from "../../stores/video-stream/video-stream-store";
 
@@ -6,7 +7,7 @@ const { injectable, inject } = inversify;
 class VideoStream {
     video: string;
 
-    static eventName = "videoResult";
+    static eventName = "finish";
 }
 
 class LiveStreamServer {
@@ -17,8 +18,16 @@ class LiveStreamServer {
 export class VideoStreamHandlers {
     @inject(VideoStreamStore) private readonly videoStreamStore: VideoStreamStore;
 
-    handleVideoStream(videoResult: any) {
-        this.videoStreamStore.videoResult = videoResult;
+    private isVideoResult(result: unknown): result is { video: string } {
+        return !!result && typeof (result as any).video === "string";
+    }
+
+    handleVideoStream(finish: gc.GameServiceMessage.Finish | undefined) {
+        if (finish?.result && this.isVideoResult(finish.result)) {
+            const result = finish.result;
+            console.log("video result", result.video);
+            this.videoStreamStore.videoResult = { video: result?.video };
+        }
     }
 
     handleLiveStreamServer(liveStreamServer: string) {
