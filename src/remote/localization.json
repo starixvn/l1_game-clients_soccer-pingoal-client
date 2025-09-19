@@ -1,5 +1,21 @@
 {
-    "lobbyNames": {},
+    "lobbyNames": {
+        "en": "Soccer PinGoal",
+        "th": null,
+        "id": null,
+        "vi": null,
+        "zh_cn": null,
+        "zh_tw": null,
+        "ja": null,
+        "es": "Soccer PinGoal",
+        "tr": "Soccer PinGoal",
+        "fil_ph": "Soccer PinGoal",
+        "pt_br": "Soccer PinGoal",
+        "ko": "Soccer PinGoal",
+        "bn_bd": "Soccer PinGoal",
+        "hi_in": "Soccer PinGoal",
+        "ms_my": "Soccer PinGoal"
+    },
     "gameNames": {
         "en": "Soccer PinGoal",
         "th": null,
