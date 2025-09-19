@@ -34,9 +34,9 @@ export default class VideoStreamIntegration extends ObserverComponent {
     @property(Node)
     backgroundBlur: Node = null;
 
-    private isLiveVideo = false;
+    private readonly isLiveVideo = false;
 
-    private blockShowFieldWithSyncNativeCurrentTime = false;
+    private readonly blockShowFieldWithSyncNativeCurrentTime = false;
     private _systemIndicator: SystemIndicator = null;
 
     get systemIndicator() {
@@ -102,7 +102,6 @@ export default class VideoStreamIntegration extends ObserverComponent {
         if (videoResult.video) {
             this.backgroundVideoPlayer.currentTime = 0;
             this.backgroundVideoPlayer.loadVideoByName(videoResult.video);
-            return;
         }
     }
 
