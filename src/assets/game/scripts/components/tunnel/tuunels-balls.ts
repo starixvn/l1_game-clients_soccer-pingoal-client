@@ -1,6 +1,6 @@
 import Observer from "observer";
 
-import { _decorator, Event, log } from "cc";
+import { _decorator } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 import { TunnelsBallsStoreType, TunnelsHandlers } from "../../handlers";
 import { TunnelsStore } from "../../stores";
@@ -24,11 +24,12 @@ export class TunnelsBalls extends ObserverComponent {
     }
 
     private findBalls() {
-        for (let i = 0; i < this.node.children.length; i++) {
-            const child = this.node.children[i];
+        for (const child of this.node.children) {
             const ballComponent = child.getComponent(DraggableRoundBall);
-            if(!ballComponent) return;
-            
+            if (!ballComponent) {
+                return;
+            }
+
             if (ballComponent.ballType === BallType.RED) {
                 this.redBall = ballComponent;
             } else if (ballComponent.ballType === BallType.BLUE) {
@@ -37,17 +38,19 @@ export class TunnelsBalls extends ObserverComponent {
         }
     }
 
-    private setupBallsCallbacks () {
+    private setupBallsCallbacks() {
         this.setupBallCallback(this.redBall, BallType.RED);
         this.setupBallCallback(this.blueBall, BallType.BLUE);
     }
 
     private setupBallCallback(ball: DraggableRoundBall, ballType: BallType) {
-        if (!ball) return;
+        if (!ball) {
+            return;
+        }
 
         ball.touchCallback = {
-            start: () => {},
-            move: () => {},
+            start: () => { },
+            move: () => { },
             end: () => this.updateBallsTunnel(ballType)
         };
     }
@@ -64,15 +67,15 @@ export class TunnelsBalls extends ObserverComponent {
         }
 
         // handle ball in same tunnel
-        if(positionUpdate === this.currentPosition[anotherTunnelName]) {
+        if (positionUpdate === this.currentPosition[anotherTunnelName]) {
             const anotherBall = this.getBallNode(ballType === BallType.RED ? BallType.BLUE : BallType.RED);
             const anotherBallNewTunnel = this.currentPosition[this.getTunnelName(ballType)];
             anotherBall.moveToTargetTunnel(anotherBallNewTunnel);
             storeData[anotherTunnelName] = anotherBallNewTunnel;
-            this.currentPosition = {...this.currentPosition, [anotherTunnelName]: anotherBallNewTunnel};
+            this.currentPosition = { ...this.currentPosition, [anotherTunnelName]: anotherBallNewTunnel };
         }
 
-        this.currentPosition = {...this.currentPosition, [tunnelName]: positionUpdate};
+        this.currentPosition = { ...this.currentPosition, [tunnelName]: positionUpdate };
         return storeData
     }
 

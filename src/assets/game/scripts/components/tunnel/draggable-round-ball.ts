@@ -1,4 +1,4 @@
-import { _decorator, Enum, tween, v3, Node, Vec2, v2, EventTouch, UITransform, Vec3, CircleCollider2D } from "cc";
+import { _decorator, Enum, tween, v3, Node, Vec2, v2, EventTouch, UITransform, CircleCollider2D } from "cc";
 import DraggableItem from "db://shared-components/shared/common-components/draggable/draggable-item";
 import { ComponentUtils } from "db://shared-components/shared/utils";
 
@@ -34,8 +34,8 @@ export default class DraggableRoundBall extends DraggableItem {
     ballType: BallType = BallType.BLUE;
 
     private tunnelNumber: TunnelNumber = TunnelNumber.FIRST;
-    private tunnelFirstX: number = 0;
-    private tunnelLastX: number = 0;
+    private tunnelFirstX = 0;
+    private tunnelLastX = 0;
     private tunnelXPositions: Record<TunnelNumber, number> = null;
 
     public touchCallback = {
@@ -56,7 +56,7 @@ export default class DraggableRoundBall extends DraggableItem {
 
     private setDefaultPosition(): void {
         this.tunnelNumber = DEFAULT_TUNNEL_NUMBER[this.ballType];
-        this.node.setPosition(this.tunnelXPositions[this.tunnelNumber], this.node.y);
+        this.node.position = v3(this.tunnelXPositions[this.tunnelNumber], this.node.position.y);
     }
 
     private getCurrentSize(): Vec2 {
@@ -65,8 +65,8 @@ export default class DraggableRoundBall extends DraggableItem {
     }
 
     onTouchStart(e: EventTouch) {
-        const position = e.getUILocation();
-        const local = this.node.getComponent(UITransform).convertToNodeSpaceAR(new Vec3(position.x, position.y));
+        const nodePosition = e.getUILocation();
+        const local = this.node.getComponent(UITransform).convertToNodeSpaceAR(v3(nodePosition.x, nodePosition.y, 0));
         const collider = this.getComponent(CircleCollider2D)
         const circleRadius = collider.radius
 
@@ -93,7 +93,7 @@ export default class DraggableRoundBall extends DraggableItem {
         const maxY = height / 2 - size.y / 2;
 
         let posY: number;
-        posY = this.node.y < 0 ? -maxY : maxY;
+        posY = this.node.position.y < 0 ? -maxY : maxY;
         posY = Math.min(maxY, posY);
 
         const { xPosition, tunnelNumber } = this.getNearestTunnel();
@@ -139,7 +139,7 @@ export default class DraggableRoundBall extends DraggableItem {
     moveToTargetTunnel(tunnelNumber: TunnelNumber) {
         this.tunnelNumber = tunnelNumber;
         tween(this.node)
-            .to(0.3, { position: v3(this.tunnelXPositions[tunnelNumber], this.node.y) }, { easing: "sineOut" })
+            .to(0.3, { position: v3(this.tunnelXPositions[tunnelNumber], this.node.position.y) }, { easing: "sineOut" })
             .start();
     }
 }
