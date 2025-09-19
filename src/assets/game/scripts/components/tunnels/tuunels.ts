@@ -9,8 +9,8 @@ const { ccclass, property } = _decorator;
 
 const { observer, render, handle } = Observer;
 
-@ccclass("tunnels-balls")
-export class TunnelsBalls extends ObserverComponent {
+@ccclass("tunnels")
+export class Tunnels extends ObserverComponent {
     private redBall: DraggableRoundBall = null;
     private blueBall: DraggableRoundBall = null;
     private currentPosition: TunnelsBallsStoreType = {

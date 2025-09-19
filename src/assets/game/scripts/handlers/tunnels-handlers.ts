@@ -1,7 +1,7 @@
 import gc from "@sg/game-client-base";
 import inversify from "inversify";
 import { TunnelsStore } from "../stores/tunnels-store";
-import { TunnelNumber } from "../components/tunnel/draggable-round-ball";
+import { TunnelNumber } from "../components/tunnels/draggable-round-ball";
 
 const { injectable, inject } = inversify;
 
