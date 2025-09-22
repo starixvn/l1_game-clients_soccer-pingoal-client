@@ -23,6 +23,18 @@ export class Actions extends ObserverComponent {
         this.disableStartButton()
     }
 
+    @render(gc.Bet.BetStore, (store) => store.isProcessingBet)
+    handleProcessingBet(isProcessingBet: boolean) {
+        if (isProcessingBet) {
+            this.disableStartButton()
+        }
+    }
+
+    @render(gc.Bet.BetStore, (store) => store.lastReceivedBet, { fireImmediately: false })
+    handleReceivedBet(bet: any) {
+        this.disableStartButton()
+    }
+
     @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: false })
     handleStartButtonStateChange(ownChip: gc.GameServiceMessage.OwnChip) {
         const amount = ownChip.amount;
