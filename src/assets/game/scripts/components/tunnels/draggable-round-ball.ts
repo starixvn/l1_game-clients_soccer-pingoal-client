@@ -1,4 +1,4 @@
-import { _decorator, Enum, tween, v3, Node, Vec2, v2, EventTouch, UITransform, CircleCollider2D } from "cc";
+import { _decorator, Enum, tween, v3, Node, Vec2, v2, EventTouch, UITransform, CircleCollider2D, CCInteger } from "cc";
 import DraggableItem from "db://shared-components/shared/common-components/draggable/draggable-item";
 import { ComponentUtils } from "db://shared-components/shared/utils";
 
@@ -33,11 +33,13 @@ export default class DraggableRoundBall extends DraggableItem {
     @property({ type: BallType })
     ballType: BallType = BallType.BLUE;
 
+    @property({ type: CCInteger })
+    pickupOffset = 0;
+
     private tunnelNumber: TunnelNumber = TunnelNumber.FIRST;
     private tunnelFirstX = 0;
     private tunnelLastX = 0;
     private tunnelXPositions: Record<TunnelNumber, number> = null;
-    private readonly pickupOffset = 10
     private fixedBallPositionY = 0;
     private isEnableDrag = true;
 
