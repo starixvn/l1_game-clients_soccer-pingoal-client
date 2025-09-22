@@ -1291,7 +1291,7 @@
     },
     "component": "",
     "_componentId": "a46dbTuz8xAC7GSqpqp+/UG",
-    "handler": "openTicketDetail",
+    "handler": "openBetDetails",
     "customEventData": ""
   },
   {
