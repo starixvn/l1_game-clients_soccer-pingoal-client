@@ -1,7 +1,7 @@
 import inversify from "inversify";
 import mobx from "mobx";
 import { BallType, DEFAULT_TUNNEL_NUMBER } from "../components/tunnels/draggable-round-ball";
-const { injectable, inject } = inversify;
+const { injectable } = inversify;
 import { TunnelNumber } from "../components/tunnels/draggable-round-ball";
 
 export type tunnelsPosition = {

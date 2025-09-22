@@ -1,13 +1,8 @@
 import Observer from "observer";
 
-import { _decorator, Label, log, Node } from "cc";
+import { _decorator, Label, Node } from "cc";
 import GameComponent from "db://shared-components/game/scripts/components/game-component";
 import { startGame } from "db://shared-components/shared/scripts/startup";
-import {
-    SINGLE_GAME_ROUND_STATE, SingleGameChipStore,
-    SingleGameRoundTimeHandlers,
-    SingleGameRoundTimeStore
-} from "db://shared-single-player-game/scripts/core";
 import { siteConfigs } from "../../../scripts/site-configs";
 import { containerOptions } from "../container-options";
 import { settings } from "../game-settings";
@@ -15,8 +10,6 @@ import "./../../../resources/i18n";
 import { BackgroundVideoPlayer } from "./video-stream/background-video-player";
 import { DOMBackgroundImage } from "./video-stream/dom-background-image";
 import { SystemIndicator } from "./video-stream/system-indicator";
-import { VideoStreamStore } from "db://assets/game/scripts";
-import gc from "@sg/game-client-base";
 
 startGame(settings.name, containerOptions, siteConfigs, settings.tolgeeNamespaces);
 

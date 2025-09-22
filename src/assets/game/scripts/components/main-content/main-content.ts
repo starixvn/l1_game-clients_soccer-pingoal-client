@@ -6,7 +6,7 @@ import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-s
 import Observer from "observer";
 
 const { ccclass } = _decorator;
-const { observer, render } = Observer;
+const { render } = Observer;
 
 @ccclass("MainContent")
 export default class MainContent extends ObserverComponent {

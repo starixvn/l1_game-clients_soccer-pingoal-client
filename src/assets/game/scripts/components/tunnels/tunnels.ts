@@ -8,8 +8,9 @@ import DraggableRoundBall, { BallType, DEFAULT_TUNNEL_NUMBER } from "./draggable
 const { ccclass } = _decorator;
 import { AnimationUtils } from "db://shared-components/shared/utils";
 import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
+import gc from "@sg/game-client-base";
 
-const { observer, render, handle } = Observer;
+const { render, handle } = Observer;
 
 @ccclass("tunnels")
 export class Tunnels extends ObserverComponent {

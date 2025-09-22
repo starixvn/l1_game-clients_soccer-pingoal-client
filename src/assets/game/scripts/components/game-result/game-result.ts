@@ -1,8 +1,8 @@
 import Observer from "observer";
 
-import { _decorator, Button } from "cc";
+import { _decorator } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
-const { ccclass, property } = _decorator;
+const { ccclass } = _decorator;
 import { AnimationUtils } from "db://shared-components/shared/utils";
 import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
 import inversify from "inversify";
