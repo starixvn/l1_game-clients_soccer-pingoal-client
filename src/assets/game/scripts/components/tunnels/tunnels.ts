@@ -7,25 +7,18 @@ import { TunnelsBallsStoreType, TunnelsHandlers } from "../../handlers";
 import { TunnelsStore } from "../../stores";
 import DraggableRoundBall, { BallType, DEFAULT_TUNNEL_NUMBER } from "./draggable-round-ball";
 const { ccclass, property } = _decorator;
+import { AnimationUtils } from "db://shared-components/shared/utils";
 
 const { observer, render, handle } = Observer;
 
 @ccclass("tunnels")
 export class Tunnels extends ObserverComponent {
-    uiOpacity: UIOpacity;
-    
     private redBall: DraggableRoundBall = null;
     private blueBall: DraggableRoundBall = null;
     private currentPosition: TunnelsBallsStoreType = {
         redTunnel: DEFAULT_TUNNEL_NUMBER[BallType.RED],
         blueTunnel: DEFAULT_TUNNEL_NUMBER[BallType.BLUE],
     };
-
-    onLoad() {
-        super.onLoad();
-
-        this.uiOpacity = this.node.getComponent(UIOpacity);
-    }
 
     start() {
         this.findBalls();
@@ -103,14 +96,17 @@ export class Tunnels extends ObserverComponent {
     }
 
     scaleInAnimation() {
-        this.uiOpacity.opacity = 255;
-        tween(this.uiOpacity).to(1.2, { opacity: 0 }, { easing: 'quadInOut' }).start();
-        tween(this.node).to(0.7, { scale: v3(0.7, 0.7), position: v3(18, 425.587) },  { easing: 'quadInOut' }).start();
+        AnimationUtils.fadeOut(this.node, 1.2);
+        AnimationUtils.movingNode(this.node, 0.7, v3(18, 425.587));
+        AnimationUtils.scaleTransition(
+            this.node, 
+            [{ scale: v3(0.7, 0.7), duration: 0.7, easing: 'quadInOut' }]
+        );
     }
 
     resetAnimation() {
-        this.uiOpacity.opacity = 255;
         this.node.setScale(v3(1, 1));
         this.node.setPosition(v3(0, 230.202));
+        AnimationUtils.fadeIn(this.node, 0.5);
     }
 }
