@@ -4,7 +4,7 @@ import { ObserverComponent } from "db://shared-components/shared/common-componen
 import Observer from "observer";
 import { VideoStreamHandlers } from "../../handlers";
 import { VideoStream, VideoStreamStore } from "../../stores";
-import { BackgroundVideoPlayer } from "./background-video-player";
+import { BackgroundVideoPlayer, VIDEO_ENDED_EVENT } from "./background-video-player";
 import { NetworkStatus, SystemIndicator } from "./system-indicator";
 
 const { ccclass, property } = _decorator;
@@ -28,11 +28,10 @@ export default class VideoStreamIntegration extends ObserverComponent {
     warnContainer: Node = null;
 
     @property(Node)
-    backgroundBlur: Node = null;
+    backgroundLoading: Node = null;
 
     private readonly isLiveVideo = false;
 
-    private readonly blockShowFieldWithSyncNativeCurrentTime = false;
     private _systemIndicator: SystemIndicator = null;
 
     get systemIndicator() {
@@ -47,14 +46,13 @@ export default class VideoStreamIntegration extends ObserverComponent {
         this.backgroundVideoPlayer?.node.on("hlsError", this.updateSystemIndicator, this);
         this.backgroundVideoPlayer?.node.on("hlsError", this.onHLSError, this);
         this.backgroundVideoPlayer?.node.on("hlsManifestLoading", () => {
-            // handle before play video
+            this.backgroundLoading && (this.backgroundLoading.active = true);
         });
         this.backgroundVideoPlayer?.node.on("syncNativeCurrentTime", (time: number) => {
-            if (this.blockShowFieldWithSyncNativeCurrentTime) {
-                return;
-            }
+            this.backgroundLoading && (this.backgroundLoading.active = time <= 0);
         });
         this.backgroundVideoPlayer?.node.on("hlsNotSupported", this.onHSLNotSupported, this);
+        this.backgroundVideoPlayer?.node.on(VIDEO_ENDED_EVENT, this.onVideoEnded, this);
         this.warnContainer?.removeAllChildren();
 
         super.onLoad();
@@ -88,25 +86,10 @@ export default class VideoStreamIntegration extends ObserverComponent {
         return isPlay;
     }
 
-    @render(gc.Rounds.RoundTimeStore, (store) => store.isStartRound)
-    private onStartingRound(isStartRound: boolean) {
-        if (isStartRound) {
-            this.resetVideoStream();
-        }
-    }
-
     @render(VideoStreamStore, (store) => store.liveStreamServer)
     private onLiveStreamServer(liveStreamServer: string) {
         this.backgroundVideoPlayer.init(liveStreamServer, this.handlePlayVideo);
     }
-
-    @handle(gc.Audios.AudioHandler, (handler, id: string) => handler.playSFX(id))
-    playSound() {
-        return INTRO_SFX;
-    }
-
-    @handle(VideoStreamHandlers, (handler) => handler.resetForNewRound())
-    private resetVideoStream() {}
 
     private onHLSError(data: any) {
         if (data?.type === "mediaError") {
@@ -125,5 +108,14 @@ export default class VideoStreamIntegration extends ObserverComponent {
 
         const node = instantiate(this?.warnPrefab);
         node && this.warnContainer?.addChild(node);
+    }
+
+    private onVideoEnded(data: { isEndVideo: boolean }) {
+        this.handleEndVideo(data?.isEndVideo);
+    }
+
+    @handle(VideoStreamHandlers, (handler, isEndVideo: boolean) => handler.handleEndVideo(isEndVideo))
+    private handleEndVideo(isEndVideo: boolean) {
+        return isEndVideo;
     }
 }

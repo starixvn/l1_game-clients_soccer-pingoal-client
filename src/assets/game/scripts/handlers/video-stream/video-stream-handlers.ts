@@ -25,11 +25,10 @@ export class VideoStreamHandlers {
     handleVideoStream(finish: gc.GameServiceMessage.Finish | undefined) {
         if (finish?.result && this.isVideoResult(finish.result)) {
             const result = finish.result;
-            console.log("video result", result.video);
             this.videoStreamStore.videoResult = { video: result?.video };
         }
     }
-    
+
     handleLiveStreamServer(liveStreamServer: string) {
         this.videoStreamStore.liveStreamServer = liveStreamServer;
     }
@@ -39,7 +38,11 @@ export class VideoStreamHandlers {
     }
 
     handlePlayVideo(isPlayVideo: boolean) {
-        this.videoStreamStore.isPlayVideo = isPlayVideo;
+        this.videoStreamStore.updateIsPlayVideo(isPlayVideo);
+    }
+
+    handleEndVideo(isEndVideo: boolean) {
+        this.videoStreamStore.updateIsEndVideo(isEndVideo);
     }
 
     eventHandleList = [

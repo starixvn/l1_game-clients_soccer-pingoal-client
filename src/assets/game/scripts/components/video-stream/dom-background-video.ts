@@ -114,7 +114,6 @@ export class DOMBackgroundVideo {
         const width = Math.min(currentWidth, view.getDesignResolutionSize()?.width);
 
         const height = currentHeight ? currentHeight : width / ratio;
-        console.log("width", width, height);
 
         return {
             width: Math.round(width),

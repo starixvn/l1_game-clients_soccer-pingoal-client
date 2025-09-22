@@ -3,7 +3,7 @@ import MusicPlayer from "db://shared-components/game/audios/scripts/component/mu
 import Observer from "observer";
 import { VideoStreamSoundStore } from "../../stores";
 const { ccclass, property } = _decorator;
-const { render, handle } = Observer;
+const { render } = Observer;
 
 @ccclass("BackgroundMusicPlayer")
 export class BackgroundMusicPlayer extends MusicPlayer {

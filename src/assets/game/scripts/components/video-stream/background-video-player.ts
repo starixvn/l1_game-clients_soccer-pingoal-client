@@ -5,6 +5,8 @@ import { SYNC_VIDEO_DIMENSION_EVENT, VideoOffSetContainer } from "./video-offset
 
 const { ccclass, property } = _decorator;
 
+export const VIDEO_ENDED_EVENT = "videoEnded";
+
 @ccclass("BackgroundVideoPlayer")
 export class BackgroundVideoPlayer extends Component {
     @property(VideoOffSetContainer)
@@ -28,6 +30,9 @@ export class BackgroundVideoPlayer extends Component {
 
     private _onPlayStateChanged: (isPlay: boolean) => void = null;
 
+    private onTimeUpdateRef: () => void = null;
+    private onEndedRef: () => void = null;
+
     private get initialized() {
         return !!this.native && !!this.hls;
     }
@@ -35,7 +40,6 @@ export class BackgroundVideoPlayer extends Component {
     currentTime = 0;
 
     init(liveStreamServer: string, callbackAfterPlay: (isPlay: boolean) => void) {
-        console.log("init - liveStreamServer: ", liveStreamServer);
         this.liveStreamServer = liveStreamServer;
         this._onPlayStateChanged = callbackAfterPlay;
     }
@@ -131,7 +135,14 @@ export class BackgroundVideoPlayer extends Component {
 
     stop() {
         if (this.initialized) {
-            this.native.removeEventListener("timeupdate", this.syncCurrentTime.bind(this));
+            if (this.onTimeUpdateRef) {
+                this.native.removeEventListener("timeupdate", this.onTimeUpdateRef);
+                this.onTimeUpdateRef = null;
+            }
+            if (this.onEndedRef) {
+                this.native.removeEventListener("ended", this.onEndedRef);
+                this.onEndedRef = null;
+            }
 
             this.hls.off(Hls.Events.ERROR);
             this.hls.detachMedia();
@@ -145,8 +156,6 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     private syncCurrentTime() {
-        this.node.emit("syncNativeCurrentTime", this.native.currentTime);
-
         const needSync = this.currentTime >= 0 && Math.abs(this.currentTime - this.native.currentTime) > 1;
 
         if (this.initialized && needSync) {
@@ -174,7 +183,10 @@ export class BackgroundVideoPlayer extends Component {
             // maxMaxBufferLength: 3, // in seconds
         });
 
-        video.addEventListener("timeupdate", this.syncCurrentTime.bind(this));
+        this.onTimeUpdateRef = this.syncCurrentTime.bind(this);
+        video.addEventListener("timeupdate", this.onTimeUpdateRef);
+        this.onEndedRef = this.handleVideoEnded.bind(this);
+        video.addEventListener("ended", this.onEndedRef);
         hls.attachMedia(video);
 
         hls.on(Hls.Events.LEVEL_SWITCHED, this.node.emit.bind(this.node));
@@ -197,5 +209,9 @@ export class BackgroundVideoPlayer extends Component {
         this.native = video;
 
         this._videoDimension?.top > 0 && DOMBackgroundVideo.updateVideoDimension(this._videoDimension);
+    }
+
+    private handleVideoEnded() {
+        this.node.emit(VIDEO_ENDED_EVENT, { isEndVideo: true });
     }
 }
