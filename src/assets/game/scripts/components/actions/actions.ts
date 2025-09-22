@@ -3,9 +3,10 @@ import Observer from "observer";
 import { _decorator, Button } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 import {
+    SINGLE_GAME_ROUND_STATE,
     SingleGameBetHandler,
-    SingleGameChipHandlers, 
-    SingleGameChipStore
+    SingleGameChipHandlers,
+    SingleGameChipStore, SingleGameRoundTimeStore
 } from "db://shared-single-player-game/scripts/core";
 import gc from "@sg/game-client-base";
 const { ccclass, property } = _decorator;
@@ -23,16 +24,11 @@ export class Actions extends ObserverComponent {
         this.disableStartButton()
     }
 
-    @render(gc.Bet.BetStore, (store) => store.isProcessingBet)
-    handleProcessingBet(isProcessingBet: boolean) {
-        if (isProcessingBet) {
+    @render(SingleGameRoundTimeStore, (store) => store.roundState, { fireImmediately: false })
+    renderRoundState(roundState: any) {
+        if (roundState === SINGLE_GAME_ROUND_STATE.LOCKING_BET) {
             this.disableStartButton()
         }
-    }
-
-    @render(gc.Bet.BetStore, (store) => store.lastReceivedBet, { fireImmediately: false })
-    handleReceivedBet(bet: any) {
-        this.disableStartButton()
     }
 
     @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: false })

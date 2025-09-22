@@ -1,6 +1,7 @@
 import gc from "@sg/game-client-base";
 import inversify from "inversify";
 import { VideoStreamStore } from "../../stores/video-stream/video-stream-store";
+import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
 
 const { injectable, inject } = inversify;
 
@@ -17,6 +18,7 @@ class LiveStreamServer {
 @injectable()
 export class VideoStreamHandlers {
     @inject(VideoStreamStore) private readonly videoStreamStore: VideoStreamStore;
+    @inject(SingleGameRoundTimeStore) private readonly singleGameRoundTimeStore: SingleGameRoundTimeStore;
 
     private isVideoResult(result: unknown): result is { video: string } {
         return !!result && typeof (result as any).video === "string";
@@ -39,10 +41,12 @@ export class VideoStreamHandlers {
 
     handlePlayVideo(isPlayVideo: boolean) {
         this.videoStreamStore.updateIsPlayVideo(isPlayVideo);
+        this.singleGameRoundTimeStore.roundState = SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO;
     }
 
     handleEndVideo(isEndVideo: boolean) {
         this.videoStreamStore.updateIsEndVideo(isEndVideo);
+        this.singleGameRoundTimeStore.roundState = SINGLE_GAME_ROUND_STATE.SHOW_RESULT;
     }
 
     eventHandleList = [

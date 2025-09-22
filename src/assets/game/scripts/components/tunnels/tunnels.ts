@@ -1,13 +1,13 @@
 import Observer from "observer";
 
-import gc from "@sg/game-client-base";
 import { _decorator, v3 } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
-import { AnimationUtils } from "db://shared-components/shared/utils";
 import { TunnelsBallsStoreType, TunnelsHandlers } from "../../handlers";
 import { TunnelsStore } from "../../stores";
 import DraggableRoundBall, { BallType, DEFAULT_TUNNEL_NUMBER } from "./draggable-round-ball";
-const { ccclass, property } = _decorator;
+const { ccclass } = _decorator;
+import { AnimationUtils } from "db://shared-components/shared/utils";
+import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
 
 const { observer, render, handle } = Observer;
 
@@ -110,18 +110,22 @@ export class Tunnels extends ObserverComponent {
         return ballType === BallType.RED ? "redTunnel" : "blueTunnel";
     }
 
-    @render(gc.Bet.BetStore, (store) => store.lastReceivedBet, { fireImmediately: false })
-    handleReceivedBet(bet: any) {
-        this.scaleInAnimation();
+    @render(SingleGameRoundTimeStore, (store) => store.roundState, { fireImmediately: false })
+    renderRoundState(roundState: any) {
+        if (roundState === SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO) {
+            this.fadeOutAnimation()
+        } else if (roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET) {
+            this.fadeInAnimation()
+        }
     }
 
-    scaleInAnimation() {
+    fadeOutAnimation() {
         AnimationUtils.fadeOut(this.node, 1.2);
         AnimationUtils.movingNode(this.node, 0.7, v3(18, 425.587));
         AnimationUtils.scaleTransition(this.node, [{ scale: v3(0.7, 0.7), duration: 0.7, easing: "quadInOut" }]);
     }
 
-    resetAnimation() {
+    fadeInAnimation() {
         this.node.setScale(v3(1, 1));
         this.node.setPosition(v3(0, 230.202));
         AnimationUtils.fadeIn(this.node, 0.5);
