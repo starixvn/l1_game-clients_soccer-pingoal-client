@@ -69,16 +69,13 @@ export class Tunnels extends ObserverComponent {
             const anotherBallNewTunnel = this.currentPosition[this.getTunnelName(ballType)];
             anotherBall.moveToTargetTunnel(anotherBallNewTunnel);
             storeData[anotherTunnelName] = anotherBallNewTunnel;
-            this.currentPosition = { ...this.currentPosition, [anotherTunnelName]: anotherBallNewTunnel };
         }
 
-        this.currentPosition = { ...this.currentPosition, [tunnelName]: positionUpdate };
-        return storeData;
+        return storeData
     }
 
     @render(TunnelsStore, (store) => store.position)
     renderBallsPosition(position: TunnelsBallsStoreType) {
-        this.currentPosition = { ...this.currentPosition, ...position };
         if(this.getBallNode(BallType.RED)) {
             this.getBallNode(BallType.RED).moveToTargetTunnel(position.redTunnel);
         }
@@ -86,6 +83,12 @@ export class Tunnels extends ObserverComponent {
             this.getBallNode(BallType.BLUE).moveToTargetTunnel(position.blueTunnel);
         }
 
+        return position;
+    }
+
+    @render(TunnelsStore, (store) => store.position)
+    renderCurrentPosition(position: TunnelsBallsStoreType) {
+        this.currentPosition = position;
         return position;
     }
 
