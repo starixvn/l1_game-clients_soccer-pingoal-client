@@ -37,6 +37,8 @@ export default class DraggableRoundBall extends DraggableItem {
     private tunnelFirstX = 0;
     private tunnelLastX = 0;
     private tunnelXPositions: Record<TunnelNumber, number> = null;
+    private readonly pickupOffset = 10
+    private fixedBallPositionY = 0;
 
     public touchCallback = {
         start: () => { },
@@ -74,6 +76,14 @@ export default class DraggableRoundBall extends DraggableItem {
             return;
         }
         super.onTouchStart(e);
+        this.node.position = this.node.position.add(v3(-this.pickupOffset, this.pickupOffset, 0));
+        this.fixedBallPositionY = this.node.position.y;
+    }
+
+    onTouchMove(e: EventTouch) {
+        super.onTouchMove(e);
+        const restrictX = Math.max(this.tunnelFirstX, Math.min(this.tunnelLastX + this.pickupOffset, this.node.position.x));
+        this.node.position = v3(restrictX - this.pickupOffset, this.fixedBallPositionY + this.pickupOffset, 0);
     }
 
     onTouchEnd(e) {
