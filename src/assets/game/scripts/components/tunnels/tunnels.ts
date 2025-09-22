@@ -78,6 +78,14 @@ export class Tunnels extends ObserverComponent {
 
     @render(TunnelsStore, (store) => store.position)
     renderBallsPosition(position: TunnelsBallsStoreType) {
+        this.currentPosition = { ...this.currentPosition, ...position };
+        if(this.getBallNode(BallType.RED)) {
+            this.getBallNode(BallType.RED).moveToTargetTunnel(position.redTunnel);
+        }
+        if(this.getBallNode(BallType.BLUE)) {
+            this.getBallNode(BallType.BLUE).moveToTargetTunnel(position.blueTunnel);
+        }
+
         return position;
     }
 
