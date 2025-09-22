@@ -8,14 +8,14 @@ const { ccclass, property } = _decorator;
 
 const { render, handle } = Observer;
 
-@ccclass('randomBallsButton')
-export class randomBallsButton extends ObserverComponent {
+@ccclass('RandomBallsButton')
+export class RandomBallsButton extends ObserverComponent {
     private isColdDown = false;
 
     @handle(TunnelsHandlers, (handler, payload: TunnelsBallsStoreType) => handler.handle(payload))
     handleRandomBalls() {
         if (this.isColdDown) {
-            return;
+            return null;
         }
         this.isColdDown = true;
         setTimeout(() => {
