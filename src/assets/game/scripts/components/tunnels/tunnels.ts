@@ -94,10 +94,11 @@ export class Tunnels extends ObserverComponent {
 
     @render(gc.Bet.BetStore, (store) => store.isProcessingBet)
     handleBallsDraggable(isProcessingBet: boolean) {
-        if(isProcessingBet) {
-            const enableDrag = !isProcessingBet;
-            this.redBall.setDraggable(enableDrag);
-            this.blueBall.setDraggable(enableDrag);
+        if(this.redBall) {
+            this.redBall.setDraggable(!isProcessingBet);
+        }
+        if(this.blueBall) {
+            this.blueBall.setDraggable(!isProcessingBet);
         }
     }
 

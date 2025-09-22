@@ -80,7 +80,7 @@ export default class DraggableRoundBall extends DraggableItem {
             return;
         }
         super.onTouchStart(e);
-        this.node.position = this.node.position.add(v3(-this.pickupOffset, this.pickupOffset, 0));
+        this.node.position = v3(this.node.position.x - this.pickupOffset, this.node.position.y + this.pickupOffset, 0)
         this.fixedBallPositionY = this.node.position.y;
     }
 
