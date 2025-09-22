@@ -1,8 +1,8 @@
-import Observer from "observer";
 import gc from "@sg/game-client-base";
+import { _decorator } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
-import { _decorator, tween, UIOpacity } from "cc";
 import { AnimationUtils } from "db://shared-components/shared/utils";
+import Observer from "observer";
 
 const { ccclass } = _decorator;
 const { observer, render } = Observer;
@@ -13,12 +13,12 @@ export default class MainContent extends ObserverComponent {
     handleReceivedBet(bet: any) {
         this.hideAnimation();
     }
-    
+
     hideAnimation() {
-        AnimationUtils.fadeOut(this.node, 0.5)
+        AnimationUtils.fadeOut(this.node, 0.5);
     }
-    
+
     showAnimation() {
-        AnimationUtils.fadeIn(this.node, 0.5)
+        AnimationUtils.fadeIn(this.node, 0.5);
     }
 }
