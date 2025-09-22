@@ -20,7 +20,7 @@ export class GameResult extends ObserverComponent {
         if (roundState === SINGLE_GAME_ROUND_STATE.SHOW_RESULT) {
             await this.showResult();
 
-            this.singleGameRoundTimeStore.roundState = SINGLE_GAME_ROUND_STATE.PLACING_BET;
+            // this.singleGameRoundTimeStore.roundState = SINGLE_GAME_ROUND_STATE.PLACING_BET;
         }
     }
 
