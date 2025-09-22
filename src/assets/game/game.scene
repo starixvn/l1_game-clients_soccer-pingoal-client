@@ -1488,8 +1488,7 @@
       {
         "__id__": 101
       }
-    ],
-    "nestedPrefabInstanceRoots": null
+    ]
   },
   {
     "__type__": "cc.PrefabInstance",

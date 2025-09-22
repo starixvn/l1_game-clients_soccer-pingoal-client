@@ -19,8 +19,7 @@ export class VideoStreamStore {
     private _videoResult: VideoStream = {} as any;
     private _isPlayVideo = false;
 
-    // temporary hard code
-    liveStreamServer = "https://d1aof1lwumql9k.cloudfront.net/";
+    liveStreamServer = "";
 
     constructor() {
         mobx.makeAutoObservable(this);
