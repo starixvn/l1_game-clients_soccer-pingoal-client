@@ -156,6 +156,8 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     private syncCurrentTime() {
+        this.node.emit("syncNativeCurrentTime", this.native.currentTime);
+
         const needSync = this.currentTime >= 0 && Math.abs(this.currentTime - this.native.currentTime) > 1;
 
         if (this.initialized && needSync) {
