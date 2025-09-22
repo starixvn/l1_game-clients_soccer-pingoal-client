@@ -39,6 +39,7 @@ export default class DraggableRoundBall extends DraggableItem {
     private tunnelXPositions: Record<TunnelNumber, number> = null;
     private readonly pickupOffset = 10
     private fixedBallPositionY = 0;
+    private isEnableDrag = true;
 
     public touchCallback = {
         start: () => { },
@@ -67,6 +68,9 @@ export default class DraggableRoundBall extends DraggableItem {
     }
 
     onTouchStart(e: EventTouch) {
+        if (!this.isEnableDrag) {
+            return;
+        }
         const nodePosition = e.getUILocation();
         const local = this.node?.getComponent(UITransform).convertToNodeSpaceAR(v3(nodePosition.x, nodePosition.y, 0));
         const collider = this.getComponent(CircleCollider2D)
@@ -81,6 +85,9 @@ export default class DraggableRoundBall extends DraggableItem {
     }
 
     onTouchMove(e: EventTouch) {
+        if (!this.isEnableDrag) {
+            return;
+        }
         super.onTouchMove(e);
         const restrictX = Math.max(this.tunnelFirstX, Math.min(this.tunnelLastX + this.pickupOffset, this.node.position.x));
         this.node.position = v3(restrictX - this.pickupOffset, this.fixedBallPositionY + this.pickupOffset, 0);
@@ -151,5 +158,9 @@ export default class DraggableRoundBall extends DraggableItem {
         tween(this.node)
             .to(0.3, { position: v3(this.tunnelXPositions[tunnelNumber], this.node.position.y) }, { easing: "sineOut" })
             .start();
+    }
+
+    setDraggable(isEnableDrag: boolean) {
+        this.isEnableDrag = isEnableDrag;
     }
 }

@@ -92,6 +92,15 @@ export class Tunnels extends ObserverComponent {
         return position;
     }
 
+    @render(gc.Bet.BetStore, (store) => store.isProcessingBet)
+    handleBallsDraggable(isProcessingBet: boolean) {
+        if(isProcessingBet) {
+            const enableDrag = !isProcessingBet;
+            this.redBall.setDraggable(enableDrag);
+            this.blueBall.setDraggable(enableDrag);
+        }
+    }
+
     private getBallNode(ballType: BallType) {
         return ballType === BallType.RED ? this.redBall : this.blueBall;
     }
