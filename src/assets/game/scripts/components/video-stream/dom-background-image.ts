@@ -36,11 +36,14 @@ export class DOMBackgroundImage {
         image.style.bottom = "0px";
         image.style.left = "0px";
         image.style.right = "0px";
-        image.style.width = `${size.width}px`;
-        image.style.height = `${size.height}px`;
+        image.style.width = "100%";
+        image.style.height = "100%";
         image.style.zIndex = "9";
         image.width = size.width;
         image.height = size.height;
+
+        // temporary hard code color
+        image.style.backgroundColor = "burlywood";
     }
 
     private static applyGameStyles(game: HTMLElement) {
