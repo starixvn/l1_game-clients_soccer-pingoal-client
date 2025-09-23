@@ -1,6 +1,11 @@
 import { _decorator, log, Node } from "cc";
 import BetItem from "db://shared-components/game/bets/scripts/components/bet-item";
-import { SingleGameBetHandler, SingleGameChipStore } from "db://shared-single-player-game/scripts/core";
+import { 
+    SingleGameBetHandler, 
+    SingleGameChipStore, 
+    SINGLE_GAME_ROUND_STATE, 
+    SingleGameRoundTimeStore 
+} from "db://shared-single-player-game/scripts/core";
 import { SingleGameOwnChip as SingleGameOwnChipType} from "db://shared-single-player-game/scripts/core/chips/single-game-chip-store";
 import Observer from "observer";
 import gc from "@sg/game-client-base";
@@ -13,8 +18,21 @@ export default class BetItemCustomize extends BetItem {
     @property(Node)
     disabledNode: Node = null;
 
+    private _currentRoundState: string = SINGLE_GAME_ROUND_STATE.NONE;
+    // TODO: Temporary: allow betting during stop state for testing
+    private _allowedBettingStates: string[] = [
+        SINGLE_GAME_ROUND_STATE.STOP_GAME_LOOP,
+        SINGLE_GAME_ROUND_STATE.PLACING_BET,
+    ];
+
+    private isBettingAllowed(): boolean {
+        return this._allowedBettingStates.includes(this._currentRoundState);
+    }
+
     override callBet() {
-        this.handleBet();
+        if (this.isBettingAllowed()) {
+            this.handleBet();
+        }
     }
 
     // Override parent class renderOwnBet method to prevent external interference
@@ -48,8 +66,23 @@ export default class BetItemCustomize extends BetItem {
         }
     }
 
+    @render(SingleGameRoundTimeStore, (store) => store.roundState, { fireImmediately: true })
+    renderRoundState(roundState: string) {
+        this._currentRoundState = roundState;
+        this.updateBetItemState();
+    }
+
     @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: false })
     updateDisabledState(ownChip: SingleGameOwnChipType | null) {
+        this.updateBetItemState(ownChip);
+    }
+
+    private updateBetItemState(ownChip?: SingleGameOwnChipType | null) {
+        if (!this.isBettingAllowed()) {
+            this.setDisabledVisibility(true);
+            return;
+        }
+
         if (!ownChip) {
             this.setDisabledVisibility(false);
             return;
