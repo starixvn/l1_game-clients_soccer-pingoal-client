@@ -61,6 +61,7 @@ export class BackgroundVideoPlayer extends Component {
 
     playVideoByName(videoName: string, callback: (isPlay: boolean) => void) {
         if (this.loadVideoByName(videoName)) {
+            this.currentTime = 0; // fix problem of playing more than second time
             this.play();
             callback(true);
         } else {
