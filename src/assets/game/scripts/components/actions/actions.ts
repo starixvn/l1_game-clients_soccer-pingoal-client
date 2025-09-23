@@ -25,12 +25,6 @@ export class Actions extends ObserverComponent {
 
     private _tunnelsPosition: any = null;
 
-    onLoad(): void {
-        super.onLoad();
-        
-        this.disableStartButton()
-    }
-
     @render(TunnelsStore, (store) => store.position, { fireImmediately: true })
     renderTunnelsPosition(position: any) {
         this._tunnelsPosition = position;
@@ -40,11 +34,14 @@ export class Actions extends ObserverComponent {
     renderRoundState(roundState: any) {
         if (roundState === SINGLE_GAME_ROUND_STATE.LOCKING_BET) {
             this.disableStartButton()
+        } else if (roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET) {
+            // default will enable rebet
+            this.enableStartButton()
         }
     }
 
-    @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: false })
-    handleStartButtonStateChange(ownChip: gc.GameServiceMessage.OwnChip) {
+    @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: true })
+    renderStartButtonStateChange(ownChip: gc.GameServiceMessage.OwnChip) {
         const amount = ownChip.amount;
         if (amount > 0) {
             this.enableStartButton()
