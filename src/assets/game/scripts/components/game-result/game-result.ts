@@ -4,7 +4,11 @@ import { _decorator } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 const { ccclass } = _decorator;
 import { AnimationUtils } from "db://shared-components/shared/utils";
-import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
+import {
+    SINGLE_GAME_ROUND_STATE,
+    SingleGameRoundTimeHandlers,
+    SingleGameRoundTimeStore
+} from "db://shared-single-player-game/scripts/core";
 import inversify from "inversify";
 
 const { inject } = inversify;
@@ -20,8 +24,13 @@ export class GameResult extends ObserverComponent {
         if (roundState === SINGLE_GAME_ROUND_STATE.SHOW_RESULT) {
             await this.showResult();
 
-            // this.singleGameRoundTimeStore.roundState = SINGLE_GAME_ROUND_STATE.PLACING_BET;
+            this.handleBackToMain()
         }
+    }
+    
+    @handle(SingleGameRoundTimeHandlers, (handler, payload) => handler.handle(payload as string))
+    handleBackToMain() {
+        return SINGLE_GAME_ROUND_STATE.PLACING_BET
     }
 
     async showResult() {
