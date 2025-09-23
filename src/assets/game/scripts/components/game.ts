@@ -8,13 +8,12 @@ import { containerOptions } from "../container-options";
 import { settings } from "../game-settings";
 import "./../../../resources/i18n";
 import { BackgroundVideoPlayer } from "./video-stream/background-video-player";
-import { DOMBackgroundImage } from "./video-stream/dom-background-image";
 import { SystemIndicator } from "./video-stream/system-indicator";
 
 startGame(settings.name, containerOptions, siteConfigs, settings.tolgeeNamespaces);
 
 const { ccclass, property } = _decorator;
-const { observer, render, handle } = Observer;
+const { observer } = Observer;
 
 @ccclass
 @observer(settings.name)
@@ -47,9 +46,5 @@ export default class Game extends GameComponent {
 
     override onHideGame() {
         this.backgroundVideoPlayer.stop();
-    }
-
-    protected onEnable(): void {
-        DOMBackgroundImage.createBackgroundImageElement();
     }
 }
