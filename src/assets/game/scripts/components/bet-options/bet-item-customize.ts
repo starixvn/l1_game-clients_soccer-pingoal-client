@@ -19,7 +19,7 @@ export default class BetItemCustomize extends BetItem {
     disabledNode: Node = null;
 
     private _currentRoundState: string = SINGLE_GAME_ROUND_STATE.NONE;
-    // TODO: Temporary: allow betting during stop state for testing
+    // TODO: Temporary: allow betting during stop state for testing // NOSONAR
     private _allowedBettingStates: string[] = [
         SINGLE_GAME_ROUND_STATE.STOP_GAME_LOOP,
         SINGLE_GAME_ROUND_STATE.PLACING_BET,

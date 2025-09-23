@@ -23,6 +23,11 @@ export class Tunnels extends ObserverComponent {
         redTunnel: DEFAULT_TUNNEL_NUMBER[BallType.RED],
         blueTunnel: DEFAULT_TUNNEL_NUMBER[BallType.BLUE],
     };
+    // TODO: Temporary: allow betting during stop state for testing // NOSONAR
+    private readonly _allowedBettingStates: string[] = [
+        SINGLE_GAME_ROUND_STATE.PLACING_BET,
+        SINGLE_GAME_ROUND_STATE.STOP_GAME_LOOP,
+    ];
 
     start() {
         this.findBalls();
@@ -116,9 +121,9 @@ export class Tunnels extends ObserverComponent {
     @render(SingleGameRoundTimeStore, (store) => store.roundState, { fireImmediately: false })
     handleBallsEnable(roundState: any) {
         if (this.redBall && this.blueBall && this.randomButton) {
-            this.redBall.setDraggable(roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET);
-            this.blueBall.setDraggable(roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET);
-            this.randomButton.setEnable(roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET);
+            this.redBall.setDraggable(this._allowedBettingStates.includes(roundState));
+            this.blueBall.setDraggable(this._allowedBettingStates.includes(roundState));
+            this.randomButton.setEnable(this._allowedBettingStates.includes(roundState));
         }
     }
 
