@@ -5,7 +5,7 @@ import { ObserverComponent } from "db://shared-components/shared/common-componen
 import { TunnelsBallsStoreType, TunnelsHandlers } from "../../handlers";
 import { TunnelsStore } from "../../stores";
 import DraggableRoundBall, { BallType, DEFAULT_TUNNEL_NUMBER } from "./draggable-round-ball";
-const { ccclass } = _decorator;
+const { ccclass, property } = _decorator;
 import { AnimationUtils } from "db://shared-components/shared/utils";
 import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
 import { RandomBallsButton } from "./random-balls-button";
@@ -14,9 +14,11 @@ const { render, handle } = Observer;
 
 @ccclass("tunnels")
 export class Tunnels extends ObserverComponent {
+    @property(RandomBallsButton)
+    randomButton: RandomBallsButton = null;
+
     private redBall: DraggableRoundBall = null;
     private blueBall: DraggableRoundBall = null;
-    private readonly randomButton: RandomBallsButton = null;
     private currentPosition: TunnelsBallsStoreType = {
         redTunnel: DEFAULT_TUNNEL_NUMBER[BallType.RED],
         blueTunnel: DEFAULT_TUNNEL_NUMBER[BallType.BLUE],

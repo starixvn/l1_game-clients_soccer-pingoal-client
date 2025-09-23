@@ -35,11 +35,11 @@ export class RandomBallsButton extends ObserverComponent {
         };
     }
 
-    // temporary fix for random number generation
     setEnable(enable: boolean) {
         this.enabled = enable;
     }
-
+    
+    // temporary fix for random number generation
     private getRenderTunnel() {
         return Math.floor(Math.random() * TUNNEL_COUNT) + 1; // NOSONAR
     }
