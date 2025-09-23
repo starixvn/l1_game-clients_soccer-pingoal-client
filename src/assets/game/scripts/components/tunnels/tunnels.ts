@@ -8,7 +8,7 @@ import DraggableRoundBall, { BallType, DEFAULT_TUNNEL_NUMBER } from "./draggable
 const { ccclass } = _decorator;
 import { AnimationUtils } from "db://shared-components/shared/utils";
 import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
-import gc from "@sg/game-client-base";
+import { RandomBallsButton } from "./random-balls-button";
 
 const { render, handle } = Observer;
 
@@ -16,6 +16,7 @@ const { render, handle } = Observer;
 export class Tunnels extends ObserverComponent {
     private redBall: DraggableRoundBall = null;
     private blueBall: DraggableRoundBall = null;
+    private readonly randomButton: RandomBallsButton = null;
     private currentPosition: TunnelsBallsStoreType = {
         redTunnel: DEFAULT_TUNNEL_NUMBER[BallType.RED],
         blueTunnel: DEFAULT_TUNNEL_NUMBER[BallType.BLUE],
@@ -47,8 +48,8 @@ export class Tunnels extends ObserverComponent {
         }
 
         ball.touchCallback = {
-            start: () => {},
-            move: () => {},
+            start: () => { },
+            move: () => { },
             end: () => this.updateBallsTunnel(ballType),
         };
     }
@@ -77,10 +78,10 @@ export class Tunnels extends ObserverComponent {
 
     @render(TunnelsStore, (store) => store.position)
     renderBallsPosition(position: TunnelsBallsStoreType) {
-        if(this.getBallNode(BallType.RED)) {
+        if (this.getBallNode(BallType.RED)) {
             this.getBallNode(BallType.RED).moveToTargetTunnel(position.redTunnel);
         }
-        if(this.getBallNode(BallType.BLUE)) {
+        if (this.getBallNode(BallType.BLUE)) {
             this.getBallNode(BallType.BLUE).moveToTargetTunnel(position.blueTunnel);
         }
 
@@ -91,16 +92,6 @@ export class Tunnels extends ObserverComponent {
     renderCurrentPosition(position: TunnelsBallsStoreType) {
         this.currentPosition = position;
         return position;
-    }
-
-    @render(gc.Bet.BetStore, (store) => store.isProcessingBet)
-    handleBallsDraggable(isProcessingBet: boolean) {
-        if(this.redBall) {
-            this.redBall.setDraggable(!isProcessingBet);
-        }
-        if(this.blueBall) {
-            this.blueBall.setDraggable(!isProcessingBet);
-        }
     }
 
     private getBallNode(ballType: BallType) {
@@ -117,6 +108,15 @@ export class Tunnels extends ObserverComponent {
             this.fadeOutAnimation()
         } else if (roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET) {
             this.fadeInAnimation()
+        }
+    }
+
+    @render(SingleGameRoundTimeStore, (store) => store.roundState, { fireImmediately: false })
+    handleBallsEnable(roundState: any) {
+        if (this.redBall && this.blueBall && this.randomButton) {
+            this.redBall.setDraggable(roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET);
+            this.blueBall.setDraggable(roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET);
+            this.randomButton.setEnable(roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET);
         }
     }
 

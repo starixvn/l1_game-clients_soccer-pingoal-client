@@ -11,10 +11,11 @@ const { render, handle } = Observer;
 @ccclass("RandomBallsButton")
 export class RandomBallsButton extends ObserverComponent {
     private isColdDown = false;
+    private readonly isEnable = true;
 
     @handle(TunnelsHandlers, (handler, payload: TunnelsBallsStoreType) => handler.handle(payload))
     handleRandomBalls() {
-        if (this.isColdDown) {
+        if (this.isColdDown || !this.isEnable) {
             return null;
         }
         this.isColdDown = true;
@@ -35,6 +36,10 @@ export class RandomBallsButton extends ObserverComponent {
     }
 
     // temporary fix for random number generation
+    setEnable(enable: boolean) {
+        this.enabled = enable;
+    }
+
     private getRenderTunnel() {
         return Math.floor(Math.random() * TUNNEL_COUNT) + 1; // NOSONAR
     }
