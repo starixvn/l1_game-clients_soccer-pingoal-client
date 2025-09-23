@@ -17,6 +17,10 @@ export default class BetItemCustomize extends BetItem {
         this.handleBet();
     }
 
+    // Override parent class renderOwnBet method to prevent external interference
+    override renderOwnBet() {
+    }
+
     @handle(SingleGameBetHandler, (handler, payload: string) => handler.handle(payload))
     handleBet() {
         log("handle bet choice: ", this.node.name);
