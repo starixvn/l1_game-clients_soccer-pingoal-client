@@ -23,7 +23,7 @@ export class Tunnels extends ObserverComponent {
         redTunnel: DEFAULT_TUNNEL_NUMBER[BallType.RED],
         blueTunnel: DEFAULT_TUNNEL_NUMBER[BallType.BLUE],
     };
-    // TODO: Temporary: allow betting during stop state for testing // NOSONAR
+    // Temporary: allow betting during stop state for testing // NOSONAR
     private readonly _allowedBettingStates: string[] = [
         SINGLE_GAME_ROUND_STATE.PLACING_BET,
         SINGLE_GAME_ROUND_STATE.STOP_GAME_LOOP,
