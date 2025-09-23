@@ -1,4 +1,4 @@
-import { _decorator, Color, Component, Label, Node, Sprite } from 'cc';
+import { _decorator, Color, Component, Label, Sprite } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('result-score')

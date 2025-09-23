@@ -1,7 +1,7 @@
-import gc, { Settlements } from "@sg/game-client-base";
+import gc from "@sg/game-client-base";
 import Observer from "observer";
 
-import { _decorator, Color, Node, Sprite } from "cc";
+import { _decorator, Node } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 const { ccclass, property } = _decorator;
 import { AnimationUtils } from "db://shared-components/shared/utils";
