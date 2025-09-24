@@ -1,20 +1,23 @@
 import gc from "@sg/game-client-base";
+import {
+    SINGLE_GAME_ROUND_STATE,
+    SingleGameRoundTimeStore,
+} from "db://shared-single-player-game/scripts/core/rounds/single-game-round-time-store";
 import inversify from "inversify";
 import mobx from "mobx";
-import { VideoStreamStore } from "./video-stream-store";
 
 const { injectable, inject } = inversify;
 
 @injectable()
 export class VideoStreamSoundStore {
     @inject(gc.UserSettings.UserSettingStore) private readonly userSettingStore: gc.UserSettings.UserSettingStore;
-    @inject(VideoStreamStore) private readonly videoStreamStore: VideoStreamStore;
+    @inject(SingleGameRoundTimeStore) private readonly singleGameRoundTimeStore: SingleGameRoundTimeStore;
 
     constructor() {
         mobx.makeAutoObservable(this);
     }
 
     get isPlayBackgroundMusic() {
-        return this.userSettingStore.musicEnable && !this.videoStreamStore?.isPlayVideo;
+        return this.userSettingStore.musicEnable && this.singleGameRoundTimeStore.roundState !== SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO;
     }
 }

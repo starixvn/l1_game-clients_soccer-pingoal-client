@@ -215,6 +215,6 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     private handleVideoEnded() {
-        this.node.emit(VIDEO_ENDED_EVENT, { isEndVideo: true });
+        this.node.emit(VIDEO_ENDED_EVENT);
     }
 }

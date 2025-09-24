@@ -1,6 +1,7 @@
 import gc from "@sg/game-client-base";
 import { _decorator, instantiate, Node, Prefab } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
+import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
 import Observer from "observer";
 import { VideoStreamHandlers } from "../../handlers";
 import { VideoStream, VideoStreamStore } from "../../stores";
@@ -10,8 +11,6 @@ import { NetworkStatus, SystemIndicator } from "./system-indicator";
 const { ccclass, property } = _decorator;
 const { render, handle } = Observer;
 const { sentryLogger } = gc;
-
-const INTRO_SFX = "intro_video";
 
 @ccclass
 export default class VideoStreamIntegration extends ObserverComponent {
@@ -30,7 +29,7 @@ export default class VideoStreamIntegration extends ObserverComponent {
     @property(Node)
     backgroundLoading: Node = null;
 
-    private readonly isLiveVideo = false;
+    private isLiveVideo = false;
 
     private _systemIndicator: SystemIndicator = null;
 
@@ -81,10 +80,8 @@ export default class VideoStreamIntegration extends ObserverComponent {
         }
     }
 
-    @handle(VideoStreamHandlers, (handler, isPlay: boolean) => handler.handlePlayVideo(isPlay))
-    private handlePlayVideo(isPlay: boolean) {
-        return isPlay;
-    }
+    @handle(VideoStreamHandlers, (handler) => handler.handlePlayVideo())
+    private handlePlayVideo() {}
 
     @render(VideoStreamStore, (store) => store.liveStreamServer)
     private onLiveStreamServer(liveStreamServer: string) {
@@ -110,12 +107,26 @@ export default class VideoStreamIntegration extends ObserverComponent {
         node && this.warnContainer?.addChild(node);
     }
 
-    private onVideoEnded(data: { isEndVideo: boolean }) {
-        this.handleEndVideo(data?.isEndVideo);
+    private onVideoEnded() {
+        this.handleEndVideo();
     }
 
-    @handle(VideoStreamHandlers, (handler, isEndVideo: boolean) => handler.handleEndVideo(isEndVideo))
-    private handleEndVideo(isEndVideo: boolean) {
-        return isEndVideo;
+    @handle(VideoStreamHandlers, (handler) => handler.handleEndVideo())
+    private handleEndVideo() {}
+
+    @render(SingleGameRoundTimeStore, (store) => store.roundState)
+    protected updateLiveVideoState(roundState: string) {
+        this.isLiveVideo = roundState === SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO;
+        if (!this.isLiveVideo) {
+            this.warnContainer?.removeAllChildren();
+        }
+    }
+
+    @render(SingleGameRoundTimeStore, (store) => store.roundState)
+    protected updateSystemIndicatorState(roundState: string) {
+        this.systemIndicator?.setLiveIndicatorVisibility(roundState === SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO);
+        if (roundState !== SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO) {
+            this.warnContainer?.removeAllChildren();
+        }
     }
 }
