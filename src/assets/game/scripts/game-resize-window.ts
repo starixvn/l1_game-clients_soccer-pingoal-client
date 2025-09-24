@@ -9,40 +9,50 @@ export class GameResizeWindow extends Component {
     @property(CCInteger)
     height = 1334;
 
+    private resizeHandler?: () => void;
+
     protected onLoad(): void {
         this.adjustResolution();
         this.setupResizeListener();
     }
 
-    adjustResolution() {
-        if (sys.isMobile) {
-            const gameDiv = document.getElementById("GameDiv");
-            gameDiv.style.width = "100% !important";
-            gameDiv.style.height = "100% !important";
-        } else {
-            // For desktop browsers, use the original logic
-            const ratioScale = window.innerHeight / this.height;
-            const newWidth = ratioScale * this.width;
+    onDestroy(): void {
+        if (this.resizeHandler) {
+            window.removeEventListener("resize", this.resizeHandler);
+            this.resizeHandler = undefined;
+        }
+    }
 
-            screen.windowSize = new Size(newWidth, window.innerHeight);
+    adjustResolution() {
+        if (!sys.isMobile) {
+            const gameContainer = document.getElementById("Cocos3dGameContainer");
+            gameContainer.style.position = "relative";
+
+            // For desktop browsers, use the original logic
+            const cssHeight = window.innerHeight;
+            const ratioScale = cssHeight / this.height;
+            const cssWidth = ratioScale * this.width;
+
+            const dpr = screen?.devicePixelRatio || 1;
+            screen.windowSize = new Size(Math.round(cssWidth * dpr), Math.round(cssHeight * dpr));
         }
     }
 
     private setupResizeListener() {
-        // Listen for window resize events
-        window.addEventListener("resize", () => {
-            setTimeout(() => {
-                this.adjustResolution();
-            }, 100);
-        });
+        this.resizeHandler = this.debounce(() => {
+            this.adjustResolution();
+        }, 150);
+        window.addEventListener("resize", this.resizeHandler);
+    }
 
-        // For mobile devices, also listen for orientation changes
-        if (sys.isMobile) {
-            window.addEventListener("orientationchange", () => {
-                setTimeout(() => {
-                    this.adjustResolution();
-                }, 300); // Longer delay for orientation change
-            });
-        }
+    // prevent multiple calls
+    private debounce(fn: (...args: any[]) => void, wait = 150) {
+        let t: number | undefined;
+        return (...args: any[]) => {
+            if (t) {
+                clearTimeout(t);
+            }
+            t = window.setTimeout(() => fn(...args), wait);
+        };
     }
 }

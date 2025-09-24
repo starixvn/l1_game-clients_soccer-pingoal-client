@@ -1,14 +1,14 @@
-import { _decorator, log, Node } from "cc";
-import BetItem from "db://shared-components/game/bets/scripts/components/bet-item";
-import { 
-    SingleGameBetHandler, 
-    SingleGameChipStore, 
-    SINGLE_GAME_ROUND_STATE, 
-    SingleGameRoundTimeStore 
-} from "db://shared-single-player-game/scripts/core";
-import { SingleGameOwnChip as SingleGameOwnChipType} from "db://shared-single-player-game/scripts/core/chips/single-game-chip-store";
-import Observer from "observer";
 import gc from "@sg/game-client-base";
+import { _decorator, Node } from "cc";
+import BetItem from "db://shared-components/game/bets/scripts/components/bet-item";
+import {
+    SINGLE_GAME_ROUND_STATE,
+    SingleGameBetHandler,
+    SingleGameChipStore,
+    SingleGameRoundTimeStore,
+} from "db://shared-single-player-game/scripts/core";
+import { SingleGameOwnChip as SingleGameOwnChipType } from "db://shared-single-player-game/scripts/core/chips/single-game-chip-store";
+import Observer from "observer";
 
 const { property, ccclass } = _decorator;
 const { render, handle } = Observer;
@@ -20,10 +20,7 @@ export default class BetItemCustomize extends BetItem {
 
     private _currentRoundState: string = SINGLE_GAME_ROUND_STATE.NONE;
     // Temporary: allow betting during stop state for testing
-    private readonly _allowedBettingStates: string[] = [
-        SINGLE_GAME_ROUND_STATE.STOP_GAME_LOOP,
-        SINGLE_GAME_ROUND_STATE.PLACING_BET,
-    ];
+    private readonly _allowedBettingStates: string[] = [SINGLE_GAME_ROUND_STATE.STOP_GAME_LOOP, SINGLE_GAME_ROUND_STATE.PLACING_BET];
 
     private isBettingAllowed(): boolean {
         return this._allowedBettingStates.includes(this._currentRoundState);
@@ -36,12 +33,10 @@ export default class BetItemCustomize extends BetItem {
     }
 
     // Override parent class renderOwnBet method to prevent external interference
-    override renderOwnBet() {
-    }
+    override renderOwnBet() {}
 
     @handle(SingleGameBetHandler, (handler, payload: string) => handler.handle(payload))
     handleBet() {
-        log("handle bet choice: ", this.node.name);
         return this.node.name;
     }
 
@@ -50,14 +45,14 @@ export default class BetItemCustomize extends BetItem {
     }
 
     @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: false })
-    renderOwnChip(ownChip: gc.GameServiceMessage.OwnChip & { totalAmount?: number } | null) {
+    renderOwnChip(ownChip: (gc.GameServiceMessage.OwnChip & { totalAmount?: number }) | null) {
         if (!this.lblOwnBet) {
             return;
         }
-        
+
         const isOwnBet = ownChip?.betChoice === this.node.name;
         const hasAmount = (ownChip?.totalAmount || 0) > 0;
-        
+
         if (isOwnBet && hasAmount) {
             const amount = ownChip.totalAmount || 0;
             this.lblOwnBet.string = gc.FormatUtils.numberWithCommas(amount);
@@ -89,12 +84,12 @@ export default class BetItemCustomize extends BetItem {
         }
 
         const currentBetChoice = ownChip.betChoice;
-        
+
         if (currentBetChoice === this.node.name) {
             this.setDisabledVisibility(false);
             return;
         }
-        
+
         if (currentBetChoice && currentBetChoice !== this.node.name) {
             this.setDisabledVisibility(true);
             return;
