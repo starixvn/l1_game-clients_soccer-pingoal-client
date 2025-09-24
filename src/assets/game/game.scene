@@ -4416,9 +4416,6 @@
     "lblRoundId": null,
     "lblMinBet": null,
     "lblMaxBet": null,
-    "nodeSystemIndicator": {
-      "__id__": 168
-    },
     "backgroundVideoPlayer": {
       "__id__": 7
     },
