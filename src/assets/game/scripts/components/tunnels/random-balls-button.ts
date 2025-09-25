@@ -1,6 +1,6 @@
 import Observer from "observer";
 
-import { _decorator } from "cc";
+import { _decorator, Button } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 import { TunnelsBallsStoreType, TunnelsHandlers } from "../../handlers";
 import { TUNNEL_COUNT } from "./draggable-round-ball";
@@ -10,17 +10,19 @@ const { render, handle } = Observer;
 
 @ccclass("RandomBallsButton")
 export class RandomBallsButton extends ObserverComponent {
-    private isColdDown = false;
+    @property(Button)
+    button: Button = null;
+
     private isEnable = true;
 
     @handle(TunnelsHandlers, (handler, payload: TunnelsBallsStoreType) => handler.handle(payload))
     handleRandomBalls() {
-        if (this.isColdDown || !this.isEnable) {
+        if (!this.isEnable) {
             return null;
         }
-        this.isColdDown = true;
+        this.button.interactable = false;
         setTimeout(() => {
-            this.isColdDown = false;
+            this.button.interactable = true;
         }, 800);
 
         const redBallRandomTunnel = this.getRenderTunnel();

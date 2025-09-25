@@ -4,6 +4,21 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>Btn_random.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{100,100}</string>
+                <key>spriteSourceSize</key>
+                <string>{100,100}</string>
+                <key>textureRect</key>
+                <string>{{916,1285},{100,100}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>balance-bg.png</key>
             <dict>
                 <key>aliases</key>
@@ -480,7 +495,7 @@
                 <key>spriteSourceSize</key>
                 <string>{70,71}</string>
                 <key>textureRect</key>
-                <string>{{916,1285},{70,71}}</string>
+                <string>{{335,1288},{70,71}}</string>
                 <key>textureRotated</key>
                 <true/>
             </dict>
@@ -513,7 +528,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:9c6164f663d26e6cb3f6b070be6b2974:56afe44746da16c24026cd7667c43f94:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
+            <string>$TexturePacker:SmartUpdate:666c161c794e74043bc95321bf879a7d:3438d8b5970427cc3cab8b0a4e80e8e2:b0f8fbd393ae9d1a95baaa51e50f3d50$</string>
             <key>textureFileName</key>
             <string>main.webp</string>
         </dict>
