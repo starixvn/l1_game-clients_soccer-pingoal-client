@@ -11,7 +11,7 @@ const { render, handle } = Observer;
 @ccclass("RandomBallsButton")
 export class RandomBallsButton extends ObserverComponent {
     private isColdDown = false;
-    private readonly isEnable = true;
+    private isEnable = true;
 
     @handle(TunnelsHandlers, (handler, payload: TunnelsBallsStoreType) => handler.handle(payload))
     handleRandomBalls() {
@@ -36,7 +36,7 @@ export class RandomBallsButton extends ObserverComponent {
     }
 
     setEnable(enable: boolean) {
-        this.enabled = enable;
+        this.isEnable = enable;
     }
     
     // temporary fix for random number generation

@@ -162,7 +162,7 @@ export default class DraggableRoundBall extends DraggableItem {
             .start();
     }
 
-    setDraggable(isEnableDrag: boolean) {
-        this.isEnableDrag = isEnableDrag;
+    setDraggable(draggable: boolean) {
+        this.isEnableDrag = draggable;
     }
 }

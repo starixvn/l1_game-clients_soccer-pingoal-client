@@ -23,11 +23,6 @@ export class Tunnels extends ObserverComponent {
         redTunnel: DEFAULT_TUNNEL_NUMBER[BallType.RED],
         blueTunnel: DEFAULT_TUNNEL_NUMBER[BallType.BLUE],
     };
-    // Temporary: allow betting during stop state for testing // NOSONAR
-    private readonly _allowedBettingStates: string[] = [
-        SINGLE_GAME_ROUND_STATE.PLACING_BET,
-        SINGLE_GAME_ROUND_STATE.STOP_GAME_LOOP,
-    ];
 
     start() {
         this.findBalls();
@@ -109,21 +104,18 @@ export class Tunnels extends ObserverComponent {
         return ballType === BallType.RED ? "redTunnel" : "blueTunnel";
     }
 
-    @render(SingleGameRoundTimeStore, (store) => store.roundState, { fireImmediately: false })
-    renderRoundState(roundState: any) {
+    @render(SingleGameRoundTimeStore, (store) => store.roundState, { fireImmediately: true })
+    renderRoundState(roundState: string) {
         if (roundState === SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO) {
             this.fadeOutAnimation()
         } else if (roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET) {
-            this.fadeInAnimation()
+           this.fadeInAnimation()
         }
-    }
 
-    @render(SingleGameRoundTimeStore, (store) => store.roundState, { fireImmediately: false })
-    handleBallsEnable(roundState: any) {
         if (this.redBall && this.blueBall && this.randomButton) {
-            this.redBall.setDraggable(this._allowedBettingStates.includes(roundState));
-            this.blueBall.setDraggable(this._allowedBettingStates.includes(roundState));
-            this.randomButton.setEnable(this._allowedBettingStates.includes(roundState));
+            this.redBall.setDraggable(roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET);
+            this.blueBall.setDraggable(roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET);
+            this.randomButton.setEnable(roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET);
         }
     }
 
@@ -134,7 +126,7 @@ export class Tunnels extends ObserverComponent {
     }
 
     fadeInAnimation() {
-        this.node.setScale(v3(1, 1));
+        this.node.setScale(v3(1, 1, 1));
         this.node.setPosition(v3(0, 230.202));
         AnimationUtils.fadeIn(this.node, 0.5);
     }
