@@ -265,15 +265,43 @@ export const languages = {
         "tooltip_guide": "Oyun Kuralları",
         "tooltip_fairness": "Adillik",
         "lock_bet": "Sonuç bekleniyor",
-        "tooltip_stat": "View stat",
-        "tooltip_auto": "Auto"
+        "tooltip_stat": "İstatistiği görüntüle",
+        "tooltip_auto": "Otomatik",
+        "crash_next_round": "(Sonraki Tur)",
+        "start_auto_bet": "Otomatik Bahsi Başlat",
+        "number_of_bet": "Bahis Sayısı",
+        "on_win": "Kazanınca",
+        "on_loss": "Kaybedince",
+        "reset": "Sıfırla",
+        "increase_by": "Artır",
+        "stop_on_win": "Kazanınca Dur",
+        "stop_on_loss": "Kaybedince Dur",
+        "manual": "Manuel",
+        "auto": "Otomatik",
+        "live_stats": "Canlı İstatistikler",
+        "profit": "Kâr",
+        "wins": "Galibiyetler",
+        "waggred": "Waggred",
+        "losses": "Kayıplar",
+        "all_bets": "Tüm Bahisler",
+        "crash_glossary_refund": "Geri Ödeme",
+        "glossary_bet": "Bahis",
+        "glossary_crash_point": "Çöküş Noktası",
+        "glossary_message_reach_max_win": "Maksimum Kazanca Ulaşın",
+        "title_multiplier": "Çarpan",
+        "crash_start_in": "Başlayacak",
+        "crashed": "ÇÖKTÜ"
     },
     "SoccerPinGoal": {
         "game_name": "Soccer PinGoal",
         "glossary_red": "Kırmızı",
         "glossary_blue": "Mavi",
         "glossary_draw": "Berabere",
-        "glossary_tunnel_selection": "Tunnel Selection"
+        "glossary_tunnel_selection": "Tünel Seçimi",
+        "button_clear": "Temizle",
+        "button_start": "Başlat",
+        "text_tunnel_selection": "Yapılandırmanı Seç!",
+        "message_livestream_not_supported": "Cihazınızın mevcut tarayıcı ve işletim sistemi sürümü, bu oyundaki canlı yayınları görüntülemeyi desteklemiyor (yine de normal şekilde bahis yapabilir ve ödülleri toplayabilirsiniz), lütfen oyunun keyfini tam olarak çıkarabilmek için Oyun Rehberleri'nde belirtilen veya üzeri bir sürüme güncellemeyi düşünün."
     }
 };
 

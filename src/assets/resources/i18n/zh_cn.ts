@@ -246,7 +246,7 @@ export const languages = {
         "waiting_for_the_next_round": "等待下一轮",
         "show_more": "显示更多",
         "show_less": "显示更少",
-        "start_in": "开始于 {time}s",
+        "start_in": "投注时间：{time}秒",
         "cancel_bet": "取消投注",
         "cashed": "兑现",
         "cashout": "兑现",
@@ -265,8 +265,32 @@ export const languages = {
         "tooltip_guide": "游戏指南",
         "tooltip_fairness": "公平",
         "lock_bet": "等待结果",
-        "tooltip_stat": "View stat",
-        "tooltip_auto": null
+        "tooltip_stat": "查看统计",
+        "tooltip_auto": "自动",
+        "crash_next_round": "(下一轮)",
+        "start_auto_bet": "开始自动投注",
+        "number_of_bet": "投注数量",
+        "on_win": "获胜时",
+        "on_loss": "失败时",
+        "reset": "重置",
+        "increase_by": "增加",
+        "stop_on_win": "赢时停止",
+        "stop_on_loss": "亏损时停止",
+        "manual": "手动",
+        "auto": "自动",
+        "live_stats": "实时统计",
+        "profit": "盈利",
+        "wins": "赢",
+        "waggred": "Waggred",
+        "losses": "损失",
+        "all_bets": "全部投注",
+        "crash_glossary_refund": "退款",
+        "glossary_bet": "赌注",
+        "glossary_crash_point": "崩溃点",
+        "glossary_message_reach_max_win": "达到最大胜利",
+        "title_multiplier": "乘数",
+        "crash_start_in": "开始于 %{time}",
+        "crashed": "坠毁"
     },
     "cascadingslot": {
         "auto_spin": "自动旋转",
@@ -338,11 +362,15 @@ export const languages = {
         "game_name": "悟空复仇"
     },
     "SoccerPinGoal": {
-        "game_name": null,
-        "glossary_red": "红",
+        "game_name": "足球弹珠台",
+        "glossary_red": "红色",
         "glossary_blue": "蓝色",
-        "glossary_draw": "抽",
-        "glossary_tunnel_selection": null
+        "glossary_draw": "平",
+        "glossary_tunnel_selection": "隧道选择",
+        "button_clear": "清除",
+        "button_start": "开始",
+        "text_tunnel_selection": "选择你的配置！",
+        "message_livestream_not_supported": "您的设备当前浏览器和操作系统版本不支持观看本游戏直播（您仍可以正常下注、领取奖励），请考虑更新至游戏指南或以上版本，以充分享受游戏乐趣。"
     }
 };
 

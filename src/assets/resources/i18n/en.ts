@@ -266,7 +266,31 @@ export const languages = {
         "tooltip_fairness": "Fairness",
         "lock_bet": "Waiting for the result",
         "tooltip_stat": "View stat",
-        "tooltip_auto": "Auto"
+        "tooltip_auto": "Auto",
+        "crash_next_round": "(Next Round)",
+        "start_auto_bet": "Start Auto Bet",
+        "number_of_bet": "Number of Bets",
+        "on_win": "On Win",
+        "on_loss": "On Loss",
+        "reset": "Reset",
+        "increase_by": "Increase by",
+        "stop_on_win": "Stop on Win",
+        "stop_on_loss": "Stop on Loss",
+        "manual": "Manual",
+        "auto": "Auto",
+        "live_stats": "Live Stats",
+        "profit": "Profit",
+        "wins": "Wins",
+        "waggred": "Waggred",
+        "losses": "Losses",
+        "all_bets": "All Bets",
+        "crash_glossary_refund": "Refund",
+        "glossary_bet": "Bet",
+        "glossary_crash_point": "Crash Point",
+        "glossary_message_reach_max_win": "Reach the Max Win",
+        "title_multiplier": "Multiplier ",
+        "crash_start_in": "Start in %{time}",
+        "crashed": "Crashed"
     },
     "cascadingslot": {
         "auto_spin": "Auto Spin",
@@ -342,7 +366,11 @@ export const languages = {
         "glossary_red": "Red",
         "glossary_blue": "Blue",
         "glossary_draw": "Draw",
-        "glossary_tunnel_selection": "Tunnel Selection"
+        "glossary_tunnel_selection": "Tunnel Selection",
+        "button_clear": "Clear",
+        "button_start": "Start",
+        "text_tunnel_selection": "Pick Your Build!",
+        "message_livestream_not_supported": "Your device's current browser and OS version does not support viewing live streams in this game (you can still place bets and collect rewards normally), please consider updating to the version mentioned in Game Guides or above to fully enjoy the game."
     }
 };
 

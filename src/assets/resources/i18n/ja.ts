@@ -238,7 +238,7 @@ export const languages = {
         "bet_detail_note": "データは、現在の日付から過去7日間にのみ利用可能です。",
         "players": "プレイヤー",
         "original_tagline": "新鮮にプレイして、最高の勝利を",
-        "auto_cashout": "オートキャッシュアウト",
+        "auto_cashout": "オート\nキャッシュアウト",
         "auto_play": "オートプレイ",
         "bet_accepted": "ベット受付",
         "chip_value": "チップの価値",
@@ -249,7 +249,7 @@ export const languages = {
         "start_in": "{time}に開始",
         "cancel_bet": "（ベットをキャンセル）",
         "cashed": "キャッシュ済",
-        "cashout": "キャッシュアウト",
+        "cashout": "キャッシュ\nアウト",
         "message_bet_is_accepted": "ベットが確定しました。",
         "message_total_cashout_reach_max": "キャッシュアウトの合計額が最大勝利金額に達しました",
         "my_bets": "ベット履歴",
@@ -265,8 +265,32 @@ export const languages = {
         "tooltip_guide": "ゲームガイド",
         "tooltip_fairness": "公平性",
         "lock_bet": "結果を待つ",
-        "tooltip_stat": "View stat",
-        "tooltip_auto": "Auto"
+        "tooltip_stat": "統計を見る",
+        "tooltip_auto": "自動",
+        "crash_next_round": "（次のラウンド）",
+        "start_auto_bet": "自動ベット開始",
+        "number_of_bet": "ベット数",
+        "on_win": "勝利時",
+        "on_loss": "敗北時",
+        "reset": "リセット",
+        "increase_by": "増加数",
+        "stop_on_win": "勝利時に停止",
+        "stop_on_loss": "損失時に停止",
+        "manual": "手動",
+        "auto": "自動",
+        "live_stats": "ライブ統計",
+        "profit": "利益",
+        "wins": "配当",
+        "waggred": "Waggred",
+        "losses": "損失",
+        "all_bets": "全ベット",
+        "crash_glossary_refund": "払い戻し",
+        "glossary_bet": "ベット",
+        "glossary_crash_point": "クラッシュポイント",
+        "glossary_message_reach_max_win": "最大配当を獲得せよ",
+        "title_multiplier": "マルチプライヤー",
+        "crash_start_in": "開始まで",
+        "crashed": "クラッシュ"
     },
     "cascadingslot": {
         "auto_spin": "オートスピン",
@@ -338,11 +362,15 @@ export const languages = {
         "game_name": "Wukong's Revenge"
     },
     "SoccerPinGoal": {
-        "game_name": null,
+        "game_name": "Soccer PinGoal",
         "glossary_red": "赤",
-        "glossary_blue": "ブルー",
-        "glossary_draw": "ドロー",
-        "glossary_tunnel_selection": null
+        "glossary_blue": "青",
+        "glossary_draw": "引き分け",
+        "glossary_tunnel_selection": "トンネル選択",
+        "button_clear": "クリア",
+        "button_start": "スタート",
+        "text_tunnel_selection": "ビルドを選択！",
+        "message_livestream_not_supported": "お使いのデバイスのブラウザおよびOSのバージョンでは、本ゲームのライブストリームをご視聴いただけません（ベットや報酬の獲得は通常通り行えます）。ゲームを最大限にお楽しみいただくため、ゲームガイドに記載のバージョン以降へのアップデートをご検討ください。"
     }
 };
 

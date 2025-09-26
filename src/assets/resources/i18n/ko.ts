@@ -265,15 +265,43 @@ export const languages = {
         "tooltip_guide": "게임 가이드",
         "tooltip_fairness": "공정성",
         "lock_bet": "결과 대기 중",
-        "tooltip_stat": "View stat",
-        "tooltip_auto": "Auto"
+        "tooltip_stat": "통계 보기",
+        "tooltip_auto": "자동",
+        "crash_next_round": "(다음 라운드)",
+        "start_auto_bet": "자동 베팅 시작",
+        "number_of_bet": "배팅 수",
+        "on_win": "승리 시",
+        "on_loss": "패배 시",
+        "reset": "초기화",
+        "increase_by": "증가 폭",
+        "stop_on_win": "승리 시 중단",
+        "stop_on_loss": "손실 시 중단",
+        "manual": "수동",
+        "auto": "자동",
+        "live_stats": "라이브 통계",
+        "profit": "수익",
+        "wins": "승리",
+        "waggred": "Waggred",
+        "losses": "손실",
+        "all_bets": "모든 베팅",
+        "crash_glossary_refund": "환불",
+        "glossary_bet": "베팅",
+        "glossary_crash_point": "크래시 포인트",
+        "glossary_message_reach_max_win": "최대 당첨금 도달",
+        "title_multiplier": "배수",
+        "crash_start_in": "시작까지 %{time}",
+        "crashed": "크래시"
     },
     "SoccerPinGoal": {
         "game_name": "Soccer PinGoal",
         "glossary_red": "빨강",
-        "glossary_blue": "파랑",
+        "glossary_blue": "파란색",
         "glossary_draw": "무승부",
-        "glossary_tunnel_selection": "Tunnel Selection"
+        "glossary_tunnel_selection": "터널 선택",
+        "button_clear": "초기화",
+        "button_start": "시작",
+        "text_tunnel_selection": "나만의 빌드를 선택하세요!",
+        "message_livestream_not_supported": "회원님의 기기에서 현재 사용 중인 브라우저 및 OS 버전으로는 이 게임의 라이브 스트리밍 시청이 불가능합니다 (베팅 및 보상은 정상적으로 이용하실 수 있습니다). 게임을 온전히 즐기시려면 게임 가이드에 명시된 버전 이상으로 업데이트하시기를 권장합니다."
     }
 };
 

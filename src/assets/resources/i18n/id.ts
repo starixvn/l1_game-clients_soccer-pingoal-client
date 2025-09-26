@@ -238,7 +238,7 @@ export const languages = {
         "bet_detail_note": "Data hanya tersedia untuk 7 hari terakhir terhitung dari tanggal saat ini.",
         "players": "Pemain",
         "original_tagline": "Main Segar, Menang Terbaik",
-        "auto_cashout": "CASHOUT OTOMATIS",
+        "auto_cashout": "Cashout Otomatis",
         "auto_play": "AUTO-PLAY",
         "bet_accepted": "Taruhan\nDiterima",
         "chip_value": "Nilai Chip",
@@ -246,7 +246,7 @@ export const languages = {
         "waiting_for_the_next_round": "Menunggu putaran berikutnya",
         "show_more": "Tampilkan Lebih Banyak",
         "show_less": "Tampilkan Lebih Sedikit",
-        "start_in": "Mulai masuk {time}s",
+        "start_in": "Waktu taruhan: {time}s",
         "cancel_bet": "(Batalkan Taruhan)",
         "cashed": "Dicairkan",
         "cashout": "Cashout",
@@ -265,8 +265,32 @@ export const languages = {
         "tooltip_guide": "Panduan Permainan",
         "tooltip_fairness": "adil",
         "lock_bet": "Tunggu hasil",
-        "tooltip_stat": "View stat",
-        "tooltip_auto": "Auto"
+        "tooltip_stat": "Lihat statistik",
+        "tooltip_auto": "Otomatis",
+        "crash_next_round": "(Ronde\nSelanjutnya)",
+        "start_auto_bet": "Mulai Taruhan Otomatis",
+        "number_of_bet": "Jumlah Taruhan",
+        "on_win": "Saat Menang",
+        "on_loss": "Saat Kalah",
+        "reset": "Reset",
+        "increase_by": "Tambahkan sebesar",
+        "stop_on_win": "Berhenti saat Menang",
+        "stop_on_loss": "Berhenti saat Kalah",
+        "manual": "Manual",
+        "auto": "Otomatis",
+        "live_stats": "Statistik Langsung",
+        "profit": "Keuntungan",
+        "wins": "MENANG",
+        "waggred": "Waggred",
+        "losses": "Kerugian",
+        "all_bets": "Semua Taruhan",
+        "crash_glossary_refund": "Pengembalian dana",
+        "glossary_bet": "Taruhan",
+        "glossary_crash_point": "Titik jatuh",
+        "glossary_message_reach_max_win": "Raih Kemenangan Maksimal",
+        "title_multiplier": "Pengali",
+        "crash_start_in": "Mulai masuk %{time}",
+        "crashed": "TERJATUH"
     },
     "cascadingslot": {
         "auto_spin": "Auto Putar",
@@ -338,11 +362,15 @@ export const languages = {
         "game_name": "Pembalasan Wukong"
     },
     "SoccerPinGoal": {
-        "game_name": null,
+        "game_name": "Soccer PinGoal",
         "glossary_red": "Merah",
-        "glossary_blue": "BIRU",
-        "glossary_draw": "Undian",
-        "glossary_tunnel_selection": null
+        "glossary_blue": "biru",
+        "glossary_draw": "Seri",
+        "glossary_tunnel_selection": "Pemilihan Terowongan",
+        "button_clear": "Clear",
+        "button_start": "Mulai",
+        "text_tunnel_selection": "Pilih Susunan Anda!",
+        "message_livestream_not_supported": "Versi browser dan OS perangkat Anda saat ini tidak mendukung penayangan siaran langsung dalam permainan ini (Anda tetap dapat memasang taruhan dan mengumpulkan hadiah secara normal), harap pertimbangkan untuk memperbarui ke versi yang disebutkan dalam Panduan Permainan atau di atasnya untuk menikmati permainan sepenuhnya."
     }
 };
 

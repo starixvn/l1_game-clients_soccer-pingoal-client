@@ -246,7 +246,7 @@ export const languages = {
         "waiting_for_the_next_round": "等待下一輪",
         "show_more": "顯示更多",
         "show_less": "顯示更少",
-        "start_in": "開始於 {time}s",
+        "start_in": "投注時間：{time}秒",
         "cancel_bet": "取消投注",
         "cashed": "兌現",
         "cashout": "兌現",
@@ -265,8 +265,32 @@ export const languages = {
         "tooltip_guide": "遊戲指南",
         "tooltip_fairness": "公平",
         "lock_bet": "等待結果",
-        "tooltip_stat": "View stat",
-        "tooltip_auto": null
+        "tooltip_stat": "查看統計",
+        "tooltip_auto": "自動",
+        "crash_next_round": "(下一輪)",
+        "start_auto_bet": "開始自動投注",
+        "number_of_bet": "投注數量",
+        "on_win": "獲勝時",
+        "on_loss": "失敗時",
+        "reset": "重置",
+        "increase_by": "增加",
+        "stop_on_win": "贏時停止",
+        "stop_on_loss": "輸時停止",
+        "manual": "手動",
+        "auto": "自動",
+        "live_stats": "即時統計",
+        "profit": "盈利",
+        "wins": "赢",
+        "waggred": "Waggred",
+        "losses": "損失",
+        "all_bets": "全部投注",
+        "crash_glossary_refund": "退款",
+        "glossary_bet": "賭注",
+        "glossary_crash_point": "崩潰點",
+        "glossary_message_reach_max_win": "達到最大勝利",
+        "title_multiplier": "乘數",
+        "crash_start_in": "開始於",
+        "crashed": "墜毀"
     },
     "cascadingslot": {
         "auto_spin": "自動旋轉",
@@ -338,11 +362,15 @@ export const languages = {
         "game_name": "悟空復仇"
     },
     "SoccerPinGoal": {
-        "game_name": null,
-        "glossary_red": "紅",
+        "game_name": "足球彈珠檯",
+        "glossary_red": "紅色",
         "glossary_blue": "藍色",
-        "glossary_draw": "抽",
-        "glossary_tunnel_selection": null
+        "glossary_draw": "平",
+        "glossary_tunnel_selection": "隧道選擇",
+        "button_clear": "清除",
+        "button_start": "開始",
+        "text_tunnel_selection": "選擇你的配置！",
+        "message_livestream_not_supported": "您的裝置目前瀏覽器和作業系統版本不支援觀看本遊戲直播（您仍可以正常下注、領取獎勵），請考慮更新至遊戲指南或以上版本，以充分享受遊戲樂趣。"
     }
 };
 

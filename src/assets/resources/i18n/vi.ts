@@ -266,7 +266,31 @@ export const languages = {
         "tooltip_fairness": "Minh bạch",
         "lock_bet": "Đang chờ kết quả",
         "tooltip_stat": "Thống kê",
-        "tooltip_auto": "Tự động"
+        "tooltip_auto": "Tự động",
+        "crash_next_round": "(Phiên Kế)",
+        "start_auto_bet": "Bắt đầu cược tự động",
+        "number_of_bet": "Số vòng",
+        "on_win": "Nếu cược thắng",
+        "on_loss": "Nếu cược thua",
+        "reset": "Đặt lại",
+        "increase_by": "Tăng thêm",
+        "stop_on_win": "Dừng khi thắng",
+        "stop_on_loss": "Dừng khi thua",
+        "manual": "Thủ công",
+        "auto": "Tự động",
+        "live_stats": "Thống kê trực tiếp",
+        "profit": "Lợi nhuận",
+        "wins": "Thắng",
+        "waggred": "Đã cược",
+        "losses": "Thua",
+        "all_bets": "Tất Cả Cược",
+        "crash_glossary_refund": "Hoàn Tiền",
+        "glossary_bet": "Cược",
+        "glossary_crash_point": "Điểm Nổ",
+        "glossary_message_reach_max_win": "Đạt Mức Tiền Thắng Tối Đa",
+        "title_multiplier": "Hệ Số Nhân",
+        "crash_start_in": "Bắt đầu sau %{time}",
+        "crashed": "ĐÃ NỔ"
     },
     "cascadingslot": {
         "auto_spin": "Tự Quay",
@@ -338,11 +362,15 @@ export const languages = {
         "game_name": "Ngộ Không Báo Thù"
     },
     "SoccerPinGoal": {
-        "game_name": null,
+        "game_name": "Soccer PinGoal",
         "glossary_red": "Đỏ",
-        "glossary_blue": "Xanh Dương",
-        "glossary_draw": "Phiên",
-        "glossary_tunnel_selection": null
+        "glossary_blue": "Xanh",
+        "glossary_draw": "Hòa",
+        "glossary_tunnel_selection": "Lựa chọn Đường Hầm",
+        "button_clear": "Hủy",
+        "button_start": "Bắt Đầu",
+        "text_tunnel_selection": "Chọn Cách Xây Dựng Của Bạn!",
+        "message_livestream_not_supported": "Phiên bản trình duyệt và hệ điều hành trên thiết bị của bạn hiện tại không hỗ trợ xem live stream trong trò chơi này (bạn vẫn có thể đặt cược và nhận thưởng bình thường), hãy nâng cấp lên phiên bản trình duyệt và hệ điều hành được hỗ trợ trong mục Hướng Dẫn hoặc mới hơn để có trải nghiệm chơi game đầy đủ nhất."
     }
 };
 
