@@ -218,7 +218,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
+      "width": 680,
       "height": 60
     },
     "_anchorPoint": {
@@ -427,7 +427,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -313.2246376811594,
+      "x": -279.32367149758454,
       "y": 1.1368683772161603e-13,
       "z": 0
     },
@@ -1626,7 +1626,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 10.54,
+      "width": 110,
       "height": 22
     },
     "_anchorPoint": {
@@ -1669,7 +1669,7 @@
     "_fontSize": 22,
     "_fontFamily": "Arial",
     "_lineHeight": 22,
-    "_overflow": 0,
+    "_overflow": 2,
     "_enableWrapText": false,
     "_font": {
       "__uuid__": "a8537839-a202-488b-8bb5-fdc265f2048a",
@@ -1756,7 +1756,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 290,
+      "x": 277.922,
       "y": 0,
       "z": 0
     },
@@ -1816,7 +1816,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 11.46,
+      "width": 110,
       "height": 21.6
     },
     "_anchorPoint": {
@@ -1858,9 +1858,9 @@
     "_actualFontSize": 22,
     "_fontSize": 22,
     "_fontFamily": "Arial",
-    "_lineHeight": 21.6,
-    "_overflow": 0,
-    "_enableWrapText": true,
+    "_lineHeight": 22,
+    "_overflow": 2,
+    "_enableWrapText": false,
     "_font": {
       "__uuid__": "52227efe-f368-4706-a10e-03f3c6922e0c",
       "__expectedType__": "cc.BitmapFont"
@@ -1935,7 +1935,7 @@
     "_target": {
       "__id__": 1
     },
-    "_left": 0.8790266666666666,
+    "_left": 0.8278264705882353,
     "_right": 0,
     "_top": 0,
     "_bottom": 0,
@@ -2543,7 +2543,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
+      "width": 680,
       "height": 60
     },
     "_anchorPoint": {
@@ -2807,7 +2807,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
+      "width": 680,
       "height": 60
     },
     "_anchorPoint": {
@@ -2981,7 +2981,6 @@
       "__id__": 0
     },
     "fileId": "e6nH9Gu0ZLIr3BacMZxKW/",
-    "instance": null,
     "targetOverrides": [
       {
         "__id__": 150
