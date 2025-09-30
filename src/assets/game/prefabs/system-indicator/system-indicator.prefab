@@ -287,7 +287,9 @@
     "__prefab": {
       "__id__": 9
     },
-    "bgNode": null,
+    "bgNode": {
+      "__id__": 2
+    },
     "_id": ""
   },
   {
