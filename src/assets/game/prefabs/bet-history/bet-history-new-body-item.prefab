@@ -35,19 +35,10 @@
       },
       {
         "__id__": 141
-      },
-      {
-        "__id__": 143
-      },
-      {
-        "__id__": 145
-      },
-      {
-        "__id__": 147
       }
     ],
     "_prefab": {
-      "__id__": 149
+      "__id__": 143
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -218,7 +209,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
+      "width": 680,
       "height": 80
     },
     "_anchorPoint": {
@@ -427,7 +418,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -313.2246376811594,
+      "x": -279.32367149758454,
       "y": 1.1368683772161603e-13,
       "z": 0
     },
@@ -1756,7 +1747,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 300.86985294117653,
+      "x": 277.922,
       "y": 0,
       "z": 0
     },
@@ -2543,7 +2534,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
+      "width": 680,
       "height": 80
     },
     "_anchorPoint": {
@@ -2807,7 +2798,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
+      "width": 680,
       "height": 80
     },
     "_anchorPoint": {
@@ -2867,112 +2858,6 @@
     "fileId": "7dmjsjHY1NTJZqb9qnzJGA"
   },
   {
-    "__type__": "c9abcNy8kNNOKl+wrvY/lZQ",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": false,
-    "__prefab": {
-      "__id__": 144
-    },
-    "lblTime": null,
-    "lblRound": {
-      "__id__": 41
-    },
-    "lblTotalStake": null,
-    "lblWin": {
-      "__id__": 108
-    },
-    "nodeBackground": {
-      "__id__": 2
-    },
-    "lblDate": {
-      "__id__": 25
-    },
-    "lblHour": {
-      "__id__": 17
-    },
-    "btnRound": null,
-    "result": {
-      "__id__": 60
-    },
-    "lblWinLoss": {
-      "__id__": 81
-    },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "1bCVM+hHlJEqE5EO/mTpx2"
-  },
-  {
-    "__type__": "4046c5So/BJMoOdxLGxmgTo",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": false,
-    "__prefab": {
-      "__id__": 146
-    },
-    "target": {
-      "__id__": 11
-    },
-    "syncWidth": false,
-    "syncHeight": true,
-    "syncPosition": false,
-    "ratioWidth": 1,
-    "ratioHeight": 1,
-    "widthPadding": 0,
-    "heightPadding": 10,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "aeYoNyOfpFdqjgytktThPY"
-  },
-  {
-    "__type__": "cc.Widget",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "__prefab": {
-      "__id__": 148
-    },
-    "_alignFlags": 40,
-    "_target": null,
-    "_left": 0,
-    "_right": 0,
-    "_top": 0,
-    "_bottom": 0,
-    "_horizontalCenter": 0,
-    "_verticalCenter": 0,
-    "_isAbsLeft": true,
-    "_isAbsRight": true,
-    "_isAbsTop": true,
-    "_isAbsBottom": true,
-    "_isAbsHorizontalCenter": true,
-    "_isAbsVerticalCenter": true,
-    "_originalWidth": 708,
-    "_originalHeight": 0,
-    "_alignMode": 1,
-    "_lockFlags": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "10lcnzMU9L/IZFXKKiRZ8i"
-  },
-  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
@@ -2981,13 +2866,12 @@
       "__id__": 0
     },
     "fileId": "e6nH9Gu0ZLIr3BacMZxKW/",
-    "instance": null,
     "targetOverrides": [
       {
-        "__id__": 150
+        "__id__": 144
       },
       {
-        "__id__": 153
+        "__id__": 147
       }
     ],
     "nestedPrefabInstanceRoots": [
@@ -3002,7 +2886,7 @@
       "__id__": 88
     },
     "sourceInfo": {
-      "__id__": 151
+      "__id__": 145
     },
     "propertyPath": [
       "lblTunnelSelectionRed"
@@ -3011,7 +2895,7 @@
       "__id__": 88
     },
     "targetInfo": {
-      "__id__": 152
+      "__id__": 146
     }
   },
   {
@@ -3032,7 +2916,7 @@
       "__id__": 88
     },
     "sourceInfo": {
-      "__id__": 154
+      "__id__": 148
     },
     "propertyPath": [
       "lblTunnelSelectionBlue"
@@ -3041,7 +2925,7 @@
       "__id__": 88
     },
     "targetInfo": {
-      "__id__": 155
+      "__id__": 149
     }
   },
   {
