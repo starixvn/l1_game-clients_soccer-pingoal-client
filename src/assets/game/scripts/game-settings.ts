@@ -1,4 +1,4 @@
-export const GAME_NAME = "soccerpingoal";
+export const GAME_NAME = "Soccerpingoal";
 export const settings = {
     id: 156,
     name: GAME_NAME,
