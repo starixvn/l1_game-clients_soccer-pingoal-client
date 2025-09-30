@@ -302,7 +302,8 @@ export const languages = {
         "button_clear": "Limpar",
         "button_start": "Começar",
         "text_tunnel_selection": "Escolha sua Construção!",
-        "message_livestream_not_supported": "A versão atual do navegador e do sistema operacional do seu dispositivo não suporta a visualização de transmissões ao vivo neste jogo (você ainda pode fazer apostas e coletar recompensas normalmente), por favor, considere atualizar para a versão mencionada nos Guias do Jogo ou superior para aproveitar o jogo na íntegra."
+        "message_livestream_not_supported": "A versão atual do navegador e do sistema operacional do seu dispositivo não suporta a visualização de transmissões ao vivo neste jogo (você ainda pode fazer apostas e coletar recompensas normalmente), por favor, considere atualizar para a versão mencionada nos Guias do Jogo ou superior para aproveitar o jogo na íntegra.",
+        "message_chosen_bet": "Já escolheu %{betChoice}. Por favor, limpe primeiro."
     }
 };
 

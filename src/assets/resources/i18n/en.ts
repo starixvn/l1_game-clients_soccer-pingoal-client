@@ -371,7 +371,8 @@ export const languages = {
         "button_clear": "Clear",
         "button_start": "Start",
         "text_tunnel_selection": "Pick Your Build!",
-        "message_livestream_not_supported": "Your device's current browser and OS version does not support viewing live streams in this game (you can still place bets and collect rewards normally), please consider updating to the version mentioned in Game Guides or above to fully enjoy the game."
+        "message_livestream_not_supported": "Your device's current browser and OS version does not support viewing live streams in this game (you can still place bets and collect rewards normally), please consider updating to the version mentioned in Game Guides or above to fully enjoy the game.",
+        "message_chosen_bet": "Already chosen %{betChoice}. Please clear it first."
     }
 };
 

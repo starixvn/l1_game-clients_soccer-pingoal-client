@@ -302,7 +302,8 @@ export const languages = {
         "button_clear": "초기화",
         "button_start": "시작",
         "text_tunnel_selection": "나만의 빌드를 선택하세요!",
-        "message_livestream_not_supported": "회원님의 기기에서 현재 사용 중인 브라우저 및 OS 버전으로는 이 게임의 라이브 스트리밍 시청이 불가능합니다 (베팅 및 보상은 정상적으로 이용하실 수 있습니다). 게임을 온전히 즐기시려면 게임 가이드에 명시된 버전 이상으로 업데이트하시기를 권장합니다."
+        "message_livestream_not_supported": "회원님의 기기에서 현재 사용 중인 브라우저 및 OS 버전으로는 이 게임의 라이브 스트리밍 시청이 불가능합니다 (베팅 및 보상은 정상적으로 이용하실 수 있습니다). 게임을 온전히 즐기시려면 게임 가이드에 명시된 버전 이상으로 업데이트하시기를 권장합니다.",
+        "message_chosen_bet": "%{betChoice}을(를) 이미 선택했습니다. 먼저 지워주세요."
     }
 };
 

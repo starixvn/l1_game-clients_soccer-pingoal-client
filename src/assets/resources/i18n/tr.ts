@@ -302,7 +302,8 @@ export const languages = {
         "button_clear": "Temizle",
         "button_start": "Başlat",
         "text_tunnel_selection": "Yapılandırmanı Seç!",
-        "message_livestream_not_supported": "Cihazınızın mevcut tarayıcı ve işletim sistemi sürümü, bu oyundaki canlı yayınları görüntülemeyi desteklemiyor (yine de normal şekilde bahis yapabilir ve ödülleri toplayabilirsiniz), lütfen oyunun keyfini tam olarak çıkarabilmek için Oyun Rehberleri'nde belirtilen veya üzeri bir sürüme güncellemeyi düşünün."
+        "message_livestream_not_supported": "Cihazınızın mevcut tarayıcı ve işletim sistemi sürümü, bu oyundaki canlı yayınları görüntülemeyi desteklemiyor (yine de normal şekilde bahis yapabilir ve ödülleri toplayabilirsiniz), lütfen oyunun keyfini tam olarak çıkarabilmek için Oyun Rehberleri'nde belirtilen veya üzeri bir sürüme güncellemeyi düşünün.",
+        "message_chosen_bet": "%{betChoice} zaten seçildi. Lütfen önce temizleyin."
     }
 };
 

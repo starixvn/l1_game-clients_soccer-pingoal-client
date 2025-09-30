@@ -371,7 +371,8 @@ export const languages = {
         "button_clear": "清除",
         "button_start": "開始",
         "text_tunnel_selection": "選擇你的配置！",
-        "message_livestream_not_supported": "您的裝置目前瀏覽器和作業系統版本不支援觀看本遊戲直播（您仍可以正常下注、領取獎勵），請考慮更新至遊戲指南或以上版本，以充分享受遊戲樂趣。"
+        "message_livestream_not_supported": "您的裝置目前瀏覽器和作業系統版本不支援觀看本遊戲直播（您仍可以正常下注、領取獎勵），請考慮更新至遊戲指南或以上版本，以充分享受遊戲樂趣。",
+        "message_chosen_bet": "已選擇%{betChoice}。請先清除。"
     }
 };
 

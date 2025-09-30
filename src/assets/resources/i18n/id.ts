@@ -371,7 +371,8 @@ export const languages = {
         "button_clear": "Clear",
         "button_start": "Mulai",
         "text_tunnel_selection": "Pilih Susunan Anda!",
-        "message_livestream_not_supported": "Versi browser dan OS perangkat Anda saat ini tidak mendukung penayangan siaran langsung dalam permainan ini (Anda tetap dapat memasang taruhan dan mengumpulkan hadiah secara normal), harap pertimbangkan untuk memperbarui ke versi yang disebutkan dalam Panduan Permainan atau di atasnya untuk menikmati permainan sepenuhnya."
+        "message_livestream_not_supported": "Versi browser dan OS perangkat Anda saat ini tidak mendukung penayangan siaran langsung dalam permainan ini (Anda tetap dapat memasang taruhan dan mengumpulkan hadiah secara normal), harap pertimbangkan untuk memperbarui ke versi yang disebutkan dalam Panduan Permainan atau di atasnya untuk menikmati permainan sepenuhnya.",
+        "message_chosen_bet": "Sudah memilih %{betChoice}. Harap bersihkan terlebih dahulu."
     }
 };
 

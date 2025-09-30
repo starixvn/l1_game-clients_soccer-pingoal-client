@@ -371,7 +371,8 @@ export const languages = {
         "button_clear": "Borrar",
         "button_start": "Iniciar",
         "text_tunnel_selection": "¡Elige tu configuración!",
-        "message_livestream_not_supported": "La versión actual del navegador y sistema operativo de tu dispositivo no admite la visualización de transmisiones en vivo en este juego (aún puedes realizar apuestas y cobrar recompensas con normalidad), considera actualizar a la versión mencionada en las Guías del Juego o superior para disfrutar plenamente del juego."
+        "message_livestream_not_supported": "La versión actual del navegador y sistema operativo de tu dispositivo no admite la visualización de transmisiones en vivo en este juego (aún puedes realizar apuestas y cobrar recompensas con normalidad), considera actualizar a la versión mencionada en las Guías del Juego o superior para disfrutar plenamente del juego.",
+        "message_chosen_bet": "Ya has elegido %{betChoice}. Por favor, bórralo primero."
     }
 };
 

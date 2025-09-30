@@ -302,7 +302,8 @@ export const languages = {
         "button_clear": "Kosongkan",
         "button_start": "Mula",
         "text_tunnel_selection": "Pilih Binaan Anda!",
-        "message_livestream_not_supported": "Versi pelayar dan OS peranti anda sekarang tidak menyokong penstriman langsung dalam permainan ini (anda masih boleh membuat pertaruhan dan mengumpul ganjaran seperti biasa), sila pertimbangkan untuk mengemas kini kepada versi yang dinyatakan dalam Panduan Permainan atau ke atas untuk menikmati permainan sepenuhnya."
+        "message_livestream_not_supported": "Versi pelayar dan OS peranti anda sekarang tidak menyokong penstriman langsung dalam permainan ini (anda masih boleh membuat pertaruhan dan mengumpul ganjaran seperti biasa), sila pertimbangkan untuk mengemas kini kepada versi yang dinyatakan dalam Panduan Permainan atau ke atas untuk menikmati permainan sepenuhnya.",
+        "message_chosen_bet": "Sudah memilih %{betChoice}. Sila kosongkan dahulu."
     }
 };
 

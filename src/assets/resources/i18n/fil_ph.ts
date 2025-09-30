@@ -302,7 +302,8 @@ export const languages = {
         "button_clear": "I-clear",
         "button_start": "Simula",
         "text_tunnel_selection": "Piliin ang Iyong Build!",
-        "message_livestream_not_supported": "Ang kasalukuyang browser at bersyon ng OS ng iyong device ay hindi sumusuporta sa panonood ng mga live stream sa larong ito (maaari ka pa ring tumaya at mangolekta ng mga reward nang normal), mangyaring isaalang-alang ang pag-update sa bersyong binanggit sa Mga Gabay sa Laro o sa itaas upang lubos na masiyahan at makita ang lahat ng features sa laro."
+        "message_livestream_not_supported": "Ang kasalukuyang browser at bersyon ng OS ng iyong device ay hindi sumusuporta sa panonood ng mga live stream sa larong ito (maaari ka pa ring tumaya at mangolekta ng mga reward nang normal), mangyaring isaalang-alang ang pag-update sa bersyong binanggit sa Mga Gabay sa Laro o sa itaas upang lubos na masiyahan at makita ang lahat ng features sa laro.",
+        "message_chosen_bet": "Napili na ang %{betChoice}. Paki-clear muna ito."
     }
 };
 

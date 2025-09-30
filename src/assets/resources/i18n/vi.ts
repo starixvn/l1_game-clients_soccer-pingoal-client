@@ -371,7 +371,8 @@ export const languages = {
         "button_clear": "Hủy",
         "button_start": "Bắt Đầu",
         "text_tunnel_selection": "Chọn Cách Xây Dựng Của Bạn!",
-        "message_livestream_not_supported": "Phiên bản trình duyệt và hệ điều hành trên thiết bị của bạn hiện tại không hỗ trợ xem live stream trong trò chơi này (bạn vẫn có thể đặt cược và nhận thưởng bình thường), hãy nâng cấp lên phiên bản trình duyệt và hệ điều hành được hỗ trợ trong mục Hướng Dẫn hoặc mới hơn để có trải nghiệm chơi game đầy đủ nhất."
+        "message_livestream_not_supported": "Phiên bản trình duyệt và hệ điều hành trên thiết bị của bạn hiện tại không hỗ trợ xem live stream trong trò chơi này (bạn vẫn có thể đặt cược và nhận thưởng bình thường), hãy nâng cấp lên phiên bản trình duyệt và hệ điều hành được hỗ trợ trong mục Hướng Dẫn hoặc mới hơn để có trải nghiệm chơi game đầy đủ nhất.",
+        "message_chosen_bet": "Đã chọn %{betChoice}. Vui lòng xóa lựa chọn trước đó."
     }
 };
 
