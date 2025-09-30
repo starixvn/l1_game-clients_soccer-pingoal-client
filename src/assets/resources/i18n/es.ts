@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "Alcanzar la Ganancia Máxima",
         "title_multiplier": "Multiplicador",
         "crash_start_in": "Comienza en ",
-        "crashed": "SE ESTRELLÓ"
+        "crashed": "SE ESTRELLÓ",
+        "start": "Iniciar"
     },
     "cascadingslot": {
         "auto_spin": "Giro Automático",

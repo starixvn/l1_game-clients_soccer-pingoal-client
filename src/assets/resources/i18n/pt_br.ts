@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "Atingir o Ganho Máximo",
         "title_multiplier": "Multiplicador",
         "crash_start_in": "Começa em %{time}",
-        "crashed": "CAIU"
+        "crashed": "CAIU",
+        "start": "Começar"
     },
     "SoccerPinGoal": {
         "game_name": "Soccer PinGoal",

@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "达到最大胜利",
         "title_multiplier": "乘数",
         "crash_start_in": "开始于 %{time}",
-        "crashed": "坠毁"
+        "crashed": "坠毁",
+        "start": "开始"
     },
     "cascadingslot": {
         "auto_spin": "自动旋转",

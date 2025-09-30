@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "Maksimum Kazanca Ulaşın",
         "title_multiplier": "Çarpan",
         "crash_start_in": "Başlayacak",
-        "crashed": "ÇÖKTÜ"
+        "crashed": "ÇÖKTÜ",
+        "start": "Başlat"
     },
     "SoccerPinGoal": {
         "game_name": "Soccer PinGoal",

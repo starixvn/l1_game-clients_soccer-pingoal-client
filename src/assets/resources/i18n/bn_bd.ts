@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "সর্বোচ্চ জয় অর্জন করুন",
         "title_multiplier": "গুণক",
         "crash_start_in": "শুরু হবে %{time}",
-        "crashed": "বিধ্বস্ত"
+        "crashed": "বিধ্বস্ত",
+        "start": "শুরু করুন"
     },
     "SoccerPinGoal": {
         "game_name": "Soccer PinGoal",

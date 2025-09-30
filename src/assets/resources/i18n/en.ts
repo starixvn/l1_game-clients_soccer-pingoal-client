@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "Reach the Max Win",
         "title_multiplier": "Multiplier ",
         "crash_start_in": "Start in %{time}",
-        "crashed": "Crashed"
+        "crashed": "Crashed",
+        "start": "Start"
     },
     "cascadingslot": {
         "auto_spin": "Auto Spin",

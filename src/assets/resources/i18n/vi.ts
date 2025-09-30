@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "Đạt Mức Tiền Thắng Tối Đa",
         "title_multiplier": "Hệ Số Nhân",
         "crash_start_in": "Bắt đầu sau %{time}",
-        "crashed": "ĐÃ NỔ"
+        "crashed": "ĐÃ NỔ",
+        "start": "Bắt Đầu"
     },
     "cascadingslot": {
         "auto_spin": "Tự Quay",

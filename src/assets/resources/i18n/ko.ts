@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "최대 당첨금 도달",
         "title_multiplier": "배수",
         "crash_start_in": "시작까지 %{time}",
-        "crashed": "크래시"
+        "crashed": "크래시",
+        "start": "시작"
     },
     "SoccerPinGoal": {
         "game_name": "Soccer PinGoal",

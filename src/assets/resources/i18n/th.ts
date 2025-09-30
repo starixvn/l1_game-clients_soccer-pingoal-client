@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "ไปให้ถึงการชนะสูงสุด",
         "title_multiplier": "ตัวคูณ",
         "crash_start_in": "เริ่มเข้า %{time}",
-        "crashed": "ล้มเหลว"
+        "crashed": "ล้มเหลว",
+        "start": "เริ่ม"
     },
     "cascadingslot": {
         "auto_spin": "สปินอัตโนมัติ",

@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "Abutin ang Max Win",
         "title_multiplier": "Multiplier",
         "crash_start_in": "Magsisimula Sa",
-        "crashed": "NATAPOS"
+        "crashed": "NATAPOS",
+        "start": "Simula"
     },
     "SoccerPinGoal": {
         "game_name": "Soccer PinGoal",

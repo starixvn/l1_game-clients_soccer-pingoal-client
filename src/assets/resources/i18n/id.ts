@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "Raih Kemenangan Maksimal",
         "title_multiplier": "Pengali",
         "crash_start_in": "Mulai masuk %{time}",
-        "crashed": "TERJATUH"
+        "crashed": "TERJATUH",
+        "start": "Mulai"
     },
     "cascadingslot": {
         "auto_spin": "Auto Putar",

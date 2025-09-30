@@ -290,7 +290,8 @@ export const languages = {
         "glossary_message_reach_max_win": "最大配当を獲得せよ",
         "title_multiplier": "マルチプライヤー",
         "crash_start_in": "開始まで",
-        "crashed": "クラッシュ"
+        "crashed": "クラッシュ",
+        "start": "スタート"
     },
     "cascadingslot": {
         "auto_spin": "オートスピン",
