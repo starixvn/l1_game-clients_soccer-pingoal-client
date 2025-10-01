@@ -19,7 +19,7 @@ export default class BetItemCustomize extends BetItem {
     disabledNode: Node = null;
 
     private _currentRoundState: string = SINGLE_GAME_ROUND_STATE.NONE;
-    private _lastBetChoice: string = "";
+    private _lastBetChoice = "";
 
     private isBettingAllowed(): boolean {
         return this._currentRoundState === SINGLE_GAME_ROUND_STATE.PLACING_BET;
