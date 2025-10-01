@@ -3,11 +3,6 @@ import { LedLightTooltip } from 'db://shared-components/game/led-light/scripts/c
 import gc from '@sg/game-client-base';
 const { ccclass, property } = _decorator;
 
-const SETTLEMENT_RESULT_TEXT = {
-    RED: "RED",
-    BLUE: "BLUE", 
-    DRAW: "DRAW"
-} as const;
 
 interface PinGoalResult {
     red?: number;
@@ -54,13 +49,13 @@ export class PingoalLedLightTooltip extends LedLightTooltip {
 
     private getResultText(settlementResult: any): string {
         if (settlementResult?.red) {
-            return SETTLEMENT_RESULT_TEXT.RED;
+            return gc.Translator.gameTranslate(`glossary_red`);
         }
         if (settlementResult?.blue) {
-            return SETTLEMENT_RESULT_TEXT.BLUE;
+            return gc.Translator.gameTranslate(`glossary_blue`);
         }
         if (settlementResult?.draw) {
-            return SETTLEMENT_RESULT_TEXT.DRAW;
+            return gc.Translator.gameTranslate(`glossary_draw`);
         }
         return "";
     }

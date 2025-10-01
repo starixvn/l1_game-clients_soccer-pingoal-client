@@ -66,7 +66,7 @@ export default class BetItemCustomize extends BetItem {
     }
 
     @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: false })
-    updateDisabledState(ownChip: SingleGameOwnChipType | null) {
+    updateState(ownChip: SingleGameOwnChipType | null) {
         this.updateBetItemState(ownChip);
     }
 
