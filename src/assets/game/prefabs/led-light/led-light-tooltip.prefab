@@ -660,7 +660,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "825869e5-4edf-4e09-99d7-f5985de43b6b@6387c",
+      "__uuid__": "3770ed4d-92dd-43da-86b1-a481afe6cf2a@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -1533,6 +1533,21 @@
     },
     "resultBlueLabel": {
       "__id__": 52
+    },
+    "containerNode": {
+      "__id__": 2
+    },
+    "resultRedSprite": {
+      "__uuid__": "3770ed4d-92dd-43da-86b1-a481afe6cf2a@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
+    "resultBlueSprite": {
+      "__uuid__": "7d1328db-955b-471d-8a63-4780ec93b6f5@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
+    "resultDrawSprite": {
+      "__uuid__": "3b7f26c3-54b3-4cfb-95e8-c731d1217951@f9941",
+      "__expectedType__": "cc.SpriteFrame"
     },
     "_id": ""
   },
