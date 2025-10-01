@@ -1,3 +1,4 @@
-.background-game {
+body .background-game {
     background: url("./../splash-resources/bg-game-blur.webp?v=3") no-repeat !important;
+    background-size: cover !important;
 }
