@@ -87,9 +87,9 @@ export class DOMBackgroundVideo {
             return;
         }
 
-        const width = view.getVisibleSize()?.width;
-        const topOffsetVW = Number(((offsetTop / width) * 100).toFixed(2));
-        video.style.top = `${topOffsetVW}vw`;
+        const height = view.getVisibleSize()?.height;
+        const topOffset = Number(((offsetTop / height) * 100).toFixed(2));
+        video.style.top = `${topOffset}vh`;
     }
 
     static updateVideoDimension(value: { width: number; height: number; top: number }) {
