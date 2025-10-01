@@ -75,7 +75,6 @@ export class DOMBackgroundVideo {
     }
 
     static updateVideoPosition(offsetTop = 0) {
-        console.log("updateVideoPosition: ", offsetTop);
         const video = document.getElementById(DOMBackgroundVideo.VIDEO_ID) as HTMLVideoElement;
         if (!video) {
             log("video not found----------");
