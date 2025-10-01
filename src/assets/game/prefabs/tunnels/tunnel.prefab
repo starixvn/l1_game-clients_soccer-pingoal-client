@@ -34,20 +34,20 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 51
+        "__id__": 61
       },
       {
-        "__id__": 53
+        "__id__": 63
       },
       {
-        "__id__": 55
+        "__id__": 65
       },
       {
-        "__id__": 57
+        "__id__": 67
       }
     ],
     "_prefab": {
-      "__id__": 59
+      "__id__": 69
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -979,10 +979,13 @@
       },
       {
         "__id__": 48
+      },
+      {
+        "__id__": 50
       }
     ],
     "_prefab": {
-      "__id__": 50
+      "__id__": 60
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -1027,7 +1030,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 382.3821452692956,
+      "width": 119.40090498271825,
       "height": 104.8
     },
     "_anchorPoint": {
@@ -1063,11 +1066,11 @@
       "b": 10,
       "a": 255
     },
-    "_string": "PICK YOUR BUILD!",
+    "_string": "ビルドを選択！",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 40,
-    "_fontSize": 40,
+    "_actualFontSize": 16,
+    "_fontSize": 16,
     "_fontFamily": "Roboto",
     "_lineHeight": 80,
     "_overflow": 0,
@@ -1132,6 +1135,90 @@
     "fileId": "debtcNKb5JhI7uZu9V5eLq"
   },
   {
+    "__type__": "58484DjBIlL4aDfqbk6LMrd",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 43
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 51
+    },
+    "overrideSizes": [
+      {
+        "__id__": 52
+      },
+      {
+        "__id__": 53
+      },
+      {
+        "__id__": 54
+      },
+      {
+        "__id__": 55
+      },
+      {
+        "__id__": 56
+      },
+      {
+        "__id__": 57
+      },
+      {
+        "__id__": 58
+      },
+      {
+        "__id__": 59
+      }
+    ],
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "71RYdB7FBLd48PlDv1B7zO"
+  },
+  {
+    "__type__": "LanguageFontSize",
+    "language": "en",
+    "size": 40
+  },
+  {
+    "__type__": "LanguageFontSize",
+    "language": "id",
+    "size": 40
+  },
+  {
+    "__type__": "LanguageFontSize",
+    "language": "th",
+    "size": 40
+  },
+  {
+    "__type__": "LanguageFontSize",
+    "language": "vi",
+    "size": 36
+  },
+  {
+    "__type__": "LanguageFontSize",
+    "language": "zh_cn",
+    "size": 40
+  },
+  {
+    "__type__": "LanguageFontSize",
+    "language": "zh_tw",
+    "size": 40
+  },
+  {
+    "__type__": "LanguageFontSize",
+    "language": "jp",
+    "size": 40
+  },
+  {
+    "__type__": "LanguageFontSize",
+    "language": "es",
+    "size": 40
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
@@ -1154,7 +1241,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 52
+      "__id__": 62
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -1182,7 +1269,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 54
+      "__id__": 64
     },
     "_alignFlags": 40,
     "_target": null,
@@ -1218,7 +1305,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 56
+      "__id__": 66
     },
     "randomButton": {
       "__id__": 40
@@ -1239,7 +1326,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 58
+      "__id__": 68
     },
     "_opacity": 255,
     "_id": ""
