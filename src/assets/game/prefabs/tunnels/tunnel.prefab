@@ -1027,7 +1027,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 413.22217212476437,
+      "width": 382.3821452692956,
       "height": 104.8
     },
     "_anchorPoint": {
@@ -1063,7 +1063,7 @@
       "b": 10,
       "a": 255
     },
-    "_string": "TUNNEL SELECTION",
+    "_string": "PICK YOUR BUILD!",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 40,
@@ -1121,7 +1121,7 @@
     "__prefab": {
       "__id__": 49
     },
-    "key": "SoccerPinGoal.glossary_tunnel_selection",
+    "key": "SoccerPinGoal.text_tunnel_selection",
     "format": 1,
     "prefix": "",
     "suffix": "",
