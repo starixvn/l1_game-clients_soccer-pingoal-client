@@ -68,8 +68,7 @@ export class VideoOffSetContainer extends Component {
 
     protected async updateDisplay() {
         await AnimationUtils.delayTime(300 / 1000);
-        const scaleX = this.getNodeScaleX();
-        const topOffsetAbs = this.calculateTopOffsetAbs(scaleX);
+        const topOffsetAbs = this.calculateTopOffsetAbs();
         const { width: fieldWidth, height: fieldHeight } = this.getReferenceBoundsWorldSize();
         const { width: widthFinal, height: heightFinal } = this.calculateFinalDimensions(fieldWidth, fieldHeight);
 
@@ -80,14 +79,14 @@ export class VideoOffSetContainer extends Component {
         });
     }
 
-    private getNodeScaleX(): number {
-        return this.node?.scale?.x || 1;
-    }
-
-    private calculateTopOffsetAbs(scaleX: number): number {
+    private calculateTopOffsetAbs(): number {
         const position = ComponentUtils.convertPosition(this.containerNode, this.targetNode);
         const topOffset = position.y ?? 0;
-        return Math.abs(topOffset) * scaleX;
+        const dpr = screen.devicePixelRatio;
+        const currentScreenWidth = screen.windowSize?.width;
+        const designScreenWidth = view.getDesignResolutionSize().width;
+        const scaleXCanvas = currentScreenWidth / designScreenWidth;
+        return Math.max(0, Math.abs(topOffset) * (scaleXCanvas / dpr));
     }
 
     private getReferenceBoundsWorldSize(): Dimensions {

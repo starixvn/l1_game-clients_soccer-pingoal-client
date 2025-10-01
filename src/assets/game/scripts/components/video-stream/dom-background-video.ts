@@ -75,6 +75,7 @@ export class DOMBackgroundVideo {
     }
 
     static updateVideoPosition(offsetTop = 0) {
+        console.log("updateVideoPosition: ", offsetTop);
         const video = document.getElementById(DOMBackgroundVideo.VIDEO_ID) as HTMLVideoElement;
         if (!video) {
             log("video not found----------");
@@ -87,9 +88,7 @@ export class DOMBackgroundVideo {
             return;
         }
 
-        const height = view.getVisibleSize()?.height;
-        const topOffset = Number(((offsetTop / height) * 100).toFixed(2));
-        video.style.top = `${topOffset}vh`;
+        video.style.top = `${offsetTop}px`;
     }
 
     static updateVideoDimension(value: { width: number; height: number; top: number }) {
