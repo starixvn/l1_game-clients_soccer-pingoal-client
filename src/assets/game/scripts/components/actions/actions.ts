@@ -6,16 +6,14 @@ import {
     SINGLE_GAME_ROUND_STATE,
     SingleGameBetHandler,
     SingleGameChipHandlers,
-    SingleGameChipStore, SingleGameRoundTimeHandlers,
+    SingleGameChipStore,
     SingleGameRoundTimeStore
 } from "db://shared-single-player-game/scripts/core";
 import gc from "@sg/game-client-base";
 import { TunnelsStore } from "db://assets/game/scripts";
-import inversify from "inversify";
 const { ccclass, property } = _decorator;
 
 const { render, handle } = Observer;
-const { inject } = inversify;
 
 
 @ccclass("actions")
@@ -60,7 +58,6 @@ export class Actions extends ObserverComponent {
     
     @handle(SingleGameBetHandler, (handler, payload) => handler.handleStartBet(payload))
     handleStart() {
-        this.handleLockingBet();
         this.playSoundClick();
         
         const { redTunnel, blueTunnel } = this._tunnelsPosition;
@@ -68,10 +65,6 @@ export class Actions extends ObserverComponent {
         return { redTunnel, blueTunnel };
     }
 
-    @handle(SingleGameRoundTimeHandlers, (handler, payload) => handler.handle(payload as string))
-    handleLockingBet() {
-        return SINGLE_GAME_ROUND_STATE.LOCKING_BET;
-    }
 
     @handle(SingleGameChipHandlers, (handler) => handler.handleClearAllChips())
     handleClear() {

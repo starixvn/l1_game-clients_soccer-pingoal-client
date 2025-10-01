@@ -19,6 +19,7 @@ export default class BetItemCustomize extends BetItem {
     disabledNode: Node = null;
 
     private _currentRoundState: string = SINGLE_GAME_ROUND_STATE.NONE;
+    private _lastBetChoice: string = "";
 
     private isBettingAllowed(): boolean {
         return this._currentRoundState === SINGLE_GAME_ROUND_STATE.PLACING_BET;
@@ -67,7 +68,16 @@ export default class BetItemCustomize extends BetItem {
 
     @render(SingleGameChipStore, (store) => store.ownChip, { fireImmediately: false })
     updateState(ownChip: SingleGameOwnChipType | null) {
+        if (ownChip?.betChoice) {
+            this._lastBetChoice = ownChip.betChoice;
+        }
         this.updateBetItemState(ownChip);
+    }
+
+    @render(SingleGameChipStore, (store) => store.clearAllChips, { fireImmediately: false })
+    handleClearAllChips() {
+        this._lastBetChoice = "";
+        this.updateBetItemState(null);
     }
 
     private updateBetItemState(ownChip?: SingleGameOwnChipType | null) {
@@ -76,23 +86,19 @@ export default class BetItemCustomize extends BetItem {
             return;
         }
 
-        if (!ownChip) {
+        // 新的回合開始時，WebSocket 會傳來空的 betChoice，這時候需要使用上一次的 betChoice
+        const effectiveBetChoice = ownChip?.betChoice || this._lastBetChoice;
+
+        if (!effectiveBetChoice) {
             this.setDisabledVisibility(false);
             return;
         }
 
-        const currentBetChoice = ownChip.betChoice;
-
-        if (currentBetChoice === this.node.name) {
+        if (effectiveBetChoice === this.node.name) {
             this.setDisabledVisibility(false);
             return;
         }
 
-        if (currentBetChoice && currentBetChoice !== this.node.name) {
-            this.setDisabledVisibility(true);
-            return;
-        }
-
-        this.setDisabledVisibility(false);
+        this.setDisabledVisibility(true);
     }
 }
