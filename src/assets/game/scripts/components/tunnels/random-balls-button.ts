@@ -1,5 +1,6 @@
 import Observer from "observer";
 
+import gc from "@sg/game-client-base";
 import { _decorator, Button } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 import { TunnelsBallsStoreType, TunnelsHandlers } from "../../handlers";
@@ -20,6 +21,7 @@ export class RandomBallsButton extends ObserverComponent {
         if (!this.isEnable) {
             return null;
         }
+        this.playSoundClick();
         this.button.interactable = false;
         setTimeout(() => {
             this.button.interactable = true;
@@ -40,9 +42,14 @@ export class RandomBallsButton extends ObserverComponent {
     setEnable(enable: boolean) {
         this.isEnable = enable;
     }
-    
+
     // temporary fix for random number generation
     private getRenderTunnel() {
         return Math.floor(Math.random() * TUNNEL_COUNT) + 1; // NOSONAR
+    }
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX(id))
+    playSoundClick() {
+        return gc.Audios.AudioIds.CLICK;
     }
 }

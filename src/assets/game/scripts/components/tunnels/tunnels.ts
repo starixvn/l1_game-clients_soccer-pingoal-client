@@ -1,14 +1,15 @@
 import Observer from "observer";
 
+import gc from "@sg/game-client-base";
 import { _decorator, v3 } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
+import { AnimationUtils } from "db://shared-components/shared/utils";
+import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
 import { TunnelsBallsStoreType, TunnelsHandlers } from "../../handlers";
 import { TunnelsStore } from "../../stores";
 import DraggableRoundBall, { BallType, DEFAULT_TUNNEL_NUMBER } from "./draggable-round-ball";
-const { ccclass, property } = _decorator;
-import { AnimationUtils } from "db://shared-components/shared/utils";
-import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
 import { RandomBallsButton } from "./random-balls-button";
+const { ccclass, property } = _decorator;
 
 const { render, handle } = Observer;
 
@@ -50,9 +51,12 @@ export class Tunnels extends ObserverComponent {
         }
 
         ball.touchCallback = {
-            start: () => { },
+            start: () => { this.playSoundClick() },
             move: () => { },
-            end: () => this.updateBallsTunnel(ballType),
+            end: () => {
+                this.updateBallsTunnel(ballType);
+                this.playSoundClick();
+            },
         };
     }
 
@@ -109,7 +113,7 @@ export class Tunnels extends ObserverComponent {
         if (roundState === SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO) {
             this.fadeOutAnimation()
         } else if (roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET) {
-           this.fadeInAnimation()
+            this.fadeInAnimation()
         }
 
         if (this.redBall && this.blueBall && this.randomButton) {
@@ -129,5 +133,10 @@ export class Tunnels extends ObserverComponent {
         this.node.setScale(v3(1, 1, 1));
         this.node.setPosition(v3(0, 230.202));
         AnimationUtils.fadeIn(this.node, 0.5);
+    }
+
+    @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX(id))
+    playSoundClick() {
+        return gc.Audios.AudioIds.CLICK;
     }
 }
