@@ -34,14 +34,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 30
+        "__id__": 28
       },
       {
-        "__id__": 32
+        "__id__": 30
       }
     ],
     "_prefab": {
-      "__id__": 34
+      "__id__": 32
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -524,18 +524,15 @@
       },
       {
         "__id__": 25
-      },
-      {
-        "__id__": 27
       }
     ],
     "_prefab": {
-      "__id__": 29
+      "__id__": 27
     },
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -60.956,
+      "y": -60.454,
       "z": 0
     },
     "_lrot": {
@@ -575,8 +572,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100.107421875,
-      "height": 138.6
+      "width": 101.56,
+      "height": 110
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -590,26 +587,6 @@
     "fileId": "a5i6OgH3dKja1bM3vo9zYH"
   },
   {
-    "__type__": "236f7x5T8NDy6zK2pEcSSAO",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 22
-    },
-    "_enabled": true,
-    "__prefab": {
-      "__id__": 26
-    },
-    "overrideFonts": [],
-    "enableCacheMode": false,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "e4cFzCQ+JAQoSztr2CAOtD"
-  },
-  {
     "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
@@ -619,7 +596,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 28
+      "__id__": 26
     },
     "_customMaterial": null,
     "_srcBlendFactor": 2,
@@ -634,14 +611,17 @@
     "_string": "00",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 90,
-    "_fontSize": 90,
+    "_actualFontSize": 65,
+    "_fontSize": 65,
     "_fontFamily": "Arial",
     "_lineHeight": 110,
     "_overflow": 0,
     "_enableWrapText": true,
-    "_font": null,
-    "_isSystemFontUsed": true,
+    "_font": {
+      "__uuid__": "01e2a2c7-4d15-4697-a7f2-9dec94f41cf6",
+      "__expectedType__": "cc.BitmapFont"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_isItalic": false,
     "_isBold": false,
@@ -700,7 +680,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 31
+      "__id__": 29
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -728,10 +708,10 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 33
+      "__id__": 31
     },
     "score": {
-      "__id__": 27
+      "__id__": 25
     },
     "trophy": {
       "__id__": 17
