@@ -637,8 +637,8 @@
     "usingRawSize": true,
     "bundleName": "resources",
     "path": "i18n-images",
-    "frameName": "logo-PinGoal",
-    "pathType": 1,
+    "frameName": "game-name",
+    "pathType": 0,
     "_id": ""
   },
   {
