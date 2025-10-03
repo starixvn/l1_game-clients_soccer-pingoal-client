@@ -2983,7 +2983,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 207,
+      "x": 207.58740234375,
       "y": 0,
       "z": 0
     },
@@ -3033,14 +3033,14 @@
       "a": 255
     },
     "_string": "Total Stake",
-    "_horizontalAlign": 0,
+    "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
     "_fontSize": 44,
     "_fontFamily": "Arial",
     "_lineHeight": 44,
-    "_overflow": 0,
-    "_enableWrapText": false,
+    "_overflow": 3,
+    "_enableWrapText": true,
     "_font": {
       "__uuid__": "41a12541-a4db-4259-b803-4c477054c858",
       "__expectedType__": "cc.TTFFont"
@@ -3114,7 +3114,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 247.650390625,
+      "width": 250,
       "height": 55.44
     },
     "_anchorPoint": {
@@ -3327,7 +3327,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 277.72,
+      "x": 340,
       "y": 0,
       "z": 0
     },
@@ -3377,14 +3377,14 @@
       "a": 255
     },
     "_string": "Win Loss",
-    "_horizontalAlign": 0,
+    "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
     "_fontSize": 44,
     "_fontFamily": "Arial",
     "_lineHeight": 44,
-    "_overflow": 0,
-    "_enableWrapText": false,
+    "_overflow": 3,
+    "_enableWrapText": true,
     "_font": {
       "__uuid__": "41a12541-a4db-4259-b803-4c477054c858",
       "__expectedType__": "cc.TTFFont"
@@ -3458,12 +3458,12 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 201.8671875,
+      "width": 250,
       "height": 55.44
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
+      "x": 1,
       "y": 0.5
     },
     "_id": ""
@@ -3504,15 +3504,15 @@
     "__prefab": {
       "__id__": 199
     },
-    "_alignFlags": 40,
+    "_alignFlags": 16,
     "_target": {
       "__id__": 1
     },
-    "_left": 0.7357152083333334,
-    "_right": -0.0048714583333333734,
+    "_left": 1.0839183333333335,
+    "_right": -0.2062933333333333,
     "_top": 0,
     "_bottom": 0,
-    "_horizontalCenter": 0,
+    "_horizontalCenter": 277.5,
     "_verticalCenter": 0,
     "_isAbsLeft": false,
     "_isAbsRight": false,
