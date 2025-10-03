@@ -23,7 +23,7 @@ export class Actions extends ObserverComponent {
     private _clearDisableNode: Node | null = null;
     private _startDisableNode: Node | null = null;
     private _currentRoundState: any = null;
-    private _hasChips: boolean = false;
+    private _hasChips = false;
 
     start() {
         this._clearDisableNode = this.clearButton?.node.getChildByName('disable');
@@ -68,8 +68,12 @@ export class Actions extends ObserverComponent {
     }
 
     private setButtonState(button: Button | null, disableNode: Node | null, enabled: boolean) {
-        if (button) button.interactable = enabled;
-        if (disableNode) disableNode.active = !enabled;
+        if (button) {
+            button.interactable = enabled;
+        }
+        if (disableNode) {
+            disableNode.active = !enabled;
+        }
     }
 
     @handle(SingleGameBetHandler, (handler, payload) => handler.handleStartBet(payload))
