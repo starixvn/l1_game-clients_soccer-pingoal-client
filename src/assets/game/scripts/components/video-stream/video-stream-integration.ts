@@ -29,6 +29,9 @@ export default class VideoStreamIntegration extends ObserverComponent {
     @property(Node)
     backgroundLoading: Node = null;
 
+    @property(Node)
+    backgroundVideoNode: Node = null;
+
     private isLiveVideo = false;
 
     private _systemIndicator: SystemIndicator = null;
@@ -117,6 +120,7 @@ export default class VideoStreamIntegration extends ObserverComponent {
     @render(SingleGameRoundTimeStore, (store) => store.roundState)
     protected updateLiveVideoState(roundState: string) {
         this.isLiveVideo = roundState === SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO;
+        this.updateBackgroundVideoState(!this.isLiveVideo);
         if (!this.isLiveVideo) {
             this.warnContainer?.removeAllChildren();
         }
@@ -128,5 +132,9 @@ export default class VideoStreamIntegration extends ObserverComponent {
         if (roundState !== SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO) {
             this.warnContainer?.removeAllChildren();
         }
+    }
+
+    protected updateBackgroundVideoState(active: boolean) {
+        this.backgroundVideoNode && (this.backgroundVideoNode.active = active);
     }
 }
