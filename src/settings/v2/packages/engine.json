@@ -6,7 +6,6 @@
     },
     "configs": {
       "migrationsConfig": {
-        "name": "Migrated Configuration",
         "cache": {
           "base": {
             "_value": true
@@ -125,7 +124,7 @@
             "_value": true
           },
           "video": {
-            "_value": false
+            "_value": true
           },
           "webview": {
             "_value": true
@@ -190,7 +189,10 @@
             "_value": false
           }
         },
-        "flags": {},
+        "flags": {
+          "LOAD_SPINE_MANUALLY": false
+        },
+        "name": "Migrated Configuration",
         "includeModules": [
           "2d",
           "affine-transform",
@@ -209,6 +211,7 @@
           "spine-3.8",
           "tween",
           "ui",
+          "video",
           "websocket",
           "webview"
         ],
