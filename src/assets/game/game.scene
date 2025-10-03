@@ -931,7 +931,7 @@
     "_id": "e1B9BjVXBLq7tQbNjfb5sL"
   },
   {
-    "__type__": "e6270UpRhJOELloHzkIAQfo",
+    "__type__": "70dd4g37CpNkZEOgJKYZosu",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -940,9 +940,7 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "width": 750,
-    "height": 1334,
-    "_id": "77w0SIpCRCLLatVP28pVlv"
+    "_id": "7e2nJY/SdDSrg0NLcM7Kz4"
   },
   {
     "__type__": "cc.Node",
@@ -3066,7 +3064,7 @@
     ],
     "value": {
       "__type__": "cc.Size",
-      "width": 382.3821452692956,
+      "width": 374.7678874567956,
       "height": 104.8
     }
   },
