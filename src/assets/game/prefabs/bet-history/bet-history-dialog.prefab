@@ -1493,7 +1493,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -102,
+      "x": -110,
       "y": 0,
       "z": 0
     },
@@ -1604,7 +1604,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 204,
+      "width": 220,
       "height": 44
     },
     "_anchorPoint": {
@@ -1657,7 +1657,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 102,
+      "x": 110,
       "y": 0,
       "z": 0
     },
@@ -1768,7 +1768,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 204,
+      "width": 220,
       "height": 44
     },
     "_anchorPoint": {
@@ -1866,7 +1866,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 408,
+      "width": 440,
       "height": 44
     },
     "_anchorPoint": {
@@ -2034,11 +2034,11 @@
       "b": 0,
       "a": 255
     },
-    "_string": "BET HISTORY",
+    "_string": "HISTORIAL DE APUESTAS",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 23,
-    "_fontSize": 23,
+    "_actualFontSize": 26,
+    "_fontSize": 26,
     "_fontFamily": "Arial",
     "_lineHeight": 56,
     "_overflow": 0,
@@ -2116,7 +2116,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 156.69873046875,
+      "width": 336.654296875,
       "height": 70.56
     },
     "_anchorPoint": {
@@ -2288,6 +2288,8 @@
       "__id__": 0
     },
     "fileId": "90LGRSWp9LGJ9k18FafO+d",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
