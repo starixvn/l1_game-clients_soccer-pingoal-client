@@ -285,7 +285,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "Time",
+    "_string": "Tiempo",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
@@ -367,7 +367,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 112.70703125,
+      "width": 168.05078125,
       "height": 55.44
     },
     "_anchorPoint": {
@@ -967,7 +967,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "Round",
+    "_string": "Ronda",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
@@ -1049,7 +1049,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 145.3203125,
+      "width": 142.333984375,
       "height": 55.44
     },
     "_anchorPoint": {
@@ -1327,7 +1327,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "Result",
+    "_string": "Resultado",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
@@ -1409,7 +1409,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 140.3359375,
+      "width": 222.212890625,
       "height": 55.44
     },
     "_anchorPoint": {
@@ -1636,7 +1636,7 @@
         "__id__": 96
       },
       {
-        "__id__": 98
+        "__id__": 104
       }
     ],
     "_prefab": {
@@ -1644,7 +1644,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -123.244140625,
+      "x": -131.8271484375,
       "y": 0,
       "z": 0
     },
@@ -1771,7 +1771,7 @@
     "fileId": "58F7GnkWZIEoL9C4CF+1wo"
   },
   {
-    "__type__": "d64e4oNcsRBYp6eh7Xn+DLt",
+    "__type__": "58484DjBIlL4aDfqbk6LMrd",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -1782,25 +1782,13 @@
     "__prefab": {
       "__id__": 97
     },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "06bdMrM81Pd5U0RxB1bAqK"
-  },
-  {
-    "__type__": "58484DjBIlL4aDfqbk6LMrd",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 91
-    },
-    "_enabled": true,
-    "__prefab": {
-      "__id__": 99
-    },
     "overrideSizes": [
+      {
+        "__id__": 98
+      },
+      {
+        "__id__": 99
+      },
       {
         "__id__": 100
       },
@@ -1812,12 +1800,6 @@
       },
       {
         "__id__": 103
-      },
-      {
-        "__id__": 104
-      },
-      {
-        "__id__": 105
       }
     ],
     "_id": ""
@@ -1855,6 +1837,24 @@
     "__type__": "LanguageFontSize",
     "language": "zh_tw",
     "size": 44
+  },
+  {
+    "__type__": "d64e4oNcsRBYp6eh7Xn+DLt",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 91
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 105
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "06bdMrM81Pd5U0RxB1bAqK"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -1904,7 +1904,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -67.0576171875,
+      "x": -67.9169921875,
       "y": 0,
       "z": 0
     },
@@ -1945,7 +1945,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 84.77734375,
+      "width": 100.224609375,
       "height": 55.44
     },
     "_anchorPoint": {
@@ -1981,7 +1981,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "Red",
+    "_string": "Rojo",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
@@ -2119,7 +2119,7 @@
     "fileId": "65LmDoYvROFJY+DR2JgWj7"
   },
   {
-    "__type__": "d64e4oNcsRBYp6eh7Xn+DLt",
+    "__type__": "d79a8JOa2JHfr/hBtgYdLqO",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -2130,14 +2130,18 @@
     "__prefab": {
       "__id__": 123
     },
+    "key": "SoccerPinGoal.glossary_red",
+    "format": 3,
+    "prefix": "",
+    "suffix": "",
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "0bYCdQSWFAyp5h1/hUaa5U"
+    "fileId": "c6/cImykBF7JJ74RrEV507"
   },
   {
-    "__type__": "d79a8JOa2JHfr/hBtgYdLqO",
+    "__type__": "d64e4oNcsRBYp6eh7Xn+DLt",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -2148,15 +2152,11 @@
     "__prefab": {
       "__id__": 125
     },
-    "key": "SoccerPinGoal.glossary_red",
-    "format": 3,
-    "prefix": "",
-    "suffix": "",
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "c6/cImykBF7JJ74RrEV507"
+    "fileId": "b3QSneDxRNpJOte7euhE/O"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -2200,7 +2200,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -7.369140625,
+      "x": -0.5048828125,
       "y": 0,
       "z": 0
     },
@@ -2460,7 +2460,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 59.6884765625,
+      "x": 67.412109375,
       "y": 0,
       "z": 0
     },
@@ -2501,7 +2501,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 99.515625,
+      "width": 101.234375,
       "height": 55.44
     },
     "_anchorPoint": {
@@ -2537,7 +2537,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "Blue",
+    "_string": "Azul",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
@@ -2748,7 +2748,7 @@
         "__id__": 168
       },
       {
-        "__id__": 170
+        "__id__": 176
       }
     ],
     "_prefab": {
@@ -2756,7 +2756,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 123.244140625,
+      "x": 131.8271484375,
       "y": 0,
       "z": 0
     },
@@ -2883,7 +2883,7 @@
     "fileId": "2dYBrixSpKJYAdj30cncrE"
   },
   {
-    "__type__": "d64e4oNcsRBYp6eh7Xn+DLt",
+    "__type__": "58484DjBIlL4aDfqbk6LMrd",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -2894,25 +2894,13 @@
     "__prefab": {
       "__id__": 169
     },
-    "_id": ""
-  },
-  {
-    "__type__": "cc.CompPrefabInfo",
-    "fileId": "25o+fhFPlLh7M3qXFKJe85"
-  },
-  {
-    "__type__": "58484DjBIlL4aDfqbk6LMrd",
-    "_name": "",
-    "_objFlags": 0,
-    "__editorExtras__": {},
-    "node": {
-      "__id__": 163
-    },
-    "_enabled": true,
-    "__prefab": {
-      "__id__": 171
-    },
     "overrideSizes": [
+      {
+        "__id__": 170
+      },
+      {
+        "__id__": 171
+      },
       {
         "__id__": 172
       },
@@ -2924,12 +2912,6 @@
       },
       {
         "__id__": 175
-      },
-      {
-        "__id__": 176
-      },
-      {
-        "__id__": 177
       }
     ],
     "_id": ""
@@ -2967,6 +2949,24 @@
     "__type__": "LanguageFontSize",
     "language": "zh_tw",
     "size": 44
+  },
+  {
+    "__type__": "d64e4oNcsRBYp6eh7Xn+DLt",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 163
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 177
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "25o+fhFPlLh7M3qXFKJe85"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3014,7 +3014,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 264.083984375,
+      "width": 281.25,
       "height": 55.44
     },
     "_anchorPoint": {
@@ -3245,7 +3245,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "Total Stake",
+    "_string": "Apuesta Total",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
@@ -3328,7 +3328,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 250,
-      "height": 65.52
+      "height": 117.51999999999998
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3589,7 +3589,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "Win Loss",
+    "_string": "Ganancia/Pérdida",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 44,
@@ -3672,7 +3672,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 250,
-      "height": 65.52
+      "height": 117.51999999999998
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
