@@ -16,6 +16,6 @@ export class TunnelsHandlers implements gc.Shared.IHandler<TunnelsBallsStoreType
     @inject(TunnelsStore) protected readonly store: TunnelsStore;
 
     handle(state: TunnelsBallsStoreType) {
-        this.store.position = {...this.store, ...state};
+        this.store.position = { ...this.store.position, ...state};
     }
 }
