@@ -1,11 +1,10 @@
 import { _decorator, Node, UIOpacity, VideoPlayer } from 'cc';
 import { ObserverComponent } from 'db://shared-components/shared/common-components/observer-component/scripts/observer-component';
-import { AnimationUtils } from 'db://shared-components/shared/utils';
 import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from 'db://shared-single-player-game/scripts/core';
 import Observer from "observer";
 
 const { ccclass, property } = _decorator;
-const { render, handle } = Observer;
+const { render } = Observer;
 
 @ccclass('BgVideo')
 export class BgVideo extends ObserverComponent {
