@@ -84,7 +84,6 @@ export class BgVideo extends ObserverComponent {
             } else {
                 this.bgMainTop.getComponent(UIOpacity).opacity = 0;
                 await this.fadeAnimation('out');
-                this.bgVideoLoading.active = true;
                 this._videoElement.style.zIndex = '0';
                 this.videoPlayer.pause();
             }
