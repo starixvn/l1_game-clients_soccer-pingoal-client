@@ -291,7 +291,24 @@ export const languages = {
         "title_multiplier": "Hệ Số Nhân",
         "crash_start_in": "Bắt đầu sau %{time}",
         "crashed": "ĐÃ NỔ",
-        "start": "Bắt Đầu"
+        "start": "Bắt Đầu",
+        "max": "Max",
+        "stop_auto_bet": "Dừng cược tự động",
+        "msg_rotate_to_portrait": "Vui lòng xoay màn hình sang chiều dọc để chơi",
+        "auto_bet_header": "Hướng Dẫn Cược Tự Động",
+        "how_to_use_auto_bet": "Cách sử dụng Auto Bet",
+        "auto_bet_para_1": "Auto Bet cho phép bạn đặt quy tắc để tự động đặt cược cho đến khi đạt được các điều kiện bạn chọn.",
+        "auto_bet_para_2": "Số lượng Cược: Tổng số vòng để tự động đặt cược.",
+        "auto_bet_para_3": "Nếu cược thắng",
+        "auto_bet_para_3_1": "Đặt lại – Trở về mức cược ban đầu của bạn sau khi thắng.",
+        "auto_bet_para_3_2": "Tăng thêm: Tăng mức cược của bạn theo một tỷ lệ phần trăm nhất định khi bạn thắng.",
+        "auto_bet_para_3_3": "(Ví dụ: Đặt +20% → Bắt đầu với $10 → thắng → cược tiếp theo $12)",
+        "auto_bet_para_4": "Nếu cược thua",
+        "auto_bet_para_4_1": "Reset: Trở lại mức cược ban đầu của bạn sau khi thua.",
+        "auto_bet_para_4_2": "Reset: Tăng mức cược của bạn theo một tỷ lệ phần trăm nhất định khi bạn thua.",
+        "auto_bet_para_4_3": "(Ví dụ: Đặt +50% → Bắt đầu với $10 → thua → cược tiếp theo $15)",
+        "auto_bet_para_5": "Stop on Win: Dừng Tự động Đặt cược khi đạt đến mục tiêu thắng của bạn.",
+        "auto_bet_para_6": "Stop on Loss: Dừng Tự động Đặt cược khi đạt đến giới hạn thua lỗ của bạn."
     },
     "cascadingslot": {
         "auto_spin": "Tự Quay",
@@ -367,10 +384,10 @@ export const languages = {
         "glossary_red": "Đỏ",
         "glossary_blue": "Xanh",
         "glossary_draw": "Hòa",
-        "glossary_tunnel_selection": "Lựa chọn Đường Hầm",
+        "glossary_tunnel_selection": "Vị trí thả bóng",
         "button_clear": "Hủy",
         "button_start": "Bắt Đầu",
-        "text_tunnel_selection": "Chọn Cách Xây Dựng Của Bạn!",
+        "text_tunnel_selection": "Chọn vị trí thả bóng!",
         "message_livestream_not_supported": "Phiên bản trình duyệt và hệ điều hành trên thiết bị của bạn hiện tại không hỗ trợ xem live stream trong trò chơi này (bạn vẫn có thể đặt cược và nhận thưởng bình thường), hãy nâng cấp lên phiên bản trình duyệt và hệ điều hành được hỗ trợ trong mục Hướng Dẫn hoặc mới hơn để có trải nghiệm chơi game đầy đủ nhất.",
         "message_chosen_bet": "Đã chọn %{betChoice}. Vui lòng xóa lựa chọn trước đó."
     }
