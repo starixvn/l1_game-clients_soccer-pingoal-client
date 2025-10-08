@@ -1,12 +1,13 @@
 import gc from "@sg/game-client-base";
 import { _decorator, instantiate, Node, Prefab } from "cc";
 import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
-import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
+import { SINGLE_GAME_ROUND_STATE, SingleGameRoundTimeHandlers, SingleGameRoundTimeStore } from "db://shared-single-player-game/scripts/core";
 import Observer from "observer";
 import { VideoStreamHandlers } from "../../handlers";
 import { VideoStream, VideoStreamStore } from "../../stores";
 import { BackgroundVideoPlayer, VIDEO_ENDED_EVENT } from "./background-video-player";
 import { NetworkStatus, SystemIndicator } from "./system-indicator";
+import Hls from "hls.js";
 
 const { ccclass, property } = _decorator;
 const { render, handle } = Observer;
@@ -78,13 +79,18 @@ export default class VideoStreamIntegration extends ObserverComponent {
 
     @render(VideoStreamStore, (store) => store.videoResult)
     renderVideoSource(videoResult: VideoStream) {
-        if (videoResult?.video) {
+        if(videoResult?.video && !Hls.isSupported()) {
+            this.handleSkipVideo();
+        } else if (videoResult?.video) {
             this.backgroundVideoPlayer.playVideoByName(videoResult?.video, this.handlePlayVideo);
         }
     }
 
     @handle(VideoStreamHandlers, (handler) => handler.handlePlayVideo())
     private handlePlayVideo() {}
+
+    @handle(SingleGameRoundTimeHandlers, (handler) => handler.handle(SINGLE_GAME_ROUND_STATE.SHOW_RESULT))
+    private handleSkipVideo() {}
 
     @render(VideoStreamStore, (store) => store.liveStreamServer)
     private onLiveStreamServer(liveStreamServer: string) {

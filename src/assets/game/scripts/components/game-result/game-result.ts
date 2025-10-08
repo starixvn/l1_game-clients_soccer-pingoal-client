@@ -12,6 +12,7 @@ import {
 } from "db://shared-single-player-game/scripts/core";
 import inversify from "inversify";
 import { ResultScore } from "./result-score";
+import Hls from "hls.js";
 
 const { inject } = inversify;
 
@@ -33,6 +34,9 @@ export class GameResult extends ObserverComponent {
 
     @property(Node)
     loseText: Node = null;
+
+    @property(Node)
+    deviceWarning: Node = null;
 
     @render(SingleGameRoundTimeStore, (store) => store.roundState)
     async handleShowResult(roundState: string) {
@@ -76,6 +80,11 @@ export class GameResult extends ObserverComponent {
     }
 
     async showResult() {
+        if(!Hls.isSupported()) {
+            this.deviceWarning.active = true;
+        } else {
+            this.deviceWarning.active = false;
+        }
         await AnimationUtils.fadeIn(this.node, 0.5);
         await AnimationUtils.delayTime(3);
         await AnimationUtils.fadeOut(this.node, 0.5);
