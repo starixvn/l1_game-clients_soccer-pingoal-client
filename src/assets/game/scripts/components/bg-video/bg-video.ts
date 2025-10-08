@@ -38,7 +38,16 @@ export class BgVideo extends ObserverComponent {
             videoElement.id = BgVideo.VIDEO_ID;
             videoElement.className = BgVideo.VIDEO_ID;
             this._videoElement = videoElement;
+            this.applyVideoStyles(parseInt(videoElement.style.width), parseInt(videoElement.style.height));
         }
+    }
+
+    private applyVideoStyles(originalWidth: number, originalHeight: number) {
+        this._videoElement.style.visibility = "visible";
+        this._videoElement.style.position = "absolute";
+        this._videoElement.style.left = "0%";
+        this._videoElement.style.transform = `${this._videoElement.style.transform}`;
+        this._videoElement.style.zIndex = "10";
     }
 
     fadeAnimation(direction: 'in' | 'out'): Promise<void> {
