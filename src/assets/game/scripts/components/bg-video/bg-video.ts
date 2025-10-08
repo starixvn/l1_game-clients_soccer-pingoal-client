@@ -32,21 +32,27 @@ export class BgVideo extends ObserverComponent {
         }, 0.1)
     }
 
+    update() {
+        if(this._videoElement &&!this._videoElement.style.transform.includes('translateX')) {
+            this._videoElement.style.transform = `${this._videoElement.style.transform} translateX(-50%)`;
+        }
+    }
+
     updateVideoElement() {
         const videoElement = document.getElementsByClassName("cocosVideo")[0] as HTMLVideoElement;
         if (videoElement) {
             videoElement.id = BgVideo.VIDEO_ID;
             videoElement.className = BgVideo.VIDEO_ID;
             this._videoElement = videoElement;
-            this.applyVideoStyles(parseInt(videoElement.style.width), parseInt(videoElement.style.height));
+            this.applyVideoStyles();
         }
     }
 
-    private applyVideoStyles(originalWidth: number, originalHeight: number) {
+    private applyVideoStyles() {
         this._videoElement.style.visibility = "visible";
         this._videoElement.style.position = "absolute";
-        this._videoElement.style.left = "0%";
-        this._videoElement.style.transform = `${this._videoElement.style.transform}`;
+        this._videoElement.style.left = "50%";
+        this._videoElement.style.transform = `${this._videoElement.style.transform} translateX(-50%`;
         this._videoElement.style.zIndex = "10";
     }
 
