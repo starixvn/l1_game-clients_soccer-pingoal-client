@@ -1,47 +1,34 @@
+import gc from "@sg/game-client-base";
 import { _decorator, AudioSource, tween } from "cc";
-import MusicPlayer from "db://shared-components/game/audios/scripts/component/music-player";
+import { ObserverComponent } from "db://shared-components/shared/common-components/observer-component/scripts/observer-component";
 import Observer from "observer";
 import { VideoStreamSoundStore } from "../../stores";
 const { ccclass, property } = _decorator;
-const { render } = Observer;
+const { render, handle } = Observer;
+const { Audios } = gc;
 
 @ccclass("BackgroundMusicPlayer")
-export class BackgroundMusicPlayer extends MusicPlayer {
+export class BackgroundMusicPlayer extends ObserverComponent {
     @property(AudioSource)
     musicSource: AudioSource = null;
 
-    _stopBackgroundMusic = false;
-
-    _currentVolume = 1;
-
-    onEnable() {
-        this.musicSource.node.on(AudioSource.EventType.STARTED, this.onMusicStarted, this);
-    }
-
-    onMusicStarted() {
-        if (this._stopBackgroundMusic) {
-            this.musicSource.stop();
-        }
-    }
-
     @render(VideoStreamSoundStore, (store) => store.isPlayBackgroundMusic)
-    playMusic(playBackgroundMusic: boolean) {
-        this._stopBackgroundMusic = !playBackgroundMusic;
-        if (playBackgroundMusic) {
-            if (this.musicSource.state === AudioSource.AudioState.STOPPED || this.musicSource.state === AudioSource.AudioState.INIT) {
-                this.musicSource.play();
-                this.callPlayMusic();
-            }
-            if (this.musicSource.volume <= 0) {
-                tween(this.musicSource).to(1, { volume: this._currentVolume }).start();
-            }
-        } else {
-            if (this.musicSource.state === AudioSource.AudioState.PLAYING) {
-                this._currentVolume = this.musicSource.volume;
-                tween(this.musicSource).to(1, { volume: 0 }).start();
-            }
-        }
+    changeMusic(playBackgroundMusic: boolean) {
+        const videoName = playBackgroundMusic ? "game-music" : "video-music";
+        const duration = 1;
+
+        tween(this.musicSource)
+            .to(duration, { volume: 0 })
+            .call(() => {
+                this.musicSource.stop();
+                this.playMusic(videoName);
+            })
+            .to(duration, { volume: 1 })
+            .start();
     }
 
-    enableMusic(musicEnable: boolean): void {}
+    @handle(Audios.AudioHandler, (handler, id: string) => handler.playMusic(id))
+    playMusic(id: string) {
+        return id;
+    }
 }

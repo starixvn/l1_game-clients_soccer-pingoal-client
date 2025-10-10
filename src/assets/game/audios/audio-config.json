@@ -1,9 +1,16 @@
 {
-    "bgm-song1": {
+    "game-music": {
         "bundle": "resources",
         "path": "background-music/song1",
         "type": "music",
         "isMusicGame": true,
+        "isLazyLoad": true
+    },
+    "video-music": {
+        "bundle": "resources",
+        "path": "background-music/song2",
+        "type": "music",
+        "isMusicGame": false,
         "isLazyLoad": true
     },
     "click": {
