@@ -33,7 +33,6 @@ export class BgVideo extends ObserverComponent {
             uiOpacity.opacity = 255;
         }
 
-        this.bgVideoLoading.active = false;
         this.scheduleOnce(() => {
             this.updateVideoElement();
         }, 0.1);
@@ -46,6 +45,10 @@ export class BgVideo extends ObserverComponent {
             transform[transform.length - 2] = " 0";
 
             this._videoElement.style.transform = `${transform.join(",")} translateX(-50%)`;
+        }
+
+        if (this._videoElement && this.videoPlayer.isPlaying) {
+            this.bgVideoLoading.active = false;
         }
     }
 
