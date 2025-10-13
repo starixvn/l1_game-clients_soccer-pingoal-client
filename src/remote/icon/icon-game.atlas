@@ -1,174 +1,63 @@
-
 icon-game.png
-size: 1181,293
-format: RGBA8888
-filter: Linear,Linear
-repeat: none
+size:332,991
+filter:Linear,Linear
+pma:true
 BG
-  rotate: false
-  xy: 263, 88
-  size: 203, 203
-  orig: 205, 205
-  offset: 1, 1
-  index: -1
+bounds:2,571,203,203
+offsets:1,1,205,205
 ball/b00
-  rotate: false
-  xy: 809, 56
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:113,286,86,86
 ball/b03
-  rotate: false
-  xy: 829, 205
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:201,201,86,86
 ball/b06
-  rotate: false
-  xy: 897, 117
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:2,266,86,86
 ball/b09
-  rotate: false
-  xy: 917, 205
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:90,198,86,86
 ball/b12
-  rotate: false
-  xy: 897, 29
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:2,178,86,86
 ball/b15
-  rotate: false
-  xy: 1005, 205
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:178,113,86,86
 ball/b18
-  rotate: false
-  xy: 1093, 205
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:90,110,86,86
 ball/b21
-  rotate: false
-  xy: 985, 117
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:178,25,86,86
 ball/b24
-  rotate: false
-  xy: 985, 29
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:2,90,86,86
 ball/b27
-  rotate: false
-  xy: 1073, 117
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:90,22,86,86
 ball/b30
-  rotate: false
-  xy: 1073, 29
-  size: 86, 86
-  orig: 86, 86
-  offset: 0, 0
-  index: -1
+bounds:2,2,86,86
 eff/1
-  rotate: true
-  xy: 688, 12
-  size: 130, 119
-  orig: 130, 119
-  offset: 0, 0
-  index: -1
+bounds:206,379,130,119
+rotate:90
 eff/2
-  rotate: true
-  xy: 686, 144
-  size: 147, 141
-  orig: 147, 141
-  offset: 0, 0
-  index: -1
+bounds:2,428,147,141
 eff/3
-  rotate: false
-  xy: 476, 2
-  size: 120, 107
-  orig: 120, 107
-  offset: 0, 0
-  index: -1
+bounds:217,693,120,107
+rotate:90
 eff/4
-  rotate: true
-  xy: 468, 111
-  size: 180, 115
-  orig: 180, 115
-  offset: 0, 0
-  index: -1
+bounds:207,511,180,115
+rotate:90
 eff/5
-  rotate: false
-  xy: 2, 4
-  size: 109, 72
-  orig: 109, 72
-  offset: 0, 0
-  index: -1
+bounds:2,354,109,72
 eff/6
-  rotate: true
-  xy: 585, 117
-  size: 174, 99
-  orig: 174, 99
-  offset: 0, 0
-  index: -1
+bounds:217,815,174,99
+rotate:90
+empty
+bounds:318,988,1,1
 light spinner
-  rotate: true
-  xy: 598, 25
-  size: 90, 88
-  orig: 94, 92
-  offset: 2, 2
-  index: -1
-name game
-  rotate: true
-  xy: 217, 82
-  size: 209, 44
-  orig: 214, 49
-  offset: 4, 3
-  index: -1
+bounds:206,289,90,88
+offsets:2,2,94,92
 pin-r
-  rotate: false
-  xy: 113, 12
-  size: 107, 64
-  orig: 107, 64
-  offset: 0, 0
-  index: -1
+bounds:266,92,107,64
+rotate:90
 pinpin-l
-  rotate: true
-  xy: 222, 22
-  size: 58, 55
-  orig: 59, 60
-  offset: 1, 0
-  index: -1
+bounds:266,35,58,55
+offsets:1,0,59,60
 top light frame
-  rotate: false
-  xy: 279, 33
-  size: 195, 53
-  orig: 197, 77
-  offset: 1, 23
-  index: -1
+bounds:151,374,195,53
+offsets:1,23,197,77
+rotate:90
 vien_icon
-  rotate: false
-  xy: 2, 78
-  size: 213, 213
-  orig: 215, 215
-  offset: 1, 1
-  index: -1
+bounds:2,776,213,213
+offsets:1,1,215,215
