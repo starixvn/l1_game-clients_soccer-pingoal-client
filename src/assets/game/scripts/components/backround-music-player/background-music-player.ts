@@ -16,6 +16,7 @@ export class BackgroundMusicPlayer extends ObserverComponent {
     changeMusic(playBackgroundMusic: boolean) {
         const videoName = playBackgroundMusic ? "game-music" : "video-music";
         const duration = 1;
+        const volume = playBackgroundMusic ? 1 : 0.7;
 
         tween(this.musicSource)
             .to(duration, { volume: 0 })
@@ -23,7 +24,7 @@ export class BackgroundMusicPlayer extends ObserverComponent {
                 this.musicSource.stop();
                 this.playMusic(videoName);
             })
-            .to(duration, { volume: 1 })
+            .to(duration, { volume })
             .start();
     }
 
