@@ -18,6 +18,9 @@ export class BgVideo extends ObserverComponent {
     bgVideoLoading: Node = null;
 
     @property(Node)
+    bgStaticVideo: Node = null;
+
+    @property(Node)
     bgMainTop: Node = null;
 
     onLoad(): void {
@@ -33,6 +36,7 @@ export class BgVideo extends ObserverComponent {
             uiOpacity.opacity = 255;
         }
 
+        this.bgVideoLoading.active = false;
         this.scheduleOnce(() => {
             this.updateVideoElement();
         }, 0.1);
@@ -48,7 +52,7 @@ export class BgVideo extends ObserverComponent {
         }
 
         if (this._videoElement && this.videoPlayer.isPlaying) {
-            this.bgVideoLoading.active = false;
+            this.bgStaticVideo.active = false;
         }
     }
 
