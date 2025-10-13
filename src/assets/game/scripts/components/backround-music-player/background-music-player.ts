@@ -12,20 +12,33 @@ export class BackgroundMusicPlayer extends ObserverComponent {
     @property(AudioSource)
     musicSource: AudioSource = null;
 
-    @render(VideoStreamSoundStore, (store) => store.isPlayBackgroundMusic)
-    changeMusic(playBackgroundMusic: boolean) {
-        const videoName = playBackgroundMusic ? "game-music" : "video-music";
-        const duration = 1;
-        const volume = playBackgroundMusic ? 1 : 0.7;
+    shouldSoftStart = true;
 
-        tween(this.musicSource)
-            .to(duration, { volume: 0 })
-            .call(() => {
-                this.musicSource.stop();
-                this.playMusic(videoName);
-            })
-            .to(duration, { volume })
-            .start();
+    @render(VideoStreamSoundStore, (store) => store.audioName)
+    change(name: string) {
+        if (!name) {
+            this.shouldSoftStart = false;
+            return;
+        }
+
+        const duration = 1;
+        const volume = name === "game-music" ? 1 : 0.7;
+
+        if (this.shouldSoftStart) {
+            tween(this.musicSource)
+                .to(duration, { volume: 0 })
+                .call(() => {
+                    this.musicSource.stop();
+                    this.playMusic(name);
+                })
+                .to(duration, { volume })
+                .start();
+        } else {
+            this.musicSource.stop();
+            this.playMusic(name);
+            this.musicSource.volume = volume;
+            this.shouldSoftStart = true;
+        }
     }
 
     @handle(Audios.AudioHandler, (handler, id: string) => handler.playMusic(id))

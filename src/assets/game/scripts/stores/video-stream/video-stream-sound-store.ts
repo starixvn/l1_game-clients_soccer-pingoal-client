@@ -17,7 +17,11 @@ export class VideoStreamSoundStore {
         mobx.makeAutoObservable(this);
     }
 
-    get isPlayBackgroundMusic() {
-        return this.userSettingStore.musicEnable && this.singleGameRoundTimeStore.roundState !== SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO;
+    get audioName(): string {
+        if (!this.userSettingStore.musicEnable) {
+            return "";
+        }
+
+        return this.singleGameRoundTimeStore.roundState !== SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO ? "game-music" : "video-music";
     }
 }
