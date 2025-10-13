@@ -39,9 +39,13 @@ export class BgVideo extends ObserverComponent {
         }, 0.1);
     }
 
-    update() {
+    lateUpdate() {
         if (this._videoElement && !this._videoElement.style.transform.includes("translateX")) {
-            this._videoElement.style.transform = `${this._videoElement.style.transform} translateX(-50%)`;
+            const transform = this._videoElement.style.transform.split(",");
+
+            transform[transform.length - 2] = " 0";
+
+            this._videoElement.style.transform = `${transform.join(",")} translateX(-50%)`;
         }
     }
 
@@ -59,7 +63,6 @@ export class BgVideo extends ObserverComponent {
         this._videoElement.style.visibility = "visible";
         this._videoElement.style.position = "absolute";
         this._videoElement.style.left = "50%";
-        this._videoElement.style.transform = `${this._videoElement.style.transform} translateX(-50%`;
         this._videoElement.style.zIndex = "10";
     }
 
