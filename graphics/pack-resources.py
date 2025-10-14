@@ -11,9 +11,6 @@ if __name__ == '__main__':
     images_dir = "./images"
     outputPath = os.path.join(project_dir, '../', 'src/assets/game/resources/textures')
 
-    # images_dir = "..\\src\\extensions\\shared-cascading-slot\\graphics\\shared-standard-slot"
-    # outputPath = os.path.join(project_dir, '..\\', 'src\\extensions\\shared-cascading-slot\\assets\\shared\\textures')
-
     # Pack.
     packer_path = os.path.join(
         project_dir,
