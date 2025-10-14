@@ -211,7 +211,7 @@ export class BackgroundVideoPlayer extends Component {
         this.hls = hls;
         this.native = video;
 
-        this._videoDimension?.top > 0 && DOMBackgroundVideo.updateVideoDimension(this._videoDimension);
+        this._videoDimension?.top >= 0 && DOMBackgroundVideo.updateVideoDimension(this._videoDimension);
     }
 
     private handleVideoEnded() {
