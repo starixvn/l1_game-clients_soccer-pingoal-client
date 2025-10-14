@@ -43,14 +43,6 @@ export class BgVideo extends ObserverComponent {
     }
 
     lateUpdate() {
-        if (this._videoElement && !this._videoElement.style.transform.includes("translateX")) {
-            const transform = this._videoElement.style.transform.split(",");
-
-            transform[transform.length - 2] = " 0";
-
-            this._videoElement.style.transform = `${transform.join(",")} translateX(-50%)`;
-        }
-
         if (this._videoElement && this.videoPlayer.isPlaying) {
             this.bgStaticVideo.active = false;
         }
@@ -62,15 +54,7 @@ export class BgVideo extends ObserverComponent {
             videoElement.id = BgVideo.VIDEO_ID;
             videoElement.className = BgVideo.VIDEO_ID;
             this._videoElement = videoElement;
-            this.applyVideoStyles();
         }
-    }
-
-    private applyVideoStyles() {
-        this._videoElement.style.visibility = "visible";
-        this._videoElement.style.position = "absolute";
-        this._videoElement.style.left = "50%";
-        this._videoElement.style.zIndex = "10";
     }
 
     fadeAnimation(direction: "in" | "out"): Promise<void> {
