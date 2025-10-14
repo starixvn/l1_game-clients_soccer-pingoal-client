@@ -305,10 +305,11 @@ export const languages = {
         "auto_bet_para_3_3": "(Example: Set +20% → Start with $10 → win → next bet $12)",
         "auto_bet_para_4": "On Loss:",
         "auto_bet_para_4_1": "Reset: Return to your starting bet after a loss.",
-        "auto_bet_para_4_2": "Reset: Raise your bet by a set percentage when you lose.",
+        "auto_bet_para_4_2": "Increase by: Raise your bet by a set percentage when you lose.",
         "auto_bet_para_4_3": "(Example: Set +50% → Start with $10 → lose → next bet $15)",
         "auto_bet_para_5": "Stop on Win: Stop Auto Bet when reaching your win target.",
-        "auto_bet_para_6": "Stop on Loss: Stop Auto Bet when reaching your loss limit."
+        "auto_bet_para_6": "Stop on Loss: Stop Auto Bet when reaching your loss limit.",
+        "tooltip_live_stat": "Live Stat"
     },
     "cascadingslot": {
         "auto_spin": "Auto Spin",
@@ -385,8 +386,8 @@ export const languages = {
         "glossary_blue": "Blue",
         "glossary_draw": "Draw",
         "glossary_tunnel_selection": "Tunnel Selection",
-        "button_clear": "Clear",
-        "button_start": "Start",
+        "button_clear": "RESET",
+        "button_start": "BET",
         "text_tunnel_selection": "Pick Your Build!",
         "message_livestream_not_supported": "Your device's current browser and OS version does not support viewing live streams in this game (you can still place bets and collect rewards normally), please consider updating to the version mentioned in Game Guides or above to fully enjoy the game.",
         "message_chosen_bet": "Already chosen %{betChoice}. Please clear it first."

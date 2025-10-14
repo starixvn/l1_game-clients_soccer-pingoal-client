@@ -295,20 +295,21 @@ export const languages = {
         "max": "Maks",
         "stop_auto_bet": "Berhenti Taruhan Otomatis",
         "msg_rotate_to_portrait": "Silakan putar layar ke mode potret untuk bermain.",
-        "auto_bet_header": "Instruksi Taruhan Otomatis",
-        "how_to_use_auto_bet": "Cara menggunakan Auto Bet",
-        "auto_bet_para_1": "Auto Bet memungkinkan Anda menetapkan aturan untuk taruhan otomatis hingga kondisi yang Anda pilih terpenuhi.",
+        "auto_bet_header": "Panduan Taruhan Otomatis",
+        "how_to_use_auto_bet": "Cara menggunakan Taruhan Otomatis",
+        "auto_bet_para_1": "Taruhan Otomatis memungkinkan Anda menetapkan aturan untuk taruhan otomatis hingga kondisi yang Anda pilih terpenuhi.",
         "auto_bet_para_2": "Jumlah Taruhan: Jumlah putaran untuk taruhan otomatis.",
         "auto_bet_para_3": "Saat Menang",
-        "auto_bet_para_3_1": "Setel Ulang – Kembali ke taruhan awal Anda setelah menang.",
+        "auto_bet_para_3_1": "Reset: Kembali ke taruhan awal Anda setelah menang.",
         "auto_bet_para_3_2": "Tambah dengan: Tingkatkan taruhan Anda dengan persentase yang ditetapkan saat Anda menang.",
         "auto_bet_para_3_3": "(Contoh: Setel +20% → Mulai dengan $10 → menang → taruhan berikutnya $12)",
-        "auto_bet_para_4": "Saat Kalah",
+        "auto_bet_para_4": "Saat Kalah:",
         "auto_bet_para_4_1": "Reset: Kembali ke taruhan awal Anda setelah kalah.",
-        "auto_bet_para_4_2": "Reset: Naikkan taruhan Anda dengan persentase yang ditetapkan saat Anda kalah.",
+        "auto_bet_para_4_2": "Tambahkan: Tingkatkan taruhan Anda dengan persentase yang ditetapkan saat Anda kalah.",
         "auto_bet_para_4_3": "(Contoh: Set +50% → Mulai dengan $10 → kalah → taruhan berikutnya $15)",
-        "auto_bet_para_5": "Stop on Win: Hentikan Taruhan Otomatis saat mencapai target kemenangan Anda.",
-        "auto_bet_para_6": "Stop on Loss: Hentikan Taruhan Otomatis saat mencapai batas kerugian Anda."
+        "auto_bet_para_5": "Berhenti saat Menang: Hentikan Taruhan Otomatis saat mencapai target kemenangan Anda.",
+        "auto_bet_para_6": "Berhenti saat Kalah: Hentikan Taruhan Otomatis saat mencapai batas kerugian Anda.",
+        "tooltip_live_stat": "Statistik Langsung"
     },
     "cascadingslot": {
         "auto_spin": "Auto Putar",
@@ -385,11 +386,11 @@ export const languages = {
         "glossary_blue": "Biru",
         "glossary_draw": "Seri",
         "glossary_tunnel_selection": "Pemilihan Terowongan",
-        "button_clear": "Clear",
-        "button_start": "Mulai",
-        "text_tunnel_selection": "Pilih Susunan Anda!",
-        "message_livestream_not_supported": "Versi browser dan OS perangkat Anda saat ini tidak mendukung penayangan siaran langsung dalam permainan ini (Anda tetap dapat memasang taruhan dan mengumpulkan hadiah secara normal), harap pertimbangkan untuk memperbarui ke versi yang disebutkan dalam Panduan Permainan atau di atasnya untuk menikmati permainan sepenuhnya.",
-        "message_chosen_bet": "Sudah memilih %{betChoice}. Harap bersihkan terlebih dahulu."
+        "button_clear": "Reset",
+        "button_start": "TARUHAN",
+        "text_tunnel_selection": "Pilih Gaya Bermainmu!",
+        "message_livestream_not_supported": "Versi browser dan sistem operasi perangkatmu saat ini tidak mendukung tampilan siaran langsung dalam game ini (kamu tetap bisa memasang taruhan dan mengumpulkan hadiah seperti biasa). Silakan pertimbangkan untuk memperbarui ke versi yang disebutkan di Panduan Game atau di atas agar dapat menikmati permainan sepenuhnya.",
+        "message_chosen_bet": "Sudah memilih %{betChoice}. Silakan bersihkan terlebih dahulu."
     }
 };
 
