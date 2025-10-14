@@ -153,7 +153,7 @@ export class BackgroundVideoPlayer extends Component {
 
     private updateVideoDimension(value: { width: number; height: number; top: number }) {
         this._videoDimension = value;
-        value?.top > 0 && DOMBackgroundVideo.updateVideoDimension(value);
+        value?.top >= 0 && DOMBackgroundVideo.updateVideoDimension(value);
     }
 
     private syncCurrentTime() {
