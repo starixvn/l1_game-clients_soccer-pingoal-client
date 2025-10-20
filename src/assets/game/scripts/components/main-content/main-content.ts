@@ -12,7 +12,7 @@ const { render, handle } = Observer;
 export default class MainContent extends ObserverComponent {
     @render(SingleGameRoundTimeStore, (store) => store.roundState, { fireImmediately: false })
     renderRoundState(roundState: any) {
-        if (roundState === SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO) {
+        if (roundState === SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO || roundState === SINGLE_GAME_ROUND_STATE.SHOW_RESULT) {
             this.fadeOutAnimation();
         } else if (roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET) {
             this.resetVideoStream();

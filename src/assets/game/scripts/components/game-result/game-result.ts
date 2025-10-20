@@ -38,6 +38,9 @@ export class GameResult extends ObserverComponent {
     @property(Node)
     deviceWarning: Node = null;
 
+    @property(Node)
+    bgVideoLoading: Node = null;
+
     @render(SingleGameRoundTimeStore, (store) => store.roundState)
     async handleShowResult(roundState: string) {
         if (roundState === SINGLE_GAME_ROUND_STATE.SHOW_RESULT) {
@@ -82,8 +85,10 @@ export class GameResult extends ObserverComponent {
     async showResult() {
         if(!Hls.isSupported()) {
             this.deviceWarning.active = true;
+            this.bgVideoLoading.active = true;
         } else {
             this.deviceWarning.active = false;
+            this.bgVideoLoading.active = false;
         }
         await AnimationUtils.fadeIn(this.node, 0.5);
         await AnimationUtils.delayTime(3);
