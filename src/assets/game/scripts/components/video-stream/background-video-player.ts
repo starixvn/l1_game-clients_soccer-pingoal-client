@@ -166,6 +166,13 @@ export class BackgroundVideoPlayer extends Component {
         }
     }
 
+    skipToTime(time: number) {
+        if (this.native && this.native.duration) {
+            this.currentTime = this.native.duration - time;
+            this.native.currentTime = this.native.duration - time;
+        }
+    }
+
     private initialize() {
         DOMBackgroundVideo.setMaxHeight(this.maxHeight);
         const video = DOMBackgroundVideo.createOrLoadVideoElement();
