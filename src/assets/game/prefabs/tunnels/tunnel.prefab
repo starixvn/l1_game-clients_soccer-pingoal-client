@@ -739,8 +739,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 324.387,
-      "y": 136.756,
+      "x": 315,
+      "y": 125,
       "z": 0
     },
     "_lrot": {
@@ -780,8 +780,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 72,
-      "height": 72
+      "width": 100,
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -822,7 +822,7 @@
     },
     "_type": 1,
     "_fillType": 0,
-    "_sizeMode": 0,
+    "_sizeMode": 2,
     "_fillCenter": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -1030,7 +1030,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 119.40090498271825,
+      "width": 374.7678874567956,
       "height": 104.8
     },
     "_anchorPoint": {
@@ -1066,11 +1066,11 @@
       "b": 10,
       "a": 255
     },
-    "_string": "ビルドを選択！",
+    "_string": "PICK YOUR BUILD!",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 16,
-    "_fontSize": 16,
+    "_actualFontSize": 40,
+    "_fontSize": 40,
     "_fontFamily": "Roboto",
     "_lineHeight": 80,
     "_overflow": 0,
