@@ -79,12 +79,16 @@ export class Actions extends ObserverComponent {
     @handle(SingleGameBetHandler, (handler, payload) => handler.handleStartBet(payload))
     handleStart() {
         this.playSoundClick();
+        // Immediately disable buttons to prevent double-click before server response
+        this.setButtonState(this.startButton, this._startDisableNode, false);
+        this.setButtonState(this.clearButton, this._clearDisableNode, false);
         return this._tunnelsPosition;
     }
 
     @handle(SingleGameChipHandlers, (handler) => handler.handleClearAllChips())
     handleClear() {
         this.playSoundClick();
+        this.setButtonState(this.clearButton, this._clearDisableNode, false);
     }
 
     @handle(gc.Audios.AudioHandler, (handle, id: string) => handle.playSFX(id))
