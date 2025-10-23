@@ -27,8 +27,10 @@ export class BackgroundVideoPlayer extends Component {
         height: 0,
         top: 0,
     };
+    private _fastForwardSpeed = 1;
 
     private _onPlayStateChanged: (isPlay: boolean) => void = null;
+    private onFastForwardTimeUpdateRef: () => void = null;
 
     private onTimeUpdateRef: () => void = null;
     private onEndedRef: () => void = null;
@@ -121,7 +123,7 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     protected lateUpdate(dt: number): void {
-        this.currentTime += dt;
+        this.currentTime += dt * this._fastForwardSpeed;
     }
 
     onLoad() {
@@ -168,9 +170,33 @@ export class BackgroundVideoPlayer extends Component {
 
     skipToTime(time: number) {
         if (this.native && this.native.duration) {
-            this.currentTime = this.native.duration - time;
-            this.native.currentTime = this.native.duration - time;
+            const targetTime = this.native.duration - time;
+            
+            this._fastForwardSpeed = 5;
+            this.native.playbackRate = this._fastForwardSpeed;
+            
+            this.startFastForwardToTarget(targetTime);
         }
+    }
+
+    private startFastForwardToTarget(targetTime: number) {
+        if (this.onFastForwardTimeUpdateRef) {
+            this.native.removeEventListener("timeupdate", this.onFastForwardTimeUpdateRef);
+        }
+        
+        this.onFastForwardTimeUpdateRef = () => {
+            if (this.native.currentTime >= targetTime) {
+                this._fastForwardSpeed = 1;
+                this.native.playbackRate = this._fastForwardSpeed;
+                this.native.currentTime = targetTime;
+                this.currentTime = targetTime;
+                
+                this.native.removeEventListener("timeupdate", this.onFastForwardTimeUpdateRef);
+                this.onFastForwardTimeUpdateRef = null;
+            }
+        };
+        
+        this.native.addEventListener("timeupdate", this.onFastForwardTimeUpdateRef);
     }
 
     private initialize() {

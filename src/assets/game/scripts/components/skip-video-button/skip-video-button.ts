@@ -30,7 +30,7 @@ export class SkipVideoButton extends ObserverComponent {
     }
 
     handleSkipVideo() {
-        this.backgroundVideoPlayer.skipToTime(2.5);
+        this.backgroundVideoPlayer.skipToTime(1);
         this.skipVideoButton.node.active = false;
     }
 }
