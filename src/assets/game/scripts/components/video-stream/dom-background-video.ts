@@ -1,6 +1,13 @@
-import { log, view } from "cc";
+import { log, sys, view } from "cc";
 import { TOP_OFFSET_DEFAULT } from "./video-offset-container";
 export class DOMBackgroundVideo {
+    private static isIOS(): boolean {
+        if (sys.isBrowser) {
+            const ua = navigator.userAgent.toLowerCase();
+            return /iphone|ipad|ipod/.test(ua) && /safari/.test(ua);
+        }
+        return sys.os === sys.OS.IOS;
+    }
     static readonly GAME_CONTAINER_ID = "Cocos3dGameContainer";
     static readonly GAME_CANVAS_ID = "GameCanvas";
 
@@ -75,6 +82,12 @@ export class DOMBackgroundVideo {
     }
 
     static updateVideoPosition(offsetTop = 0) {
+        // Skip position updates on iOS Safari due to rendering bugs
+        // Video uses bottom: 0 positioning which works correctly on iOS
+        if (this.isIOS()) {
+            return;
+        }
+
         const video = document.getElementById(DOMBackgroundVideo.VIDEO_ID) as HTMLVideoElement;
         if (!video) {
             log("video not found----------");
