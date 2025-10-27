@@ -48,6 +48,15 @@ export class Actions extends ObserverComponent {
         this.updateButtonStates();
     }
 
+    @render(gc.Notices.NoticeStore, (store) => store.notice)
+    handleNotice(notice: gc.Notices.Notice) {
+        const isApiError = notice?.noticeInfo === gc.Notices.NoticeInfo.ApiError;
+
+        if (isApiError) {
+            this.updateButtonStates();
+        }
+    }
+
     private updateButtonStates() {
         this.ensureDisableNodes();
         
