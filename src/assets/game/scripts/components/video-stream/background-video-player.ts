@@ -27,10 +27,8 @@ export class BackgroundVideoPlayer extends Component {
         height: 0,
         top: 0,
     };
-    private _fastForwardSpeed = 1;
 
     private _onPlayStateChanged: (isPlay: boolean) => void = null;
-    private onFastForwardTimeUpdateRef: () => void = null;
 
     private onTimeUpdateRef: () => void = null;
     private onEndedRef: () => void = null;
@@ -123,7 +121,7 @@ export class BackgroundVideoPlayer extends Component {
     }
 
     protected lateUpdate(dt: number): void {
-        this.currentTime += dt * this._fastForwardSpeed;
+        this.currentTime += dt;
     }
 
     onLoad() {
@@ -168,35 +166,21 @@ export class BackgroundVideoPlayer extends Component {
         }
     }
 
-    skipToTime(time: number) {
-        if (this.native && this.native.duration) {
-            const targetTime = this.native.duration - time;
-            
-            this._fastForwardSpeed = 5;
-            this.native.playbackRate = this._fastForwardSpeed;
-            
-            this.startFastForwardToTarget(targetTime);
-        }
-    }
-
-    private startFastForwardToTarget(targetTime: number) {
-        if (this.onFastForwardTimeUpdateRef) {
-            this.native.removeEventListener("timeupdate", this.onFastForwardTimeUpdateRef);
-        }
-        
-        this.onFastForwardTimeUpdateRef = () => {
-            if (this.native.currentTime >= targetTime) {
-                this._fastForwardSpeed = 1;
-                this.native.playbackRate = this._fastForwardSpeed;
-                this.native.currentTime = targetTime;
-                this.currentTime = targetTime;
+    skipVideo():Promise<void> {
+        return new Promise((resolve) => {
+            if (this.native && this.native.duration) {
+                const remainedSecond = 2;
+    
+                this.currentTime = this.native.duration - remainedSecond;
+                this.native.currentTime = this.native.duration - remainedSecond;
                 
-                this.native.removeEventListener("timeupdate", this.onFastForwardTimeUpdateRef);
-                this.onFastForwardTimeUpdateRef = null;
+                setTimeout(() => {
+                    resolve();
+                }, 1300);
+            } else {
+                resolve();
             }
-        };
-        
-        this.native.addEventListener("timeupdate", this.onFastForwardTimeUpdateRef);
+        })
     }
 
     private initialize() {
