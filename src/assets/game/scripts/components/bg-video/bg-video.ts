@@ -36,10 +36,11 @@ export class BgVideo extends ObserverComponent {
             uiOpacity.opacity = 255;
         }
 
+        this.bgStaticVideo.active = true;
         this.bgVideoLoading.active = false;
         this.scheduleOnce(() => {
             this.updateVideoElement();
-        }, 0.1);
+        }, 0);
     }
 
     lateUpdate() {
@@ -77,10 +78,10 @@ export class BgVideo extends ObserverComponent {
     async renderRoundState(roundState: string) {
         if (this.bgVideoLoading && this._videoElement && this.videoPlayer) {
             if (roundState === SINGLE_GAME_ROUND_STATE.PLACING_BET) {
-                this.bgMainTop.getComponent(UIOpacity).opacity = 255;
                 this._videoElement.style.zIndex = "10";
                 this.bgVideoLoading.active = false;
                 this.videoPlayer.play();
+                this.bgMainTop.getComponent(UIOpacity).opacity = 255;
                 await this.fadeAnimation("in");
             } else {
                 this.bgMainTop.getComponent(UIOpacity).opacity = 0;
