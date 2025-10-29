@@ -15,6 +15,7 @@ export class RandomBallsButton extends ObserverComponent {
     button: Button = null;
 
     private isEnable = true;
+    private disableDuration = 0.8;
 
     @handle(TunnelsHandlers, (handler, payload: TunnelsBallsStoreType) => handler.handle(payload))
     handleRandomBalls() {
@@ -23,9 +24,9 @@ export class RandomBallsButton extends ObserverComponent {
         }
         this.playSoundClick();
         this.button.interactable = false;
-        setTimeout(() => {
+        this.scheduleOnce(() => {
             this.button.interactable = true;
-        }, 800);
+        }, this.disableDuration);
 
         const redBallRandomTunnel = this.getRenderTunnel();
         let blueBallRandomTunnel = this.getRenderTunnel();

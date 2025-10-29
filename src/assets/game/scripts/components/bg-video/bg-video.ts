@@ -10,6 +10,7 @@ const { render } = Observer;
 export class BgVideo extends ObserverComponent {
     static readonly VIDEO_ID = "bg-video";
     private _videoElement: HTMLVideoElement = null;
+    private fadeDuration = 0.5;
 
     @property(VideoPlayer)
     videoPlayer: VideoPlayer = null;
@@ -65,12 +66,12 @@ export class BgVideo extends ObserverComponent {
                 return;
             }
 
-            this._videoElement.style.transition = `opacity 0.5s ease-${direction}-out`;
+            this._videoElement.style.transition = `opacity ${this.fadeDuration}s ease-${direction}-out`;
             this._videoElement.style.opacity = direction === "in" ? "1" : "0";
 
-            setTimeout(() => {
+            this.scheduleOnce(() => {
                 resolve();
-            }, 0.5 * 1000);
+            }, this.fadeDuration * 1000);
         });
     }
 
