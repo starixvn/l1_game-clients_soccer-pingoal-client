@@ -174,9 +174,9 @@ export class BackgroundVideoPlayer extends Component {
                 this.currentTime = this.native.duration - remainedSecond;
                 this.native.currentTime = this.native.duration - remainedSecond;
                 
-                setTimeout(() => {
+                this.scheduleOnce(() => {
                     resolve();
-                }, 1300);
+                }, 1.3);
             } else {
                 resolve();
             }
