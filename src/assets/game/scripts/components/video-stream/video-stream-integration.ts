@@ -134,7 +134,7 @@ export default class VideoStreamIntegration extends ObserverComponent {
 
     @render(SingleGameRoundTimeStore, (store) => store.roundState)
     protected updateSystemIndicatorState(roundState: string) {
-        this.systemIndicator?.setLiveIndicatorVisibility(roundState === SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO);
+        // systemIndicator LiveIndicatorVisibility removed
         if (roundState !== SINGLE_GAME_ROUND_STATE.PLAYING_VIDEO) {
             this.warnContainer?.removeAllChildren();
         }
