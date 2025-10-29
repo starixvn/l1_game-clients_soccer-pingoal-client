@@ -10,7 +10,7 @@ const { render } = Observer;
 export class BgVideo extends ObserverComponent {
     static readonly VIDEO_ID = "bg-video";
     private _videoElement: HTMLVideoElement = null;
-    private fadeDuration = 0.5;
+    private readonly fadeDuration = 0.5;
 
     @property(VideoPlayer)
     videoPlayer: VideoPlayer = null;

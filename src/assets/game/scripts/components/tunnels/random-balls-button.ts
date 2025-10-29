@@ -15,7 +15,7 @@ export class RandomBallsButton extends ObserverComponent {
     button: Button = null;
 
     private isEnable = true;
-    private disableDuration = 0.8;
+    private readonly disableDuration = 0.8;
 
     @handle(TunnelsHandlers, (handler, payload: TunnelsBallsStoreType) => handler.handle(payload))
     handleRandomBalls() {
