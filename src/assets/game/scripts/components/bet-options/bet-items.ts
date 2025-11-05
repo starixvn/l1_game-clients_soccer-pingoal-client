@@ -12,14 +12,6 @@ export class BetItems extends BetItemsPolygonBase {
     private currentTunnelPosition: tunnelsPosition = null;
     private currentRoundOdds: gc.Rounds.RoundOdds = null;
 
-    private getPositionOddsKey(choice: string): string | null {
-        if (!this.currentTunnelPosition) {
-            return null;
-        }
-        const { redTunnel, blueTunnel } = this.currentTunnelPosition;
-        return `R${redTunnel}B${blueTunnel}_${choice}`;
-    }
-
     @render(TunnelsStore, (store) => store.position)
     updateTunnelPosition(position: tunnelsPosition) {
         this.currentTunnelPosition = position;
@@ -32,23 +24,24 @@ export class BetItems extends BetItemsPolygonBase {
     @render(gc.Rounds.RoundStore, (store) => store.roundOdds)
     renderOdds(roundOdds: gc.Rounds.RoundOdds) {
         this.currentRoundOdds = roundOdds;
-
         const { odds, fractional } = roundOdds;
 
-        Object.keys(odds).forEach((choice) => {
-            if (choice.includes("_")) {
-                return;
-            }
+        if (!this.currentTunnelPosition || !odds || Object.keys(odds).length === 0) {
+            return;
+        }
 
-            const betItem = this.filterBetItem(choice);
-            if (!betItem) {
-                return;
-            }
+        const { redTunnel, blueTunnel } = this.currentTunnelPosition;
+        const oddsKey = `r${redTunnel}b${blueTunnel}`;
+        const betTypes: Array<'red' | 'blue' | 'draw'> = ['red', 'blue', 'draw'];
 
-            const positionKey = this.getPositionOddsKey(choice);
-            const oddsValue = positionKey && odds[positionKey] !== undefined ? odds[positionKey] : odds[choice];
+        const allOddsExist = betTypes.every((type) => odds[`${oddsKey}_${type}`] !== undefined);
+        if (!allOddsExist) {
+            return;
+        }
 
-            betItem.renderOdd(oddsValue, fractional);
+        betTypes.forEach((type) => {
+            const betItem = this.filterBetItem(type);
+            betItem.renderOdd(odds[`${oddsKey}_${type}`], fractional);
         });
     }
 }
