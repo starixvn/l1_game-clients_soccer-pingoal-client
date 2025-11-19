@@ -9,10 +9,10 @@ export class TimeOffset extends Component {
    start() {
         const offset = -new Date().getTimezoneOffset() / 60;
 
-        // 加上 +/- 號
+        // Add +/- sign
         const sign = offset >= 0 ? "+" : "";
 
-        // 顯示格式：GMT+8 / GMT+7
+        // Display format: GMT+8 / GMT+7
         this.label.string = `(GMT ${sign}${offset})`;
    }
 }
